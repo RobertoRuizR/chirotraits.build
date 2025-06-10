@@ -1,0 +1,111 @@
+source:
+  primary:
+    key: delaTorre_2010
+    bibtype: Article
+    year: '2010'
+    author: J. Antonio De La Torre and Rodrigo A. Medellín
+    journal: Mammalian Species
+    title: 'Pteronotus personatus (Chiroptera: Mormoopidae)'
+    volume: '42'
+    pages: 244–250
+    doi: 10.1644/869.1
+    issn: 1545-1410
+contributors:
+  data_collectors:
+  - last_name: unknown
+    given_name: unknown
+    ORCID: unknown
+    affiliation: unknown
+  assistants: unknown
+  dataset_curators: unknown
+dataset:
+  data_is_long_format: no
+  custom_R_code: .na
+  collection_date: '2010'
+  taxon_name: species_name
+  location_name: unknown
+  description: unknown
+  basis_of_record: unknown
+  life_stage: unknown
+  sampling_strategy: unknown
+  original_file: unknown
+  notes: unknown
+locations: .na
+contexts: .na
+traits:
+- var_in: forearm length mean
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: .na
+  methods: unknown
+- var_in: forearm length minimum
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: .na
+  methods: unknown
+- var_in: forearm length maximum
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: .na
+  methods: unknown
+- var_in: head body length mean
+  unit_in: mm
+  trait_name: head_body_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: .na
+  methods: unknown
+- var_in: head body length minimum
+  unit_in: mm
+  trait_name: head_body_length
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: .na
+  methods: unknown
+- var_in: head body length maximum
+  unit_in: mm
+  trait_name: head_body_length
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: .na
+  methods: unknown
+- var_in: tail length mean
+  unit_in: mm
+  trait_name: tail_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: .na
+  methods: unknown
+- var_in: tail length minimum
+  unit_in: mm
+  trait_name: tail_length
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: .na
+  methods: unknown
+- var_in: tail length maximum
+  unit_in: mm
+  trait_name: tail_length
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: .na
+  methods: unknown
+substitutions: .na
+taxonomic_updates: .na
+exclude_observations: .na
+questions: .na
