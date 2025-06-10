@@ -1,0 +1,241 @@
+traits:
+  description: Thesaurus of bat functional traits included in the GlobalBatTraitDatabase
+  type: list
+  elements:
+    body_mass:
+      label: Body mass
+      description: The amount of matter in the body of an organism.
+      comments: None.
+      type: numeric
+      units: g
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://purl.obolibrary.org/obo/VT_0001259
+    forearm_length:
+      label: Forearm length
+      description: This is measured from the end of the ulna to the end of the carpus.
+      comments: None.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://purl.obolibrary.org/obo/FOVT_0001379
+    head_body_length:
+      label: Head-body length
+      description: Head-body length is the total length from tip of nose to anus, base of tail or vent (i.e. tail length is excluded). 
+      comments: None.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://eol.org/schema/terms/HeadBodyLength
+    body_length_with_tail:
+      label: Body length with tail
+      description: The length of a body that includes the tail. This is measured from the snout to the end of the tail along the anterior-posterior axis in four-legged vertebrates.
+      comments: None.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://purl.obolibrary.org/obo/FOVT_0000001
+    tail_length:
+      label: Tail length
+      description: The distance from point to point along the longest axis of the appendage at the caudal end of the vertebral column. 
+      comments: None.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://purl.obolibrary.org/obo/VT_0002758
+    aspect_ratio: ####
+      label: Aspect ratio
+      description: The square of the wingspan divided by the wing area.
+      comments: None.
+      type: numeric
+      units: '{dimensionless}'
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://doi.org/10.1098/rstb.1987.0030
+    tip_shape_index: ####
+      label: Tip shape index
+      description: Trait description.
+      comments: None.
+      type: numeric
+      units: '{dimensionless}'
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://ONTOLOGY_DEFINITION_URLpurl.obolibrary.org/obo/VT_0001259
+    wing_area: ####
+      label: Wing area
+      description: The combined area of the two wings, the entire tail membrane and the portion of the body between the wings.
+      comments: None.
+      type: numeric
+      units: m2
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://doi.org/10.1098/rstb.1987.0030
+    wing_loading: ####
+      label: Wing loading
+      description: The weight divided by the wing area.
+      comments: None.
+      type: numeric
+      units: N/m2
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://doi.org/10.1098/rstb.1987.0030
+    wingspan: ####
+      label: Wingspan
+      description: Distance between the wingtips of a bat with wings extended so that the leading edge is straight.
+      comments: None.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://doi.org/10.1098/rstb.1987.0030
+    greatest_skull_length:
+      label: Greatest skull length
+      description: Distance between the most posterior point of the occiput to the most anterior point of the premaxilla, including the incisors.
+      comments: Abbreviation = GLS.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    condyloincisive_length:
+      label: Condyloincisive length
+      description: Distance between the most anterior point of the premaxilla and the most posterior point of the occipital condyles.
+      comments: Abbreviation = CIL.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    condylocanine_length:
+      label: Condylocanine length
+      description: Distance taken from the anterior edge of the alveolus of the first maxillary tooth to the most posterior point of the occipital condyles.
+      comments: Abbreviation = CCL.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    braincase_breadth:
+      label: Braincase breadth
+      description: Maximum width of the cranium measured from the dorsal side and posterior to the zygomatic arches.
+      comments: Abbreviation = BB.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    zygomatic_breadth:
+      label: Zygomatic breadth
+      description: Greatest distance between the external extremities of the zygomatic arches.
+      comments: Abbreviation = ZB.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    mastoid_breadth:
+      label: Mastoid breadth
+      description: Greatest width of the skull across the mastoids.
+      comments: Abbreviation = MB.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    rostrum_length:
+      label: Rostrum length
+      description: Distance between the posterior palatal notch and the anterior border of the incisor alveolus.
+      comments: Abbreviation = PL.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    interorbital_length:
+      label: Interorbital length
+      description: Least constriction of the skull measured behind the orbital processes.
+      comments: Abbreviation = PB.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    maxillary_tooth_row_length:
+      label: Maxillary tooth row length
+      description: Distance from the anterior edge of the alveolus of the first maxillary tooth to the posterior edge of the last molar.
+      comments: Abbreviation = MTRL.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    width_at_m3:
+      label: Width at M3
+      description: Distance between the outer margins of the upper third molars.
+      comments: Abbreviation = M3–M3.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    palatal_width_at_canines:
+      label: Palatal width at canines
+      description: Distance between the width of the palate between the cingula of the upper canines.
+      comments: Abbreviation = C-C.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    dentary_length:
+      label: Dentary length
+      description: Distance from the midpoint of the mandibular condyle to the most anterior margin of the dentary.
+      comments: Abbreviation = DENL.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    dentary_depth_under_the_protoconid_of_m2:
+      label: Dentary depth under the protoconid of m2
+      description: Perpendicular height from the ventral surface of the mandible to below the m2 protoconid.
+      comments: Abbreviation = DD.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    masseteric_fossa_length:
+      label: Masseteric fossa length
+      description: Distance across the masseteric fossa.
+      comments: Abbreviation = MFL.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    mandibular_tooth_row_length:
+      label: Mandibular tooth row length
+      description: Distance from the most anterior surface of the lower canine to the most posterior surface of m3.
+      comments: Abbreviation = MANDL.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    width_at_mandibular_condyles:
+      label: Width at mandibular condyles
+      description: Widest distance between inner margins of mandibular condyles.
+      comments: Abbreviation = WMC.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+
+
+
