@@ -1,0 +1,69 @@
+source:
+  primary:
+    key: Soria_2021
+    bibtype: Article
+    year: '2021'
+    author: Carmen D. Soria and Michela Pacifici and Moreno Di Marco and Sarah M.
+      Stephen and Carlo Rondinini
+    journal: Ecology
+    title: 'COMBINE: a coalesced mammal database of intrinsic and extrinsic traits'
+    volume: '102'
+    number: '6'
+    doi: 10.1002/ecy.3344
+    issn: 1939-9170
+contributors:
+  data_collectors:
+  - last_name: unknown
+    given_name: unknown
+    ORCID: unknown
+    affiliation: unknown
+  assistants: unknown
+  dataset_curators: unknown
+dataset:
+  data_is_long_format: no
+  custom_R_code: '
+    data |> 
+    mutate(name = paste0(genus, " ", species), .after = species) |> 
+    filter(order == "Chiroptera")
+  
+  '
+  collection_date: 1999/2020
+  taxon_name: name
+  location_name: unknown
+  description: unknown
+  basis_of_record: unknown
+  life_stage: unknown
+  sampling_strategy: unknown
+  original_file: unknown
+  notes: unknown
+locations: .na
+contexts: .na
+traits:
+- var_in: adult_mass_g
+  unit_in: g
+  trait_name: body_mass
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: adult_body_length_mm
+  unit_in: mm
+  trait_name: head_body_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: adult_forearm_length_mm
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+substitutions: .na
+taxonomic_updates: .na
+exclude_observations: .na
+questions: .na
