@@ -1,0 +1,136 @@
+source:
+  primary:
+    key: Crane_2022
+    bibtype: Article
+    year: '2021'
+    author: Matt Crane and Inês Silva and Matthew J. Grainger and George A. Gale
+    journal: Mammal Review
+    title: Limitations and gaps in global bat wing morphology trait data
+    volume: '52'
+    number: '2'
+    pages: 165–176
+    doi: 10.1111/mam.12270
+    issn: 1365-2907
+contributors:
+  data_collectors:
+  - last_name: unknown
+    given_name: unknown
+    ORCID: unknown
+    affiliation: unknown
+  assistants: unknown
+  dataset_curators: unknown
+dataset:
+  data_is_long_format: no
+  custom_R_code: .na
+  collection_date: 2000/2020
+  taxon_name: scientificName.iucn.sub
+  location_name: unknown
+  description: unknown
+  basis_of_record: unknown
+  life_stage: unknown
+  sampling_strategy: unknown
+  original_file: unknown
+  notes: unknown
+locations: .na
+contexts: .na
+traits:
+- var_in: forearm_mm
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: forearm_sd
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: species
+  value_type: standard_error
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: mass_g
+  unit_in: g
+  trait_name: body_mass
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: mass_sd
+  unit_in: g
+  trait_name: body_mass
+  entity_type: species
+  value_type: standard_error
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: wingspan_cm
+  unit_in: cm
+  trait_name: wingspan
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: wingspan_sd
+  unit_in: cm
+  trait_name: wingspan
+  entity_type: species
+  value_type: standard_error
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: wingSurfaceArea_cm2
+  unit_in: cm2
+  trait_name: wing_area
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: wingSurfaceArea_sd
+  unit_in: cm2
+  trait_name: wing_area
+  entity_type: species
+  value_type: standard_error
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: partialAspectRatio
+  unit_in: '{dimensionless}'
+  trait_name: aspect_ratio
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: partialWingLoading_Nm2
+  unit_in: N/m2
+  trait_name: wing_loading
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: partialAspectRatio_sd
+  unit_in: '{dimensionless}'
+  trait_name: aspect_ratio
+  entity_type: species
+  value_type: standard_error
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: partialWingLoading_sd
+  unit_in: N/m2
+  trait_name: wing_loading
+  entity_type: species
+  value_type: standard_error
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+substitutions: .na
+taxonomic_updates: .na
+exclude_observations: .na
+questions: .na
