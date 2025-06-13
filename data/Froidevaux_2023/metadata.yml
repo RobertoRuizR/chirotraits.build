@@ -1,0 +1,90 @@
+source:
+  primary:
+    key: Froidevaux_2023
+    bibtype: Article
+    year: '2023'
+    author: Jérémy S. P. Froidevaux and Nia Toshkova and Luc Barbaro and Ana Benítez-López
+      and Christian Kerbiriou and Isabelle Le Viol and Michela Pacifici and Luca Santini
+      and Clare Stawski and Danilo Russo and Jasja Dekker and Antton Alberdi and Francisco
+      Amorim and Leonardo Ancillotto and Kévin Barré and Yves Bas and Lisette Cantú-Salazar
+      and Dina K. N. Dechmann and Tiphaine Devaux and Katrine Eldegard and Sasan Fereidouni
+      and Joanna Furmankiewicz and Daniela Hamidovic and Davina L. Hill and Carlos
+      Ibáñez and Jean-Francois Julien and Javier Juste and Peter Kaňuch and Carmi
+      Korine and Alexis Laforge and Gaelle Legras and Camille Leroux and Grzegorz
+      Lesiński and Léa Mariton and Julie Marmet and Vanessa A. Mata and Clare M. Mifsud
+      and Victoria Nistreanu and Roberto Novella-Fernandez and Hugo Rebelo and Niamh
+      Roche and Charlotte Roemer and Ireneusz Ruczyński and Rune Sørås and Marcel
+      Uhrin and Adriana Vella and Christian C. Voigt and Orly Razgour
+    journal: Scientific Data
+    title: A species-level trait dataset of bats in Europe and beyond
+    volume: '10'
+    number: '1'
+    doi: 10.1038/s41597-023-02157-4
+    issn: 2052-4463
+contributors:
+  data_collectors:
+  - last_name: unknown
+    given_name: unknown
+    ORCID: unknown
+    affiliation: unknown
+  assistants: unknown
+  dataset_curators: unknown
+dataset:
+  data_is_long_format: yes
+  custom_R_code: '
+    data |> 
+          filter(verbatimTraitName %in% c("ForearmLength", "BodyMass", "AspectRatioIndex", "WingLoadingIndex")) |> 
+          mutate(verbatimScientificName = str_replace_all(verbatimScientificName, "_", " ")) |> 
+          filter(verbatimTraitValueType == "mean") |>
+          distinct(verbatimScientificName, verbatimTraitName, .keep_all = T)
+  '
+  collection_date: 2000/2023
+  taxon_name: verbatimScientificName
+  trait_name: verbatimTraitName
+  value: verbatimTraitValue
+  location_name: Area
+  description: unknown
+  basis_of_record: unknown
+  life_stage: unknown
+  sampling_strategy: unknown
+  original_file: unknown
+  notes: unknown
+locations: .na
+contexts: .na
+traits:
+- var_in: ForearmLength
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: BodyMass
+  unit_in: g
+  trait_name: body_mass
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: AspectRatioIndex
+  unit_in: '{dimensionless}'
+  trait_name: aspect_ratio
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: WingLoadingIndex
+  unit_in: '{dimensionless}'
+  trait_name: wing_loading
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+substitutions: .na
+taxonomic_updates: .na
+exclude_observations: .na
+questions: .na
