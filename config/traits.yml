@@ -1,5 +1,5 @@
 traits:
-  description: Thesaurus of bat functional traits included in the GlobalBatTraitDatabase
+  description: Thesaurus of bat functional traits included in ChiroTraits.
   type: list
   elements:
     body_mass:
@@ -47,7 +47,61 @@ traits:
       allowed_values_min: 1.0e-05
       allowed_values_max: 1000000.0
       entity_URI: http://purl.obolibrary.org/obo/VT_0002758
-    aspect_ratio: ####
+    hindfoot_length:
+      label: Hindfoot length
+      description: The hind foot length, from heel to toe. 
+      comments: None.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://eol.org/schema/terms/HindTarsusLength
+    calcaneus_length:
+      label: Calcaneus length
+      description: The maximal length of a calcaneus along the anterior-posterior axis.
+      comments: None.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://purl.obolibrary.org/obo/FOVT_0000022
+    ear_length:
+      label: Ear length
+      description: The length of a external ear.
+      comments: None.
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://purl.obolibrary.org/obo/OBA_0003426
+    tragus_length:
+      label: Tragus length
+      description: Measure from the base to the tip of the structure. A small pointed eminence of the external ear, situated in front of the concha, and projecting backward over the meatus.
+      comments: Adapted from Castillo-Figueroa & Perez-Torres, 2021 doi 10.11606/1807-0205/2021.61.24
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://purl.obolibrary.org/obo/UBERON_0010887
+    length_of_the_third_digit:
+      label: Length of the third digit
+      description: In biological collections the trait is the result of the sum of the metacarpus and its three phalanges. The metacarpus is measured from the joint with the phalanx to the junction with the carpus. The phalanx is measured as the maximum distance between the joints. In the field, the trait is measured from the junction of the metacarpus with the carpus to the tip of the third phalanx.
+      comments: Description obtained from Castillo-Figueroa & Perez-Torres, 2021 doi 10.11606/1807-0205/2021.61.24
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: 10.11606/1807-0205/2021.61.24
+    length_of_the_fifth_digit:
+      label: Length of the fifth digit
+      description: In biological collections the trait is the result of the sum of the metacarpus and its two phalanges. The metacarpus is measured from the joint with the phalanx to the junction with the carpus. The phalanx is measured as the maximum distance between the joints. In the field, it is measured from the junction of the metacarpus with the carps to the tip of the second phalanx.
+      comments: Description obtained from Castillo-Figueroa & Perez-Torres, 2021 doi 10.11606/1807-0205/2021.61.24
+      type: numeric
+      units: mm
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: 10.11606/1807-0205/2021.61.24
+    aspect_ratio:
       label: Aspect ratio
       description: The square of the wingspan divided by the wing area.
       comments: None.
@@ -56,16 +110,16 @@ traits:
       allowed_values_min: 1.0e-05
       allowed_values_max: 1000000.0
       entity_URI: https://doi.org/10.1098/rstb.1987.0030
-    tip_shape_index: ####
+    tip_shape_index:
       label: Tip shape index
-      description: Trait description.
-      comments: None.
+      description: Tip shape index (I) is the tip area ratio (Ts) divided by tip length ratio (Tl) minus Ts; I = Ts/(Tl-Ts).
+      comments: Description obtained from Castillo-Figueroa & Perez-Torres, 2021 doi 10.11606/1807-0205/2021.61.24
       type: numeric
       units: '{dimensionless}'
       allowed_values_min: 1.0e-05
       allowed_values_max: 1000000.0
-      entity_URI: http://ONTOLOGY_DEFINITION_URLpurl.obolibrary.org/obo/VT_0001259
-    wing_area: ####
+      entity_URI: 10.11606/1807-0205/2021.61.24
+    wing_area:
       label: Wing area
       description: The combined area of the two wings, the entire tail membrane and the portion of the body between the wings.
       comments: None.
@@ -74,7 +128,7 @@ traits:
       allowed_values_min: 1.0e-05
       allowed_values_max: 1000000.0
       entity_URI: https://doi.org/10.1098/rstb.1987.0030
-    wing_loading: ####
+    wing_loading:
       label: Wing loading
       description: The weight divided by the wing area.
       comments: None.
@@ -83,7 +137,7 @@ traits:
       allowed_values_min: 1.0e-05
       allowed_values_max: 1000000.0
       entity_URI: https://doi.org/10.1098/rstb.1987.0030
-    wingspan: ####
+    wingspan:
       label: Wingspan
       description: Distance between the wingtips of a bat with wings extended so that the leading edge is straight.
       comments: None.
@@ -236,6 +290,210 @@ traits:
       allowed_values_min: 1.0e-05
       allowed_values_max: 1000000.0
       entity_URI: https://pmc.ncbi.nlm.nih.gov/articles/PMC8533215/table/biology-10-01012-t0A1/
+    sexual_dimorphism:
+      label: Sexual dimorphism
+      description: A quality inhering in a bearer by virtue of the bearer's exhibiting a phenotypic difference between males and females of the same species. 
+      comments: None.
+      type: categorical
+      allowed_values_levels:
+          yes: The species has sexual dimorphism (OWN)
+          no: The species does not have sexual dimorphism (OWN)
+      entity_URI: http://purl.obolibrary.org/obo/PATO_0002451
+    longevity:
+      label: Longevity
+      description: The length or duration of life or viability.
+      comments: None.
+      type: numeric
+      units: days
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://purl.obolibrary.org/obo/NCIT_C153298
+    mating_systems:
+      label: Mating systems
+      description: An organismal quality inhering in a bearer by virtue of the structure of the bearer's conspecifics in relation to sexual behavior.
+      comments: Level definitions from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24
+      type: categorical
+      allowed_values_levels:
+          Polygamy: Mating system in which both sexes have more than one mate, and mating success is approximately equal for males and females.
+          Polyandry: Mating system in which females mate with a restricted group of the same males in successive breeding attempts.
+          Polygyny: Mating system in which males mate with the same group of females in successive mating attempts.
+          Monogamy: Mating system in which males mate with the same female in several reproductive attempts.
+      entity_URI: http://purl.obolibrary.org/obo/ECOCORE_00000062
+    sexual_maturity_age:
+      label: Sexual maturity age
+      description: The age at which an organism develops the ability to produce viable offspring.
+      comments: None.
+      type: numeric
+      units: days
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://purl.obolibrary.org/obo/VT_0002683
+    age_at_first_birth:
+      label: Age of first birth
+      description: Age at which females give birth to their first litter, or their young attach to teats or hatch out.
+      comments: None.
+      type: numeric
+      units: days
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://eol.org/schema/terms/AgeAtFirstBirth
+    foraging_strategy:
+      label: Foraging strategy
+      description: Behavioral strategy that is used to obtain food.
+      comments: Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24
+      type: categorical
+      allowed_values_levels:
+          Hawking foraging strategy: Foraging behavior in which an organism catches flying insects in the air.
+          Gleaning foraging strategy:	Foraging behavior in which an organism (usually a bird or a bat) catch its prey (mainly arthropods) by plucking them from foliage or the ground, from crevices as rock faces and under the eaves of houses, or from living organisms (in case of ticks and lice).
+          Flycatching foraging strategy: Foraging behavior in which an organism spends much of the time perched and seeking prey and only flies when prey is located.
+          Trawling foraging strategy:	Foraging behavior in which a bat 'gaff' insects from water surfaces, generally with its hindlimbs.
+          Hovering foraging strategy:	Foraging behavior in which an organism remains stationary in the air while ingesting food, such as nectar from flowers, or looking out for food when lacking a suitable perch.
+          Perching foraging strategy:	Foraging behavior in which an organism feeds fruits by hanging from branches or vegetation.          
+      entity_URI: https://doi.org/10.11606/1807-0205/2021.61.24
+    feeding_guild:
+      label: Feeding guild
+      description: Organisms that share certain morphological traits due to adaptation to similar environments and ecological roles.
+      comments: Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24
+      type: categorical
+      allowed_values_levels:
+          Insectivorous:	Organism that eats invertebrates, primarily insects.
+          Frugivorous:	An herbivore that primarily consumes fruits or fruit-like vegetables.
+          Nectarivorous:	An herbivore that primarily consumes nectar.
+          Carnivorous:	A predator that primarily eats vertebrates.
+      entity_URI: http://eol.org/schema/terms/EcomorphologicalGuild
+    bite_force:
+      label: Bite force
+      description: Is the result of the interplay between the teeth, the masticatory muscles, the mandible, the maxillae, and temporomandibular joints. Bite force can be measured in vivo with an isometric Kistler force transducer or can be estimated with assessments of muscular and bony morphology from skulls using algorithms.
+      comments: Description obtained from Castillo-Figueroa & Perez-Torres, 2021 doi 10.11606/1807-0205/2021.61.24
+      type: numeric
+      units: N
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: 10.11606/1807-0205/2021.61.24
+    dental_formula:
+      label: Dental formula
+      description: Syntax. upper/lower  I.C.P.M / I.C.P.M. When used with generic tooth class applies to both deciduous and primary. Should also be used with a taxon property.
+      comments: None.
+      type: categorical
+      allowed_values_levels:
+          yes: Dental formula present (OWN)
+          no: Dental formula absent (OWN)
+      entity_URI: http://purl.obolibrary.org/obo/UBPROP_0000113
+    migration:
+      label: Migration
+      description: Rhythmic behavior that involves cue-initiated, persistent, direct, focused movement between habitats.
+      comments: None.
+      type: categorical
+      allowed_values_levels:
+          yes: The species migrates (OWN)
+          no: The species does not migrate (OWN)
+      entity_URI: http://purl.obolibrary.org/obo/NBO_0070001
+    hibernation:
+      label: Hibernation
+      description: Any process in which an organism enters and maintains a period of dormancy in which to pass the winter. It is characterized by narcosis and by sharp reduction in body temperature and metabolic activity and by a depression of vital signs.
+      comments: None.
+      type: categorical
+      allowed_values_levels:
+          yes: The species hibernates (OWN)
+          no: The species does not hibernate (OWN)
+      entity_URI: http://purl.obolibrary.org/obo/GO_0042750
+    basal_metabolic_rate:
+      label: Basal metabolic rate
+      description: Basal metabolic rate (BMR) is the amount of energy expended daily by humans and other animals at rest. Rest is defined as existing in a neutrally temperate environment while in the post-absorptive state.
+      comments: None.
+      type: numeric
+      units: ml_O2/h
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://purl.bioontology.org/ontology/SNOMEDCT/165109007
+    body_temperature:
+      label: Body temperature
+      description: The degree of heat in the body of a living organism, temperature is measure of the average kinetic energy of the particles in a sample of matter, expressed in terms of units or degrees designated on a standard scale.
+      comments: None.
+      type: numeric
+      units: C
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://purl.bioontology.org/ontology/CSP/2871-4249
+    home_range:
+      label: Home range
+      description: Size of the area within which everyday activities of individuals or groups (of any type) are typically restricted.
+      comments: None.
+      type: numeric
+      units: km2
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://eol.org/schema/terms/HomeRange
+    type_of_roost:
+      label: Type of roost
+      description: The lair of an animal, where the animal can rest, give birth, hibernate, or take shelter.
+      comments: Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4  
+      type: categorical
+      allowed_values_levels:
+          Thermally stable underground roosts: (e.g. caves, mines, etc.) 
+          Thermally unstable underground roosts: (e.g. cellar, bunker, etc.)
+          Human-made roost: (e.g. buildings, barns, churches, etc.)
+          Tree roost: (e.g. holes, crevices, barck pockets, etc.)
+          Rock crevices: Rock crevices
+      entity_URI: https://doi.org/10.11606/1807-0205/2021.61.24
+    nursery_roost:
+      label: Nursery roost
+      description: Colony of bats in which females give birth to and rear their young until they are capable of flying and feeding themselves.
+      comments: Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4  
+      type: categorical
+      allowed_values_levels:
+          Thermally stable underground roosts: (e.g. caves, mines, etc.) 
+          Thermally unstable underground roosts: (e.g. cellar, bunker, etc.)
+          Human-made roost: (e.g. buildings, barns, churches, etc.)
+          Tree roost: (e.g. holes, crevices, barck pockets, etc.)
+          Rock crevices: Rock crevices
+      entity_URI: https://doi.org/10.11606/1807-0205/2021.61.24
+    echolocation_presence:
+      label: Echolocation presence
+      description: The method used by some animals (e.g. bats, dolphins and some whales) to determine the location of something by measuring the time it takes for an echo to return from it. These animals emit sound waves and listen for the echo, calculating the distance to the object from the time lapse between sound emission and the echo returning. 
+      comments: None.
+      type: numeric
+      units: kHz
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: http://purl.obolibrary.org/obo/GO_0050959
+    echolocation_call_type:
+      label: Echolocation call type
+      description: Type of echolocation signal according to frequency modulation in time.
+      comments: Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4
+      type: categorical
+      allowed_values_levels:
+          FM: Frequency modulated.
+          FM/QCF: Frequency modulated or quasi-constant frequency.
+          CF+FM: Constant-frequency with modulated frequency components.
+      entity_URI: 10.1038/s41597-023-02157-4
+    freq_max_amp:
+      label: Frequency of maximum amplitude
+      description: Frequency of most energy, also called peak frequency. the frequency of the call with the greatest amplitude.
+      comments: Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24
+      type: numeric
+      units: kHz
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: https://doi.org/10.11606/1807-0205/2021.61.24
+    call_duration:
+      label: Call duration
+      description: Duration of a call.
+      comments: Description obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4
+      type: numeric
+      units: ms
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: 10.1038/s41597-023-02157-4
+    call_bandwidth:
+      label: Call bandwidth
+      description: The range of frequencies through which an echolocation call sweeps.
+      comments: Description obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4
+      type: numeric
+      units: kHz
+      allowed_values_min: 1.0e-05
+      allowed_values_max: 1000000.0
+      entity_URI: 10.1038/s41597-023-02157-4
 
 
 
