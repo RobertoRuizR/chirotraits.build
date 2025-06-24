@@ -1,0 +1,140 @@
+source:
+  primary:
+    key: Goncalvez_2018
+    bibtype: Article
+    year: '2018'
+    author: Fernando Goncalves and Ricardo S. Bovendorp and Gabrielle Beca and Carolina
+      Bello and Raul Costa_Pereira and Renata L. Muylaert and Raisa R. Rodarte and
+      Nacho Villar and Rafael Souza and Maurício E. Graipel and Jorge J. Cherem and
+      Deborah Faria and Julio Baumgarten and Martín R. Alvarez and Emerson M. Vieira
+      and Nilton Cáceres and Renata Pardini and Yuri L. R. Leite and Leonora P. Costa
+      and Marco A. R. Mello and Erich Fischer and Fernando C. Passos and Luiz H. Varzinczak
+      and Jayme A. Prevedello and Ariovaldo P. Cruz_Neto and Fernando Carvalho and
+      Alexandre R. Percequillo and Agustin Paviolo and Alessandra Nava and José M.
+      B. Duarte and Noé U. De La Sancha and Enrico Bernard and Ronaldo G. Morato and
+      Juliana F. Ribeiro and Rafael G. Becker and Gabriela Paise and Paulo S. Tomasi
+      and Felipe Vélez_Garcia and Geruza L. Melo and Jonas Sponchiado and Felipe Cerezer
+      and Marília A. S. Barros and Albérico Q. S. De Souza and Cinthya C. Dos Santos
+      and Gastón A. F. Giné and Patricia Kerches_Rogeri and Marcelo M. Weber and Guilherme
+      Ambar and Lucía V. Cabrera_Martinez and Alan Eriksson and Maurício Silveira
+      and Carolina F. Santos and Lucas Alves and Eder Barbier and Gabriela C. Rezende
+      and Guilherme S. T. Garbino and Élson O. Rios and Adna Silva and Alexandre Túlio
+      A. Nascimento and Rodrigo S. De Carvalho and Anderson Feijó and Juan Arrabal
+      and Ilaria Agostini and Daniela Lamattina and Sebastian Costa and Ezequiel Vanderhoeven
+      and Fabiano R. De Melo and Plautino De Oliveira Laroque and Leandro Jerusalinsky
+      and Monica M. Valenca_Montenegro and Amely B. Martins and Gabriela Ludwig and
+      Renata B. De Azevedo and Agustin Anzóategui and Marina X. Da Silva and Marcela
+      Figuerêdo Duarte Moraes and Alexandre Vogliotti and Andressa Gatti and Thomas
+      Püttker and Camila S. Barros and Thais K. Martins and Alexine Keuroghlian and
+      Donald P. Eaton and Carolina L. Neves and Marcelo S. Nardi and Caryne Braga
+      and Pablo R. Goncalves and Ana Carolina Srbek_Araujo and Poliana Mendes and
+      João A. De Oliveira and Fábio A. M. Soares and Patrício A. Rocha and Peter Crawshaw
+      and Milton C. Ribeiro and Mauro Galetti
+    journal: Ecology
+    title: '<scp>ATLANTIC MAMMAL TRAITS</scp>: a data set of morphological traits
+      of mammals in the Atlantic Forest of South America'
+    volume: '99'
+    number: '2'
+    pages: 498–498
+    doi: 10.1002/ecy.2106
+    issn: 1939-9170
+contributors:
+  data_collectors:
+  - last_name: unknown
+    given_name: unknown
+    ORCID: unknown
+    affiliation: unknown
+  assistants: unknown
+  dataset_curators: unknown
+dataset:
+  data_is_long_format: no
+  custom_R_code: '
+          data |>
+          dplyr::rename(dplyr::all_of(c("latitude (deg)" = "latitude",
+                                  "longitude (deg)" = "longitude"))) 
+  
+  
+  '
+  collection_date: year
+  taxon_name: binomial
+  location_name: unknown
+  individual_id: ID_register
+  description: unknown
+  basis_of_record: unknown
+  life_stage: unknown
+  sampling_strategy: unknown
+  original_file: unknown
+  notes: unknown
+locations: .na
+contexts:
+- context_property: Age of the bat (If identified).
+  category: entity_context
+  var_in: age
+  values:
+  - find: adult
+    value: unknown
+    description: unknown
+  - find: juvenile
+    value: unknown
+    description: unknown
+  - find: juvenille
+    value: unknown
+    description: unknown
+- context_property: Sex of the bat (If identified).
+  category: entity_context
+  var_in: sex
+- context_property: unknown
+  category: Reproductive stage of the bat (If identified).
+  var_in: reproductive_stage
+  values:
+  - find: pregnant
+    value: unknown
+    description: unknown
+  - find: scroted
+    value: unknown
+    description: unknown
+- context_property: Status of individual when measured
+  category: entity_context
+  var_in: status
+  values:
+  - value: dead
+    description: unknown
+  - value: alive
+    description: unknown
+traits:
+- var_in: body_mass
+  unit_in: g
+  trait_name: body_mass
+  entity_type: individual
+  value_type: raw
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: body_length
+  unit_in: cm
+  trait_name: head_body_length
+  entity_type: individual
+  value_type: raw
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: tail_length
+  unit_in: cm
+  trait_name: tail_length
+  entity_type: individual
+  value_type: raw
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: forearm
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: individual
+  value_type: raw
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+substitutions: .na
+taxonomic_updates: .na
+exclude_observations: .na
+questions: .na
