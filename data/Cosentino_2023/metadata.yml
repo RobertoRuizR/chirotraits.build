@@ -22,14 +22,7 @@ dataset:
   data_is_long_format: no
   custom_R_code: '
           data |>
-          select(-Class, -Order, -Suborder, -Family, -Subfamily, -Genus, -Species,
-                     -HR_mean, -HR_min, -HR_max, -Dispersal_Dist_mean, -Dispersal_Dist_max,
-                     -Length_tot_mean, -Wing_Length_mean, -Wing_Area_mean,
-                     -Length_tot_min, -Wing_Length_min, -Wing_Area_min,
-                     -Length_tot_max, -Wing_Length_max, -Wing_Area_max,
-                     -SexMaturity_Age_mean, -SexMaturity_Age_min, -SexMaturity_Age_max, -sex) |> 
-          distinct(Code, SpeciesEpithet, .keep_all = T)
-  
+          distinct()  
   '
   collection_date: 2000/2023
   taxon_name: SpeciesEpithet
@@ -42,7 +35,20 @@ dataset:
   original_file: unknown
   notes: unknown
 locations: .na
-contexts: .na
+contexts:
+- context_property: unknown
+  category: entity_context
+  var_in: sex
+- context_property: unknown
+  category: entity_context
+  var_in: sex
+  values:
+  - value: male
+    description: unknown
+  - value: female
+    description: unknown
+  - value: unknown
+    description: unknown
 traits:
 - var_in: HeadBody_Length_mean
   unit_in: mm
@@ -107,7 +113,7 @@ traits:
   value_type: mean
   basis_of_value: measurement
   replicates: unknown
-  methods: unknown ###################
+  methods: unknown
 - var_in: HeadBody_Length_min
   unit_in: mm
   trait_name: head_body_length
@@ -171,7 +177,7 @@ traits:
   value_type: minimum
   basis_of_value: measurement
   replicates: unknown
-  methods: unknown #####################
+  methods: unknown
 - var_in: HeadBody_Length_max
   unit_in: mm
   trait_name: head_body_length
