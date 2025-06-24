@@ -33,10 +33,43 @@ dataset:
   data_is_long_format: yes
   custom_R_code: '
     data |> 
-          filter(verbatimTraitName %in% c("ForearmLength", "BodyMass", "AspectRatioIndex", "WingLoadingIndex")) |> 
+          select(-1) |>
           mutate(verbatimScientificName = str_replace_all(verbatimScientificName, "_", " ")) |> 
-          filter(verbatimTraitValueType == "mean") |>
-          distinct(verbatimScientificName, verbatimTraitName, .keep_all = T)
+          mutate(originalverbatimTraitValueType = verbatimTraitValueType, .before = verbatimTraitValueType) |>
+          mutate(verbatimTraitValueType = str_to_lower(verbatimTraitValueType)) |>
+          mutate(verbatimTraitValueType = str_replace_all(verbatimTraitValueType, "(mean of min and max|mean of means)", "mean")) |> 
+          mutate(verbatimTraitValueType = str_replace_all(verbatimTraitValueType, "max$", "maximum")) |> 
+          mutate(verbatimTraitValueType = str_replace_all(verbatimTraitValueType, "min$", "minimum")) |>
+          mutate(verbatimTraitValueType = str_replace_all(verbatimTraitValueType, "cumulated", "unknown")) |> 
+          mutate(verbatimEntityType_individuals = if_else(verbatimN1 > 1, "population", "individual"), .after = verbatimN1Unit) |> 
+          mutate(verbatimEntityType_individuals = if_else((verbatimN1Unit == "individual" & is.na(verbatimEntityType_individuals)), "individual", verbatimEntityType_individuals), .after = verbatimEntityType_individuals) |> 
+          mutate(verbatimEntityType_sex = na_if(if_else(str_detect(str_to_lower(AdditionalInfo1), "sex_"), str_sub(str_to_lower(AdditionalInfo1), 5), NA), "na"), .after = verbatimEntityType_individuals) |>
+          mutate(verbatimEntityType_age = na_if(if_else(str_detect(str_to_lower(AdditionalInfo2), "(age_|adult)"), str_to_lower(AdditionalInfo2), NA), "na"), .after = verbatimEntityType_sex) |>
+          mutate(verbatimEntityType_age = na_if(if_else(str_detect(verbatimEntityType_age, "age_"), str_sub(verbatimEntityType_age, 5), verbatimEntityType_age), "na")) |>
+          mutate(verbatimTraitMethod = replace_na(verbatimTraitMethod, "unknown")) |> 
+          mutate(verbatimBasisofValue = if_else(str_detect(verbatimTraitMethod, "(capture|hand-release|free-flight|light-tagged|leaving roost|in-hand|respiratometry|formula)"), "measurement", verbatimTraitMethod), .after = verbatimTraitMethod) |> 
+          mutate(verbatimBasisofValue = if_else(str_detect(verbatimBasisofValue, "(MCP|Kernel|HomingIn)"), "model_derived", verbatimBasisofValue)) |> 
+          rename("coordinateX_WGS84" = "coordinateX-WGS84") |>
+          mutate(verbatimContryRegion = if_else(!is.na(coordinateX_WGS84), Area, NA), .before = coordinateX_WGS84) |> 
+          mutate(verbatimContryRegionDescription = if_else(!is.na(verbatimContryRegion), "Country of origin of the data.", NA), .after = verbatimContryRegion) |>
+          group_by(verbatimScientificName, verbatimTraitName, verbatimTraitValueType, verbatimEntityType_individuals, verbatimEntityType_sex, verbatimEntityType_age, Area) |> 
+          mutate(across(c("verbatimTraitMethod"), replace_duplicates_with_NA)) |> 
+          ungroup() |> 
+          drop_na(verbatimTraitMethod) |>
+          filter(verbatimTraitName %in% c("ForearmLength", 
+                                          "ThirdDigitLength", 
+                                          "FifthDigitLength", 
+                                          "BodyMass", 
+                                          "AspectRatioIndex", 
+                                          "WingLoadingIndex",
+                                          "TorporBehavior", 
+                                          "RestingMetabolicRate",
+                                          "MaxLongevity",
+                                          "CallDuration", 
+                                          "CallPeakFrequency", 
+                                          "CallBandwidth", 
+                                          "CallType", 
+                                          "DietType", "HomeRange"))
   '
   collection_date: 2000/2023
   taxon_name: verbatimScientificName
@@ -50,38 +83,138 @@ dataset:
   original_file: unknown
   notes: unknown
 locations: .na
-contexts: .na
+contexts:
+- context_property: Data obtention method
+  category: method_context
+  var_in: verbatimTraitMethod
+- context_property: Number of individuals of which a value comes from 
+  category: entity_context
+  var_in: verbatimEntityType_individuals
+- context_property: Sex of the bat (If identified).
+  category: entity_context
+  var_in: verbatimEntityType_sex
+- context_property: Age of the bat (If identified).
+  category: entity_context
+  var_in: verbatimEntityType_age
 traits:
 - var_in: ForearmLength
-  unit_in: mm
+  unit_in: verbatimTraitUnit
   trait_name: forearm_length
-  entity_type: species
-  value_type: mean
-  basis_of_value: measurement
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
   replicates: unknown
   methods: unknown
 - var_in: BodyMass
-  unit_in: g
+  unit_in: verbatimTraitUnit
   trait_name: body_mass
-  entity_type: species
-  value_type: mean
-  basis_of_value: measurement
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
   replicates: unknown
   methods: unknown
 - var_in: AspectRatioIndex
   unit_in: '{dimensionless}'
   trait_name: aspect_ratio
-  entity_type: species
-  value_type: mean
-  basis_of_value: measurement
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
   replicates: unknown
   methods: unknown
 - var_in: WingLoadingIndex
   unit_in: '{dimensionless}'
   trait_name: wing_loading
-  entity_type: species
-  value_type: mean
-  basis_of_value: measurement
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
+  replicates: unknown
+  methods: unknown
+- var_in: TorporBehavior
+  unit_in: verbatimTraitUnit
+  trait_name: hibernation
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
+  replicates: unknown
+  methods: unknown
+- var_in: RestingMetabolicRate
+  unit_in: verbatimTraitUnit
+  trait_name: basal_metabolic_rate
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
+  replicates: unknown
+  methods: unknown
+- var_in: ThirdDigitLength
+  unit_in: verbatimTraitUnit
+  trait_name: length_of_the_third_digit
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
+  replicates: unknown
+  methods: unknown
+- var_in: FifthDigitLength
+  unit_in: verbatimTraitUnit
+  trait_name: length_of_the_fifth_digit
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
+  replicates: unknown
+  methods: unknown
+- var_in: CallDuration
+  unit_in: verbatimTraitUnit
+  trait_name: call_duration
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
+  replicates: unknown
+  methods: unknown
+- var_in: CallPeakFrequency
+  unit_in: verbatimTraitUnit
+  trait_name: freq_max_amp
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
+  replicates: unknown
+  methods: unknown
+- var_in: CallBandwidth
+  unit_in: verbatimTraitUnit
+  trait_name: call_bandwidth
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
+  replicates: unknown
+  methods: unknown
+- var_in: CallType
+  unit_in: verbatimTraitUnit
+  trait_name: echolocation_call_type
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
+  replicates: unknown
+  methods: unknown
+- var_in: DietType
+  unit_in: verbatimTraitUnit
+  trait_name: feeding_guild
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
+  replicates: unknown
+  methods: unknown
+- var_in: HomeRange
+  unit_in: verbatimTraitUnit
+  trait_name: home_range
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
+  replicates: unknown
+  methods: unknown
+- var_in: MaxLongevity
+  unit_in: verbatimTraitUnit
+  trait_name: longevity
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
   replicates: unknown
   methods: unknown
 substitutions: .na
