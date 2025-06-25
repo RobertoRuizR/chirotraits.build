@@ -356,10 +356,10 @@ traits:
       comments: Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24
       type: categorical
       allowed_values_levels:
-          Insectivorous:	Organism that eats invertebrates, primarily insects.
-          Frugivorous:	An herbivore that primarily consumes fruits or fruit-like vegetables.
-          Nectarivorous:	An herbivore that primarily consumes nectar.
-          Carnivorous:	A predator that primarily eats vertebrates.
+          insectivorous:	Organism that eats invertebrates, primarily insects.
+          frugivorous:	An herbivore that primarily consumes fruits or fruit-like vegetables.
+          nectarivorous:	An herbivore that primarily consumes nectar.
+          carnivorous:	A predator that primarily eats vertebrates.
       entity_URI: http://eol.org/schema/terms/EcomorphologicalGuild
     bite_force:
       label: Bite force
