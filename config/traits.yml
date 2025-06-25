@@ -463,9 +463,9 @@ traits:
       comments: Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4
       type: categorical
       allowed_values_levels:
-          FM: Frequency modulated.
-          FM/QCF: Frequency modulated or quasi-constant frequency.
-          CF+FM: Constant-frequency with modulated frequency components.
+          fm: Frequency modulated.
+          fm_qfc: Frequency modulated or quasi-constant frequency.
+          cf_fm: Constant-frequency with modulated frequency components.
       entity_URI: 10.1038/s41597-023-02157-4
     freq_max_amp:
       label: Frequency of maximum amplitude
