@@ -90,7 +90,7 @@ cm/s,m/s,x*1/100
 cm/s,s/m,100/x
 umol/g/s,nmol/g/s,x*1000
 nmol/g/s,umol/g/s,x*0.001
-umol/m2/s,nmol/m2/s,x*1000	
+umol/m2/s,nmol/m2/s,"x*1000	"
 nmol/m2/s,umol/m2/s,x*0.001
 neg_umol{CO2}/m2/s,nmol{CO2}/m2/s,x*-1000
 neg_nmol{CO2}/g/s,nmol{CO2}/g/s,x*-1
@@ -172,3 +172,8 @@ mg.cm/MPa/s,10^6.kg.m/MPa/s,x*1/100
 kg.m/MPa/s,10^6.kg.m/MPa/s,x*1000000
 10^4.kg.m/MPa/s,10^6.kg.m/MPa/s,x*100
 10^7.kg.m/MPa/s,10^6.kg.m/MPa/s,x*1/10
+m2,cm2,x*10000
+cm2,m2,x/10000
+ha,km2,x/100
+years,days,x*365
+kg,g,x*1000
