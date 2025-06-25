@@ -36,13 +36,10 @@ dataset:
   notes: unknown
 locations: .na
 contexts:
-- context_property: unknown
+- context_property: male_female
   category: entity_context
-  var_in: sex
-- context_property: unknown
-  category: entity_context
-  var_in: sex
-  values:
+  var_in: male_female
+  values:                        
   - value: male
     description: unknown
   - value: female
@@ -50,197 +47,653 @@ contexts:
   - value: unknown
     description: unknown
 traits:
-- var_in: HeadBody_Length_mean
+- var_in: HeadBody_LengthM_mean
   unit_in: mm
   trait_name: head_body_length
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: Tail_Length_mean
+- var_in: HeadBody_LengthF_mean
+  unit_in: mm
+  trait_name: head_body_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: HeadBody_LengthU_mean
+  unit_in: mm
+  trait_name: head_body_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: Tail_LengthM_mean
   unit_in: mm
   trait_name: tail_length
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: Forearm_Length_mean
+- var_in: Tail_LengthF_mean
+  unit_in: mm
+  trait_name: tail_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: Tail_LengthU_mean
+  unit_in: mm
+  trait_name: tail_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: Forearm_LengthM_mean
   unit_in: mm
   trait_name: forearm_length
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: Hindfoot_Length_mean
+- var_in: Forearm_LengthF_mean
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: Forearm_LengthU_mean
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: Hindfoot_LengthM_mean
   unit_in: mm
   trait_name: hindfoot_length
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: Wingspan_mean
+- var_in: Hindfoot_LengthF_mean
+  unit_in: mm
+  trait_name: hindfoot_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: Hindfoot_LengthU_mean
+  unit_in: mm
+  trait_name: hindfoot_length
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: WingspanM_mean
   unit_in: mm
   trait_name: wingspan
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: W_aspect_ratio_mean
+- var_in: WingspanF_mean
+  unit_in: mm
+  trait_name: wingspan
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: WingspanU_mean
+  unit_in: mm
+  trait_name: wingspan
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: W_aspect_ratioM_mean
   unit_in: '{dimensionless}'
   trait_name: aspect_ratio
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: W_loading_mean
+- var_in: W_aspect_ratioF_mean
+  unit_in: '{dimensionless}'
+  trait_name: aspect_ratio
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: W_aspect_ratioU_mean
+  unit_in: '{dimensionless}'
+  trait_name: aspect_ratio
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: W_loadingM_mean
   unit_in: N/m2
   trait_name: wing_loading
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: BodyMass_mean
+- var_in: W_loadingF_mean
+  unit_in: N/m2
+  trait_name: wing_loading
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: W_loadingU_mean
+  unit_in: N/m2
+  trait_name: wing_loading
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: BodyMassM_mean
   unit_in: g
   trait_name: body_mass
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: HeadBody_Length_min
+- var_in: BodyMassF_mean
+  unit_in: g
+  trait_name: body_mass
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: BodyMassU_mean
+  unit_in: g
+  trait_name: body_mass
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: HeadBody_LengthM_min
   unit_in: mm
   trait_name: head_body_length
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: Tail_Length_min
+- var_in: HeadBody_LengthF_min
+  unit_in: mm
+  trait_name: head_body_length
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: HeadBody_LengthU_min
+  unit_in: mm
+  trait_name: head_body_length
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: Tail_LengthM_min
   unit_in: mm
   trait_name: tail_length
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: Forearm_Length_min
+- var_in: Tail_LengthF_min
+  unit_in: mm
+  trait_name: tail_length
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: Tail_LengthU_min
+  unit_in: mm
+  trait_name: tail_length
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: Forearm_LengthM_min
   unit_in: mm
   trait_name: forearm_length
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: Hindfoot_Length_min
+- var_in: Forearm_LengthF_min
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: Forearm_LengthU_min
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: Hindfoot_LengthM_min
   unit_in: mm
   trait_name: hindfoot_length
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: Wingspan_min
+- var_in: Hindfoot_LengthF_min
+  unit_in: mm
+  trait_name: hindfoot_length
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: Hindfoot_LengthU_min
+  unit_in: mm
+  trait_name: hindfoot_length
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: WingspanM_min
   unit_in: mm
   trait_name: wingspan
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: W_aspect_ratio_min
+- var_in: WingspanF_min
+  unit_in: mm
+  trait_name: wingspan
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: WingspanU_min
+  unit_in: mm
+  trait_name: wingspan
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: W_aspect_ratioM_min
   unit_in: '{dimensionless}'
   trait_name: aspect_ratio
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: W_loading_min
+- var_in: W_aspect_ratioF_min
+  unit_in: '{dimensionless}'
+  trait_name: aspect_ratio
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: W_aspect_ratioU_min
+  unit_in: '{dimensionless}'
+  trait_name: aspect_ratio
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: W_loadingM_min
   unit_in: N/m2
   trait_name: wing_loading
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: BodyMass_min
+- var_in: W_loadingF_min
+  unit_in: N/m2
+  trait_name: wing_loading
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: W_loadingU_min
+  unit_in: N/m2
+  trait_name: wing_loading
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: BodyMassM_min
   unit_in: g
   trait_name: body_mass
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: HeadBody_Length_max
+- var_in: BodyMassF_min
+  unit_in: g
+  trait_name: body_mass
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: BodyMassU_min
+  unit_in: g
+  trait_name: body_mass
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: HeadBody_LengthM_max
   unit_in: mm
   trait_name: head_body_length
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: Tail_Length_max
+- var_in: HeadBody_LengthF_max
+  unit_in: mm
+  trait_name: head_body_length
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: HeadBody_LengthU_max
+  unit_in: mm
+  trait_name: head_body_length
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: Tail_LengthM_max
   unit_in: mm
   trait_name: tail_length
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: Forearm_Length_max
+- var_in: Tail_LengthF_max
+  unit_in: mm
+  trait_name: tail_length
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: Tail_LengthU_max
+  unit_in: mm
+  trait_name: tail_length
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: Forearm_LengthM_max
   unit_in: mm
   trait_name: forearm_length
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: Hindfoot_Length_max
+- var_in: Forearm_LengthF_max
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: Forearm_LengthU_max
+  unit_in: mm
+  trait_name: forearm_length
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: Hindfoot_LengthM_max
   unit_in: mm
   trait_name: hindfoot_length
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: Wingspan_max
+- var_in: Hindfoot_LengthF_max
+  unit_in: mm
+  trait_name: hindfoot_length
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: Hindfoot_LengthU_max
+  unit_in: mm
+  trait_name: hindfoot_length
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: WingspanM_max
   unit_in: mm
   trait_name: wingspan
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: W_aspect_ratio_max
+- var_in: WingspanF_max
+  unit_in: mm
+  trait_name: wingspan
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: WingspanU_max
+  unit_in: mm
+  trait_name: wingspan
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: W_aspect_ratioM_max
   unit_in: '{dimensionless}'
   trait_name: aspect_ratio
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: W_loading_max
+- var_in: W_aspect_ratioF_max
+  unit_in: '{dimensionless}'
+  trait_name: aspect_ratio
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: W_aspect_ratioU_max
+  unit_in: '{dimensionless}'
+  trait_name: aspect_ratio
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: W_loadingM_max
   unit_in: N/m2
   trait_name: wing_loading
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
   methods: unknown
-- var_in: BodyMass_max
+- var_in: W_loadingF_max
+  unit_in: N/m2
+  trait_name: wing_loading
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: W_loadingU_max
+  unit_in: N/m2
+  trait_name: wing_loading
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: BodyMassM_max
   unit_in: g
   trait_name: body_mass
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: unknown
+  replicates: 1
+  male_female: male
+  methods: unknown
+- var_in: BodyMassF_max
+  unit_in: g
+  trait_name: body_mass
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: BodyMassU_max
+  unit_in: g
+  trait_name: body_mass
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
   methods: unknown
 substitutions: .na
 taxonomic_updates: .na
