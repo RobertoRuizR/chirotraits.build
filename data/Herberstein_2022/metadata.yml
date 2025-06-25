@@ -1,0 +1,94 @@
+source:
+  primary:
+    key: Herberstein_2022
+    bibtype: Article
+    year: '2022'
+    author: Marie E. Herberstein and Donald James Mclean and Elizabeth Lowe and Jonas
+      O. Wolff and Md Kawsar Khan and Kaitlyn Smith and Andrew P. Allen and Matthew
+      Bulbert and Bruno A. Buzatto and Mark D. B. Eldridge and Daniel Falster and
+      Laura Fernandez Winzer and Simon C. Griffith and Joshua S. Madin and Ajay Narendra
+      and Mark Westoby and Martin J. Whiting and Ian J. Wright and Alexandra J. R.
+      Carthey
+    journal: Scientific Data
+    title: AnimalTraits - a curated animal trait database for body mass, metabolic
+      rate and brain size
+    volume: '9'
+    number: '1'
+    doi: 10.1038/s41597-022-01364-9
+    issn: 2052-4463
+contributors:
+  data_collectors:
+  - last_name: unknown
+    given_name: unknown
+    ORCID: unknown
+    affiliation: unknown
+  assistants: unknown
+  dataset_curators: unknown
+dataset:
+  data_is_long_format: no
+  custom_R_code: '
+          data |>
+          janitor::clean_names() |>
+          mutate(order = str_replace_all(order, "Chrioptera", "Chiroptera")) |>
+          filter(order == "Chiroptera") |>
+          mutate(individuals_population = if_else(sample_size_value > 1, "population", "individual"), .after = sample_size_value) |>
+          mutate(value_type = if_else(sample_size_value > 1, "raw", "mean"), .after = individuals_population) 
+          
+
+  
+  '
+  collection_date: publicationYear
+  taxon_name: species
+  location_name: unknown
+  description: unknown
+  basis_of_record: unknown
+  life_stage: unknown
+  sampling_strategy: unknown
+  original_file: unknown
+  notes: unknown
+locations: .na
+contexts:
+- context_property: Number of individuals of which a value comes from
+  category: entity_context
+  var_in: individuals_population
+traits:
+- var_in: original_body_mass
+  unit_in: original_body_mass_units
+  trait_name: body_mass
+  entity_type: individuals_population
+  value_type: value_type
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: original_metabolic_rate
+  unit_in: original_metabolic_rate_units
+  trait_name: basal_metabolic_rate
+  entity_type: individuals_population
+  value_type: value_type
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+- var_in: original_temperature
+  unit_in: C
+  trait_name: body_temperature
+  entity_type: individuals_population
+  value_type: value_type
+  basis_of_value: measurement
+  replicates: unknown
+  methods: unknown
+substitutions: .na
+taxonomic_updates:
+- find: Diaemus rotundus
+  replace: Diaemus youngi
+  reason: Updated original name combination
+  taxonomic_resolution: species
+- find: Pteropus vampyru
+  replace: Pteropus vampyrus
+  reason: Typo
+  taxonomic_resolution: species
+- find: Vampyrops helleri
+  replace: Platyrrhinus helleri
+  reason: Taxonomic update
+  taxonomic_resolution: species
+exclude_observations: .na
+questions: .na
