@@ -61,7 +61,7 @@ traits:
   replicates: unknown
   methods: unknown
 - var_in: original_metabolic_rate
-  unit_in: original_metabolic_rate_units
+  unit_in: ml{O2}/g/h
   trait_name: basal_metabolic_rate
   entity_type: individuals_population
   value_type: value_type

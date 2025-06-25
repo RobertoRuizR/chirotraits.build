@@ -402,7 +402,7 @@ traits:
       description: Basal metabolic rate (BMR) is the amount of energy expended daily by humans and other animals at rest. Rest is defined as existing in a neutrally temperate environment while in the post-absorptive state.
       comments: None.
       type: numeric
-      units: ml_O2/h
+      units: ml{O2}/g/h
       allowed_values_min: 1.0e-05
       allowed_values_max: 1000000.0
       entity_URI: http://purl.bioontology.org/ontology/SNOMEDCT/165109007
