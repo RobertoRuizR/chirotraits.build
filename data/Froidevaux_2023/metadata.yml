@@ -63,7 +63,7 @@ dataset:
                                           "AspectRatioIndex", 
                                           "WingLoadingIndex",
                                           "TorporBehavior", 
-                                          "RestingMetabolicRate",
+                                          "BasalMetabolicRate",
                                           "MaxLongevity",
                                           "CallDuration", 
                                           "CallPeakFrequency", 
@@ -87,7 +87,7 @@ contexts:
 - context_property: Data obtention method
   category: method_context
   var_in: verbatimTraitMethod
-- context_property: Number of individuals of which a value comes from 
+- context_property: Number of individuals of which a value comes from
   category: entity_context
   var_in: verbatimEntityType_individuals
 - context_property: Sex of the bat (If identified).
@@ -122,7 +122,7 @@ traits:
   replicates: unknown
   methods: unknown
 - var_in: WingLoadingIndex
-  unit_in: '{dimensionless}'
+  unit_in: verbatimTraitUnit
   trait_name: wing_loading
   entity_type: verbatimEntityType_individuals
   value_type: verbatimTraitValueType
@@ -137,8 +137,8 @@ traits:
   basis_of_value: verbatimBasisofValue
   replicates: unknown
   methods: unknown
-- var_in: RestingMetabolicRate
-  unit_in: verbatimTraitUnit
+- var_in: BasalMetabolicRate
+  unit_in: ml{O2}/g/h
   trait_name: basal_metabolic_rate
   entity_type: verbatimEntityType_individuals
   value_type: verbatimTraitValueType
@@ -217,7 +217,28 @@ traits:
   basis_of_value: verbatimBasisofValue
   replicates: unknown
   methods: unknown
-substitutions: .na
+substitutions:
+- trait_name: echolocation_call_type
+  find: fm
+  replace: fm
+- trait_name: echolocation_call_type
+  find: fm/qcf
+  replace: fm_qfc
+- trait_name: echolocation_call_type
+  find: cf+fm
+  replace: cf_fm
+- trait_name: feeding_guild
+  find: Insectivorous
+  replace: insectivorous
+- trait_name: feeding_guild
+  find: Frugivorous
+  replace: frugivorous
+- trait_name: feeding_guild
+  find: Nectarivorous
+  replace: nectarivorous
+- trait_name: feeding_guild
+  find: Carnivorous
+  replace: carnivorous
 taxonomic_updates: .na
 exclude_observations: .na
 questions: .na
