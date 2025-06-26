@@ -78,17 +78,94 @@ traits:
   methods: unknown
 substitutions: .na
 taxonomic_updates:
-- find: Diaemus rotundus
-  replace: Diaemus youngi
-  reason: Updated original name combination
+- find: Chaerophon Ieucostigma
+  replace: Mops leucostigma
+  reason: Synonym of Mops leucostigma; https://www.mammaldiversity.org/taxon/1005213/
+  taxonomic_resolution: .na.character
+- find: Chaerophon limbatus
+  replace: Mops limbatus
+  reason: Synonym of Mops pumilus; moved from Chaerephon to Mops, although further
+    research is needed to confirm this placement https://www.mammaldiversity.org/taxon/1005163/
+  taxonomic_resolution: species
+- find: Cynopterus horsfieldi
+  replace: Cynopterus horsfieldii
+  reason: Synonym of Cynopterus horsfieldii https://www.mammaldiversity.org/taxon/1004375/
+  taxonomic_resolution: species
+- find: Diaemus youngi
+  replace: Diaemus youngii
+  reason: spelling changed from 'youngi' to 'youngii' to match the original spelling
+    for the name; https://www.mammaldiversity.org/taxon/1004881/
+  taxonomic_resolution: species
+- find: Eonycteris spelea
+  replace: Eonycteris spelaea
+  reason: Mispelling https://www.mammaldiversity.org/taxon/1004515/
+  taxonomic_resolution: species
+- find: Mimon crenulatum
+  replace: Gardnerycteris keenani
+  reason: split from G. crenulata; moved from Mimon to Gardnerycteris https://www.mammaldiversity.org/taxon/1004970/
+  taxonomic_resolution: species
+- find: Miniopterus schreibers
+  replace: Miniopterus schreibersii
+  reason: Mispelling https://www.mammaldiversity.org/taxon/1005135/
+  taxonomic_resolution: species
+- find: Molossus ate
+  replace: Molossus nigricans
+  reason: Mispelling of M. ater, synonym of Molossus nigricans https://www.mammaldiversity.org/taxon/1005203/
+  taxonomic_resolution: species
+- find: Molossus major
+  replace: Molossus molossus
+  reason: Synonym of Molossus molossus https://www.mammaldiversity.org/taxon/1005202/
+  taxonomic_resolution: species
+- find: Mops limbatus
+  replace: Mops pumilus
+  reason: previously included C. pusillus; moved from Chaerephon to Mops, although
+    further research is needed to confirm this placement https://www.mammaldiversity.org/taxon/1005159/
+  taxonomic_resolution: species
+- find: Myotis bechsteini
+  replace: Myotis bechsteinii
+  reason: Typo
+  taxonomic_resolution: species
+- find: Myotis bocagei
+  replace: Myotis bocagii
+  reason: Typo
+  taxonomic_resolution: species
+- find: Myotis daubentoni
+  replace: Myotis daubentonii
+  reason: Typo
+  taxonomic_resolution: species
+- find: Pteropus edwarsi
+  replace: Pteropus medius
+  reason: the name medius is used instead of giganteus because giganteus is now considered
+    a synonym of P. vampyrum; P. intermedius has been included under this species
+    or under P. vampyrus, but the species is tentatively recognized here until further
+    research is done https://www.mammaldiversity.org/taxon/1004476/
+  taxonomic_resolution: species
+- find: Pteropus giganteus
+  replace: Pteropus vampyrus
+  reason: Synonym of Pteropus vampyrus https://www.mammaldiversity.org/taxon/1004507/
   taxonomic_resolution: species
 - find: Pteropus vampyru
   replace: Pteropus vampyrus
   reason: Typo
   taxonomic_resolution: species
+- find: Scotophilus gigas
+  replace: Scotophilus nigrita
+  reason: Synonym of Scotophilus nigrita https://www.mammaldiversity.org/taxon/1005691/
+  taxonomic_resolution: species
 - find: Vampyrops helleri
   replace: Platyrrhinus helleri
   reason: Taxonomic update
+  taxonomic_resolution: species
+- find: Vespertilio serotinus
+  replace: Cnephaeus serotinus
+  reason: previously included E. pachyomus and E. isabellinus; may include E. kobayashii,
+    but the species is tentatively retained here; the species also includes the recently
+    described lobatus, which was described for populations from Ukraine to the Caucasus;
+    these populations likely represent either the taxon turcomanus or mirza, which
+    may be distinct species in their own right (either two distinct species, or a
+    single species including both names); the taxonomic status of the eastern portion
+    of the distribution of E. serotinus has yet to be determined; moved from Eptesicus
+    to Cnephaeus https://www.mammaldiversity.org/taxon/1005531/
   taxonomic_resolution: species
 exclude_observations: .na
 questions: .na

@@ -239,6 +239,34 @@ substitutions:
 - trait_name: feeding_guild
   find: Carnivorous
   replace: carnivorous
-taxonomic_updates: .na
+taxonomic_updates:
+- find: Eptesicus anatolicus
+  replace: Cnephaeus anatolicus
+  reason: split from E. bottae; moved from Eptesicus to Cnephaeus https://www.mammaldiversity.org/taxon/1005511/
+  taxonomic_resolution: species
+- find: Eptesicus bottae
+  replace: Cnephaeus bottae
+  reason: previously included E. anatolicus and E. ognevi, which have all been included
+    under E. serotinus in some publications; moved from Eptesicus to Cnephaeus https://www.mammaldiversity.org/taxon/1005513/
+  taxonomic_resolution: species
+- find: Eptesicus isabellinus
+  replace: Cnephaeus isabellinus
+  reason: split from E. serotinus; moved from Eptesicus to Cnephaeus https://www.mammaldiversity.org/taxon/1005524/
+  taxonomic_resolution: species
+- find: Eptesicus nilssonii
+  replace: Cnephaeus nilssonii
+  reason: moved from Eptesicus to Cnephaeus https://www.mammaldiversity.org/taxon/1005526/
+  taxonomic_resolution: species
+- find: Eptesicus serotinus
+  replace: Cnephaeus serotinus
+  reason: previously included E. pachyomus and E. isabellinus; may include E. kobayashii,
+    but the species is tentatively retained here; the species also includes the recently
+    described lobatus, which was described for populations from Ukraine to the Caucasus;
+    these populations likely represent either the taxon turcomanus or mirza, which
+    may be distinct species in their own right (either two distinct species, or a
+    single species including both names); the taxonomic status of the eastern portion
+    of the distribution of E. serotinus has yet to be determined; moved from Eptesicus
+    to Cnephaeus https://www.mammaldiversity.org/taxon/1005531/
+  taxonomic_resolution: species
 exclude_observations: .na
 questions: .na

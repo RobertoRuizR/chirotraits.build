@@ -135,6 +135,75 @@ traits:
   replicates: unknown
   methods: unknown
 substitutions: .na
-taxonomic_updates: .na
-exclude_observations: .na
+taxonomic_updates:
+- find: Artibeus cinereus
+  replace: Dermanura cinerea
+  reason: moved to Dermanura from Artibeus, although some recent publications do not
+    agree with this split, there seems to be more publications using this revised
+    taxonomy rather than leaving all species under Artibeus https://www.mammaldiversity.org/taxon/1005003/
+  taxonomic_resolution: species
+- find: Dermanura gnoma
+  replace: Dermanura gnomus
+  reason: Synonym of Dermanura gnomus https://www.mammaldiversity.org/taxon/1005008/
+  taxonomic_resolution: species
+- find: Artibeus gnomus
+  replace: Dermanura gnomus
+  reason: Synonym of Dermanura gnomus https://www.mammaldiversity.org/taxon/1005008/
+  taxonomic_resolution: species
+- find: Eptesicus brasiliensis
+  replace: Neoeptesicus brasiliensis
+  reason: moved from Eptesicus to the recently described Neoeptesicus https://www.mammaldiversity.org/taxon/1005514/
+  taxonomic_resolution: species
+- find: Eptesicus diminutus
+  replace: Neoeptesicus diminutus
+  reason: moved from Eptesicus to the recently described Neoeptesicus https://www.mammaldiversity.org/taxon/1005516/
+  taxonomic_resolution: species
+- find: Eptesicus furinalis
+  replace: Neoeptesicus furinalis
+  reason: moved from Eptesicus to the recently described Neoeptesicus https://www.mammaldiversity.org/taxon/1005518/
+  taxonomic_resolution: species
+- find: Eptesicus taddeii
+  replace: Neoeptesicus taddeii
+  reason: recently described; moved from Eptesicus to the recently described Neoeptesicus
+    https://www.mammaldiversity.org/taxon/1005532/
+  taxonomic_resolution: species
+- find: Gardnerycteris crenulatum
+  replace: Gardnerycteris crenulata
+  reason: Synonym of Gardnerycteris crenulata https://www.mammaldiversity.org/taxon/1004969/
+  taxonomic_resolution: species
+- find: Lonchophylla peracchi
+  replace: Lonchophylla peracchii
+  reason: Mispelling https://www.mammaldiversity.org/taxon/1004940/
+  taxonomic_resolution: species
+- find: Lophostoma silvicolum
+  replace: Lophostoma silvicola
+  reason: previously included L. occidentale; specific epithet has variously been
+    spelt 'silvicola' and 'silvicolum', but 'silvicola' is the correct spelling as
+    it the original spelling and is a noun in apposition https://www.mammaldiversity.org/taxon/1004978/
+  taxonomic_resolution: species
+exclude_observations:
+- variable: taxon_name
+  find: Artibeus sp.
+  reason: Data found in genus taxonomic level
+- variable: taxon_name
+  find: Eptesicus sp.
+  reason: Data found in genus taxonomic level
+- variable: taxon_name
+  find: Glossophaga sp.
+  reason: Data found in genus taxonomic level
+- variable: taxon_name
+  find: Histiotus sp.
+  reason: Data found in genus taxonomic level
+- variable: taxon_name
+  find: Lonchophylla sp.
+  reason: Data found in genus taxonomic level
+- variable: taxon_name
+  find: Micronycteris sp.
+  reason: Data found in genus taxonomic level
+- variable: taxon_name
+  find: Myotis sp.
+  reason: Data found in genus taxonomic level
+- variable: taxon_name
+  find: Thyroptera sp.
+  reason: Data found in genus taxonomic level
 questions: .na

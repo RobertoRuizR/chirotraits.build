@@ -131,6 +131,281 @@ traits:
   replicates: unknown
   methods: unknown
 substitutions: .na
-taxonomic_updates: .na
+taxonomic_updates:
+- find: Acerodon mackloti
+  replace: Acerodon macklotii
+  reason: often spelt with only one 'i', but the original description has two, which
+    is what is used here https://www.mammaldiversity.org/taxon/1004446/
+  taxonomic_resolution: species
+- find: Artibeus jamaicensis jamaicensis
+  replace: Artibeus jamaicensis
+  reason: Subspecies of Artibeus jamaicensis https://www.mammaldiversity.org/taxon/1005011/
+  taxonomic_resolution: species
+- find: Artibeus jamaicensis schwartzi
+  replace: Artibeus schwartzi
+  reason: split from A. jamaicensis https://www.mammaldiversity.org/taxon/1005018/
+  taxonomic_resolution: species
+- find: Brachyphylla cavernarum intermedia
+  replace: Brachyphylla cavernarum
+  reason: Subspecies of Brachyphylla cavernarum https://www.mammaldiversity.org/taxon/1004883/
+  taxonomic_resolution: species
+- find: Chaerephon ansorgei
+  replace: Mops ansorgei
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005145/
+  taxonomic_resolution: species
+- find: Chaerephon atsinanana
+  replace: Mops atsinanana
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005146/
+  taxonomic_resolution: species
+- find: Chaerephon jobensis
+  replace: Mops jobensis
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005152/
+  taxonomic_resolution: species
+- find: Chaerephon leucogaster
+  replace: Mops leucogaster
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005155/
+  taxonomic_resolution: species
+- find: Chaerephon major
+  replace: Mops major
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005156/
+  taxonomic_resolution: species
+- find: Chaerephon plicatus
+  replace: Mops plicatus
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005158/
+  taxonomic_resolution: species
+- find: Chaerephon pumilus
+  replace: Mops pumilus
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005159/
+  taxonomic_resolution: species
+- find: Chaerephon russatus
+  replace: Mops russatus
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005161/
+  taxonomic_resolution: species
+- find: Diaemus youngi
+  replace: Diaemus youngii
+  reason: spelling changed from 'youngi' to 'youngii' to match the original spelling
+    for the name; https://www.mammaldiversity.org/taxon/1004881/
+  taxonomic_resolution: species
+- find: Eptesicus hottentotus
+  replace: Cnephaeus hottentotus
+  reason: moved from Eptesicus to Cnephaeus https://www.mammaldiversity.org/taxon/1005522/
+  taxonomic_resolution: species
+- find: Eptesicus nilssonii
+  replace: Cnephaeus nilssonii
+  reason: moved from Eptesicus to Cnephaeus https://www.mammaldiversity.org/taxon/1005526/
+  taxonomic_resolution: species
+- find: Eptesicus platyops
+  replace: Cnephaeus platyops
+  reason: moved from Eptesicus to Cnephaeus https://www.mammaldiversity.org/taxon/1005539/
+  taxonomic_resolution: species
+- find: Eptesicus serotinus
+  replace: Cnephaeus serotinus
+  reason: previously included E. pachyomus and E. isabellinus; may include E. kobayashii,
+    but the species is tentatively retained here; the species also includes the recently
+    described lobatus, which was described for populations from Ukraine to the Caucasus;
+    these populations likely represent either the taxon turcomanus or mirza, which
+    may be distinct species in their own right (either two distinct species, or a
+    single species including both names); the taxonomic status of the eastern portion
+    of the distribution of E. serotinus has yet to be determined; moved from Eptesicus
+    to Cnephaeus https://www.mammaldiversity.org/taxon/1005531/
+  taxonomic_resolution: species
+- find: Erophylla bombifrons bombifrons
+  replace: Erophylla bombifrons
+  reason: Subspecies of Erophylla bombifrons https://www.mammaldiversity.org/taxon/1004885/
+  taxonomic_resolution: species
+- find: Gardnerycteris crenulatum
+  replace: Gardnerycteris crenulata
+  reason: Synonym of Gardnerycteris crenulata https://www.mammaldiversity.org/taxon/1004969/
+  taxonomic_resolution: species
+- find: Glossophaga longirostris rostrata
+  replace: Glossophaga longirostris
+  reason: Subspecies of Glossophaga longirostris https://www.mammaldiversity.org/taxon/1004911/
+  taxonomic_resolution: species
+- find: Glossophaga soricina antillarum
+  replace: Glossophaga antillarum
+  reason: split from G. soricina https://www.mammaldiversity.org/taxon/1006535/
+  taxonomic_resolution: species
+- find: Hipposideros commersoni
+  replace: Macronycteris commersonii
+  reason: moved from Hipposideros to Macronycteris https://www.mammaldiversity.org/taxon/1004640/
+  taxonomic_resolution: species
+- find: Hipposideros cyclops
+  replace: Doryrhina cyclops
+  reason: moved from Hipposideros to Doryrhina https://www.mammaldiversity.org/taxon/1004568/
+  taxonomic_resolution: species
+- find: Hipposideros pratti
+  replace: Hipposideros swinhoii
+  reason: previously known under the name H. pratti, but the name swinhoii was shown
+    to be the appropriate name for the species; the name swinhoii was previously considered
+    a synonym of H. armiger; often spelt 'swinhoei', but the name was originally spelt
+    'swinhoii' and 'swinhoei' is an unjustified emendation (not appearing to be in
+    prevailing use), so the spelling has been changed to match the original description
+    https://www.mammaldiversity.org/taxon/1004637/
+  taxonomic_resolution: species
+- find: Hipposideros vittatus
+  replace: Macronycteris vittata
+  reason: Synonym of Macronycteris vittata https://www.mammaldiversity.org/taxon/1004644/
+  taxonomic_resolution: species
+- find: Hypsugo bemainty
+  replace: Neoromicia bemainty
+  reason: recently described; moved from Hypsugo to Neoromicia https://www.mammaldiversity.org/taxon/1005742/
+  taxonomic_resolution: species
+- find: Lophostoma silvicolum
+  replace: Lophostoma silvicola
+  reason: previously included L. occidentale; specific epithet has variously been
+    spelt 'silvicola' and 'silvicolum', but 'silvicola' is the correct spelling as
+    it the original spelling and is a noun in apposition https://www.mammaldiversity.org/taxon/1004978/
+  taxonomic_resolution: species
+- find: Megaderma lyra
+  replace: Lyroderma lyra
+  reason: previously included L. sinense; moved from Megaderma to Lyroderma so that
+    Megaderma is not paraphyletic https://www.mammaldiversity.org/taxon/1004648/
+  taxonomic_resolution: species
+- find: Micropteropus pusillus
+  replace: Epomophorus pusillus
+  reason: moved from Micropteropus to Epomophorus https://www.mammaldiversity.org/taxon/1004525/
+  taxonomic_resolution: species
+- find: Molossops mattogrossensis
+  replace: Neoplatymops mattogrossensis
+  reason: moved from Molossops to Neoplatymops https://www.mammaldiversity.org/taxon/1005233/
+  taxonomic_resolution: species
+- find: Monophyllus plethodon luciae
+  replace: Monophyllus plethodon
+  reason: Subspecies of Monophyllus plethodon https://www.mammaldiversity.org/taxon/1004917/
+  taxonomic_resolution: species
+- find: Mormopterus beccarii
+  replace: Ozimops beccarii
+  reason: moved from Mormopterus to Ozimops https://www.mammaldiversity.org/taxon/1005246/
+  taxonomic_resolution: species
+- find: Mormopterus norfolkensis
+  replace: Micronomus norfolkensis
+  reason: moved from Mormopterus to Micronomus https://www.mammaldiversity.org/taxon/1005191/
+  taxonomic_resolution: species
+- find: Mormopterus planiceps
+  replace: Ozimops planiceps
+  reason: previously included O. petersi; moved from Mormopterus to Ozimops https://www.mammaldiversity.org/taxon/1005253/
+  taxonomic_resolution: species
+- find: Mystacina tuberculata tuberculata
+  replace: Mystacina tuberculata
+  reason: Subspecies of Mystacina tuberculata https://www.mammaldiversity.org/taxon/1004869/
+  taxonomic_resolution: species
+- find: Natalus stramineus stramineus
+  replace: Natalus stramineus
+  reason: Subspecies of Natalus stramineus https://www.mammaldiversity.org/taxon/1005279/
+  taxonomic_resolution: species
+- find: Neoromicia capensis
+  replace: Laephotis capensis
+  reason: includes melckorum; moved from Neoromicia to Laephotis https://www.mammaldiversity.org/taxon/1005731/
+  taxonomic_resolution: species
+- find: Neoromicia nana
+  replace: Afronycteris nanus
+  reason: moved from Neoromicia to the recently described Afronycteris; the specific
+    epithet has been suggested to be spelt 'nana' to match the generic gender, but
+    'nanus' is a noun, and does not change with the genus https://www.mammaldiversity.org/taxon/1005700/
+  taxonomic_resolution: species
+- find: Neoromicia rendalli
+  replace: Pseudoromicia rendalli
+  reason: moved from Neoromicia to the recently described Psuedoromicia https://www.mammaldiversity.org/taxon/1005774/
+  taxonomic_resolution: species
+- find: Neoromicia tenuipinnis
+  replace: Pseudoromicia tenuipinnis
+  reason: moved from Neoromicia to the recently described Pseudoromicia https://www.mammaldiversity.org/taxon/1005776/
+  taxonomic_resolution: species
+- find: Notopteris macdonaldi
+  replace: Notopteris macdonaldii
+  reason: Synonym of Notopteris macdonaldii https://www.mammaldiversity.org/taxon/1004412/
+  taxonomic_resolution: species
+- find: Nycticeinops schlieffeni
+  replace: Nycticeinops schlieffenii
+  reason: spelling changed from 'schlieffeni' to schlieffenii' to match the original
+    spelling https://www.mammaldiversity.org/taxon/1005752/
+  taxonomic_resolution: species
+- find: Nyctimene albiventer
+  replace: Nyctimene albiventris
+  reason: Synonym of Nyctimene albiventris https://www.mammaldiversity.org/taxon/1004415/
+  taxonomic_resolution: species
+- find: Pipistrellus musciculus
+  replace: Hypsugo musciculus
+  reason: Synonym of Hypsugo musciculus https://www.mammaldiversity.org/taxon/1005724/
+  taxonomic_resolution: species
+- find: Pipistrellus pulveratus
+  replace: Hypsugo pulveratus
+  reason: Synonym of Hypsugo pulveratus https://www.mammaldiversity.org/taxon/1005726/
+  taxonomic_resolution: species
+- find: Pipistrellus rueppellii
+  replace: Vansonia rueppellii
+  reason: moved from Pipistrellus to Vansonia https://www.mammaldiversity.org/taxon/1005648/
+  taxonomic_resolution: species
+- find: Ptenochirus jagori
+  replace: Ptenochirus jagorii
+  reason: Synonym of Ptenochirus jagorii https://www.mammaldiversity.org/taxon/1004385/
+  taxonomic_resolution: species
+- find: Pteronotus davyi davyi
+  replace: Pteronotus davyi
+  reason: Subspecies of Pteronotus davyi https://www.mammaldiversity.org/taxon/1004853/
+  taxonomic_resolution: species
+- find: Pteronotus parnellii portoricensis
+  replace: Pteronotus portoricensis
+  reason: split from P. parnellii https://www.mammaldiversity.org/taxon/1004863/
+  taxonomic_resolution: species
+- find: Pteronotus quadridens fuliginosus
+  replace: Pteronotus quadridens
+  reason: Subspecies of Pteronotus quadridens https://www.mammaldiversity.org/taxon/1004866/
+  taxonomic_resolution: species
+- find: Pteropus giganteus
+  replace: Pteropus vampyrus
+  reason: includes the name giganteus (that species is now known as P. medius); P.
+    intermedius has been included under this species or under P. medius, but the species
+    is tentatively recognized as distinct here until further research is done https://www.mammaldiversity.org/taxon/1004507/
+  taxonomic_resolution: species
+- find: Rhinolophus indorouxii
+  replace: Rhinolophus rouxii
+  reason: includes the recently described indorouxii; indorouxii likely represents
+    a distinct species, although this needs to be proven with morphological and genetic
+    data rather than just echolocation data; a new valid name would also need to be
+    described for the indorouxii taxon since the paper that first used indorouxii
+    did not include a full description, holotype, and type locality designation https://www.mammaldiversity.org/taxon/1004735/
+  taxonomic_resolution: species
+- find: Rhinolophus paradoxolophus
+  replace: Rhinolophus rex
+  reason: includes paradoxolophus and the recently described schnitzleri https://www.mammaldiversity.org/taxon/1004732/
+  taxonomic_resolution: species
+- find: Rousettus celebensis
+  replace: Pilonycteris celebensis
+  reason: moved from Rousettus to the recently described Pilonycteris https://www.mammaldiversity.org/taxon/1004541/
+  taxonomic_resolution: species
+- find: Scotonycteris ophiodon
+  replace: Casinycteris ophiodon
+  reason: moved from Scotonycteris to Casinycteris https://www.mammaldiversity.org/taxon/1004549/
+  taxonomic_resolution: species
+- find: Stenoderma rufum darioi
+  replace: Stenoderma rufum
+  reason: Subspecies of Stenoderma rufum https://www.mammaldiversity.org/taxon/1005054/
+  taxonomic_resolution: species
+- find: Sturnira lilium paulsoni
+  replace: Sturnira paulsoni
+  reason: split from S. lilium https://www.mammaldiversity.org/taxon/1005090/
+  taxonomic_resolution: species
+- find: Tadarida aegyptiaca
+  replace: Nyctinomus aegyptiacus
+  reason: tentatively moved from Tadarida to Nyctinomus, but a more thorough revision
+    of Tadarida is needed as the genus as currently defined is polyphyletic; the name
+    thomasi may represent a distinct species, but is retained under T. aegyptiaca
+    here https://www.mammaldiversity.org/taxon/1005261/
+  taxonomic_resolution: species
+- find: Vampyriscus nymphaea
+  replace: Vampyriscus nymphaeus
+  reason: the specific epithet 'nymphaea/us' is treated as an adjective based on the
+    Greek root rather than a Latin noun here; moved from Vampyressa to Vampyriscus
+    https://www.mammaldiversity.org/taxon/1005067/
+  taxonomic_resolution: species
 exclude_observations: .na
 questions: .na

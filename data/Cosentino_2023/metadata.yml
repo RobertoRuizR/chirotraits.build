@@ -39,7 +39,7 @@ contexts:
 - context_property: male_female
   category: entity_context
   var_in: male_female
-  values:                        
+  values:
   - value: male
     description: unknown
   - value: female
@@ -696,6 +696,165 @@ traits:
   male_female: unknown
   methods: unknown
 substitutions: .na
-taxonomic_updates: .na
+taxonomic_updates:
+- find: Chaerephon aloysiisabaudiae
+  replace: Mops aloysiisabaudiae
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005144/
+  taxonomic_resolution: species
+- find: Chaerephon ansorgei
+  replace: Mops ansorgei
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005145/
+  taxonomic_resolution: species
+- find: Chaerephon atsinanana
+  replace: Mops atsinanana
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005146/
+  taxonomic_resolution: species
+- find: Chaerephon bemmeleni
+  replace: Mops bemmeleni
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005147/
+  taxonomic_resolution: species
+- find: Chaerephon bivittatus
+  replace: Mops bivittatus
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005148/
+  taxonomic_resolution: species
+- find: Chaerephon chapini
+  replace: Mops chapini
+  reason: tentatively includes shortridgei until further taxonomic research can be
+    conducted; moved from Chaerephon to Mops, although further research is needed
+    to confirm this placement https://www.mammaldiversity.org/taxon/1005150/
+  taxonomic_resolution: species
+- find: Chaerephon gallagheri
+  replace: Mops gallagheri
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005151/
+  taxonomic_resolution: species
+- find: Chaerephon jobimena
+  replace: Mops jobimena
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement (the placement of C. jobimena in particular is highly contentious)
+    https://www.mammaldiversity.org/taxon/1005153/
+  taxonomic_resolution: species
+- find: Chaerephon leucogaster
+  replace: Mops leucogaster
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005155/
+  taxonomic_resolution: species
+- find: Chaerephon major
+  replace: Mops major
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005156/
+  taxonomic_resolution: species
+- find: Chaerephon nigeriae
+  replace: Mops nigeriae
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005157/
+  taxonomic_resolution: species
+- find: Chaerephon pumilus
+  replace: Mops pumilus
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005159/
+  taxonomic_resolution: species
+- find: Chaerephon pusillus
+  replace: Mops pusillus
+  reason: split from pumilus; moved from Chaerephon to Mops, although further research
+    is needed to confirm this placement https://www.mammaldiversity.org/taxon/1005160/
+  taxonomic_resolution: species
+- find: Chaerephon russatus
+  replace: Mops russatus
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005161/
+  taxonomic_resolution: species
+- find: Chaerephon tomensis
+  replace: Mops tomensis
+  reason: moved from Chaerephon to Mops, although further research is needed to confirm
+    this placement https://www.mammaldiversity.org/taxon/1005163/
+  taxonomic_resolution: species
+- find: Eptesicus bottae
+  replace: Cnephaeus bottae
+  reason: previously included E. anatolicus and E. ognevi, which have all been included
+    under E. serotinus in some publications; moved from Eptesicus to Cnephaeus https://www.mammaldiversity.org/taxon/1005513/
+  taxonomic_resolution: species
+- find: Eptesicus floweri
+  replace: Cnephaeus floweri
+  reason: moved from Eptesicus to the to Cnephaeus https://www.mammaldiversity.org/taxon/1005517/
+  taxonomic_resolution: species
+- find: Eptesicus hottentotus
+  replace: Cnephaeus hottentotus
+  reason: moved from Eptesicus to Cnephaeus https://www.mammaldiversity.org/taxon/1005522/
+  taxonomic_resolution: species
+- find: Eptesicus isabellinus
+  replace: Cnephaeus isabellinus
+  reason: split from E. serotinus; moved from Eptesicus to Cnephaeus https://www.mammaldiversity.org/taxon/1005524/
+  taxonomic_resolution: species
+- find: Eptesicus platyops
+  replace: Cnephaeus platyops
+  reason: moved from Eptesicus to Cnephaeus https://www.mammaldiversity.org/taxon/1005539/
+  taxonomic_resolution: species
+- find: Laephotis botswanae
+  replace: Laephotis angolensis
+  reason: includes botswanae https://www.mammaldiversity.org/taxon/1005729/
+  taxonomic_resolution: species
+- find: Lissonycteris angolensis
+  replace: Myonycteris angolensis
+  reason: occasionally included under the genus Lissonycteris, although most recent
+    publications include the species under Myonycteris https://www.mammaldiversity.org/taxon/1004531/
+  taxonomic_resolution: species
+- find: Macronycteris vittatus
+  replace: Macronycteris vittata
+  reason: Synonym of Macronycteris vittata https://www.mammaldiversity.org/taxon/1004644/
+  taxonomic_resolution: species
+- find: Nycteris madagascariensis
+  replace: Nycteris macrotis
+  reason: includes vinsoni and madagascariensis https://www.mammaldiversity.org/taxon/1004840/
+  taxonomic_resolution: species
+- find: Nycticeinops crassulus
+  replace: Afropipistrellus crassulus
+  reason: Synonym of Afropipistrellus crassulus https://www.mammaldiversity.org/taxon/1005747/
+  taxonomic_resolution: species
+- find: Nycticeinops eisentrauti
+  replace: Afropipistrellus eisentrauti
+  reason: Synonym of Afropipistrellus eisentrauti https://www.mammaldiversity.org/taxon/1005748/
+  taxonomic_resolution: species
+- find: Nycticeinops grandidieri
+  replace: Afropipistrellus grandidieri
+  reason: Synonym of Afropipistrellus grandidieri https://www.mammaldiversity.org/taxon/1005749/
+  taxonomic_resolution: species
+- find: Rhinolophus gorongosae
+  replace: Rhinolophus simulator
+  reason: tentatively includes the recently described gorongosae and rhodesiae (previously
+    a synonym of R. swinnyi) as synonyms based on recent molecular data, although
+    further work is needed to clarify their taxonomic status https://www.mammaldiversity.org/taxon/1004745/
+  taxonomic_resolution: species
+- find: Rhinolophus kahuzi
+  replace: Rhinolophus ruwenzorii
+  reason: includes the recently described taxa kahuzi based on recent molecular data
+    https://www.mammaldiversity.org/taxon/1004737/
+  taxonomic_resolution: species
+- find: Rhinolophus rhodesiae
+  replace: Rhinolophus simulator
+  reason: tentatively includes the recently described gorongosae and rhodesiae (previously
+    a synonym of R. swinnyi) as synonyms based on recent molecular data, although
+    further work is needed to clarify their taxonomic status https://www.mammaldiversity.org/taxon/1004745/
+  taxonomic_resolution: species
+- find: Stenonycteris lanosus
+  replace: Stenonycteris lanosa
+  reason: Synonym of Stenonycteris lanosa https://www.mammaldiversity.org/taxon/1004553/
+  taxonomic_resolution: species
+- find: Tadarida aegyptiaca
+  replace: Nyctinomus aegyptiacus
+  reason: tentatively moved from Tadarida to Nyctinomus, but a more thorough revision
+    of Tadarida is needed as the genus as currently defined is polyphyletic; the name
+    thomasi may represent a distinct species, but is retained under T. aegyptiaca
+    here https://www.mammaldiversity.org/taxon/1005261/
+  taxonomic_resolution: species
+- find: Gardnerycteris crenulatum
+  replace: Gardnerycteris crenulata
+  reason: Synonym of Gardnerycteris crenulata https://www.mammaldiversity.org/taxon/1004969/
+  taxonomic_resolution: species
 exclude_observations: .na
 questions: .na
