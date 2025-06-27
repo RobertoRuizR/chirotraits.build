@@ -91,6 +91,10 @@ taxonomic_updates:
   replace: Cynopterus horsfieldii
   reason: Synonym of Cynopterus horsfieldii https://www.mammaldiversity.org/taxon/1004375/
   taxonomic_resolution: species
+- find: Diaemus rotundus
+  replace: Desmodus rotundus
+  reason: misspelled in Herberstein_2022, original publication (10.1139/z70-075) has data assigned as Desmodus rotundus
+  taxonomic_resolution: species
 - find: Diaemus youngi
   replace: Diaemus youngii
   reason: spelling changed from 'youngi' to 'youngii' to match the original spelling
@@ -99,6 +103,10 @@ taxonomic_updates:
 - find: Eonycteris spelea
   replace: Eonycteris spelaea
   reason: Mispelling https://www.mammaldiversity.org/taxon/1004515/
+  taxonomic_resolution: species
+- find: Miniopterus gigas
+  replace: Macroderma gigas
+  reason: misspelled in Herberstein_2022, original publication (10.1007/s003600000121) has data assigned as Macroderma gigas
   taxonomic_resolution: species
 - find: Mimon crenulatum
   replace: Gardnerycteris keenani
@@ -151,6 +159,10 @@ taxonomic_updates:
 - find: Scotophilus gigas
   replace: Scotophilus nigrita
   reason: Synonym of Scotophilus nigrita https://www.mammaldiversity.org/taxon/1005691/
+  taxonomic_resolution: species
+- find: Tadarida albiventer
+  replace: Mormopterus jugularis
+  reason: Synonym of Mormopterus jugularis https://www.mammaldiversity.org/taxon/1005227/ also referenced in https://doi.org/10.5252/z2012n4a5
   taxonomic_resolution: species
 - find: Vampyrops helleri
   replace: Platyrrhinus helleri
