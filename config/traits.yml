@@ -430,11 +430,11 @@ traits:
       comments: Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4  
       type: categorical
       allowed_values_levels:
-          Thermally stable underground roosts: (e.g. caves, mines, etc.) 
-          Thermally unstable underground roosts: (e.g. cellar, bunker, etc.)
-          Human-made roost: (e.g. buildings, barns, churches, etc.)
-          Tree roost: (e.g. holes, crevices, barck pockets, etc.)
-          Rock crevices: Rock crevices
+          thermally_stable_underground roosts: (e.g. caves, mines, etc.) 
+          thermally_unstable_underground roosts: (e.g. cellar, bunker, etc.)
+          human_made_roost: (e.g. buildings, barns, churches, etc.)
+          tree_roost: (e.g. holes, crevices, barck pockets, etc.)
+          rock_crevices: Rock crevices
       entity_URI: https://doi.org/10.11606/1807-0205/2021.61.24
     nursery_roost:
       label: Nursery roost
@@ -442,11 +442,11 @@ traits:
       comments: Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4  
       type: categorical
       allowed_values_levels:
-          Thermally stable underground roosts: (e.g. caves, mines, etc.) 
-          Thermally unstable underground roosts: (e.g. cellar, bunker, etc.)
-          Human-made roost: (e.g. buildings, barns, churches, etc.)
-          Tree roost: (e.g. holes, crevices, barck pockets, etc.)
-          Rock crevices: Rock crevices
+          thermally_stable_underground roosts: (e.g. caves, mines, etc.) 
+          thermally_unstable_underground roosts: (e.g. cellar, bunker, etc.)
+          human_made_roost: (e.g. buildings, barns, churches, etc.)
+          tree_roost: (e.g. holes, crevices, barck pockets, etc.)
+          rock_crevices: Rock crevices
       entity_URI: https://doi.org/10.11606/1807-0205/2021.61.24
     echolocation_presence:
       label: Echolocation presence
