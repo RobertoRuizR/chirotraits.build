@@ -337,29 +337,41 @@ traits:
       allowed_values_min: 1.0e-05
       allowed_values_max: 1000000.0
       entity_URI: http://eol.org/schema/terms/AgeAtFirstBirth
+    foraging_habitat:
+      label: Foraging habitat
+      description: Primary habitat where the species forages.
+      comments: Description modified from http://eol.org/schema/terms/ForagingHabitat Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24
+      type: categorical
+      allowed_values_levels:
+          clutter: Organism that search for food in dense and cluttered vegetation.
+          clutter_edge:	Organism that search for food near the edges of clutter such as forest edges and gaps.
+          open: Organism that search for food in open spaces.
+      entity_URI: https://doi.org/10.11606/1807-0205/2021.61.24
     foraging_strategy:
       label: Foraging strategy
       description: Behavioral strategy that is used to obtain food.
       comments: Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24
       type: categorical
       allowed_values_levels:
-          Hawking foraging strategy: Foraging behavior in which an organism catches flying insects in the air.
-          Gleaning foraging strategy:	Foraging behavior in which an organism (usually a bird or a bat) catch its prey (mainly arthropods) by plucking them from foliage or the ground, from crevices as rock faces and under the eaves of houses, or from living organisms (in case of ticks and lice).
-          Flycatching foraging strategy: Foraging behavior in which an organism spends much of the time perched and seeking prey and only flies when prey is located.
-          Trawling foraging strategy:	Foraging behavior in which a bat 'gaff' insects from water surfaces, generally with its hindlimbs.
-          Hovering foraging strategy:	Foraging behavior in which an organism remains stationary in the air while ingesting food, such as nectar from flowers, or looking out for food when lacking a suitable perch.
-          Perching foraging strategy:	Foraging behavior in which an organism feeds fruits by hanging from branches or vegetation.          
+          hawking: Foraging behavior in which an organism catches flying insects in the air.
+          gleaning:	Foraging behavior in which an organism (usually a bird or a bat) catch its prey (mainly arthropods) by plucking them from foliage or the ground, from crevices as rock faces and under the eaves of houses, or from living organisms (in case of ticks and lice).
+          flycatching: Foraging behavior in which an organism spends much of the time perched and seeking prey and only flies when prey is located.
+          trawling:	Foraging behavior in which a bat 'gaff' insects from water surfaces, generally with its hindlimbs.
+          hovering:	Foraging behavior in which an organism remains stationary in the air while ingesting food, such as nectar from flowers, or looking out for food when lacking a suitable perch.
+          perching:	Foraging behavior in which an organism feeds fruits by hanging from branches or vegetation.          
       entity_URI: https://doi.org/10.11606/1807-0205/2021.61.24
     feeding_guild:
       label: Feeding guild
       description: Organisms that share certain morphological traits due to adaptation to similar environments and ecological roles.
-      comments: Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24
+      comments: Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Omnivore level and description obtained from http://www.wikidata.org/entity/Q164509 Sanguivore level and description obtained from http://purl.obolibrary.org/obo/ECOCORE_00000164
       type: categorical
       allowed_values_levels:
           insectivorous:	Organism that eats invertebrates, primarily insects.
           frugivorous:	An herbivore that primarily consumes fruits or fruit-like vegetables.
           nectarivorous:	An herbivore that primarily consumes nectar.
           carnivorous:	A predator that primarily eats vertebrates.
+          omnivore: Organism consuming a variety of foods, usually including both plants and animals.
+          sanguivore: A carnivore that consumes blood, during a brief, temporary interaction.
       entity_URI: http://eol.org/schema/terms/EcomorphologicalGuild
     bite_force:
       label: Bite force
@@ -430,8 +442,8 @@ traits:
       comments: Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4  
       type: categorical
       allowed_values_levels:
-          thermally_stable_underground roosts: (e.g. caves, mines, etc.) 
-          thermally_unstable_underground roosts: (e.g. cellar, bunker, etc.)
+          thermally_stable_underground_roosts: (e.g. caves, mines, etc.) 
+          thermally_unstable_underground_roosts: (e.g. cellar, bunker, etc.)
           human_made_roost: (e.g. buildings, barns, churches, etc.)
           tree_roost: (e.g. holes, crevices, barck pockets, etc.)
           rock_crevices: Rock crevices
@@ -442,8 +454,8 @@ traits:
       comments: Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4  
       type: categorical
       allowed_values_levels:
-          thermally_stable_underground roosts: (e.g. caves, mines, etc.) 
-          thermally_unstable_underground roosts: (e.g. cellar, bunker, etc.)
+          thermally_stable_underground_roosts: (e.g. caves, mines, etc.) 
+          thermally_unstable_underground_roosts: (e.g. cellar, bunker, etc.)
           human_made_roost: (e.g. buildings, barns, churches, etc.)
           tree_roost: (e.g. holes, crevices, barck pockets, etc.)
           rock_crevices: Rock crevices
