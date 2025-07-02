@@ -6,15 +6,25 @@ Source repository to build the `ChiroTraits` database.
 
 This repository compiles the code and data used to build the ChiroTraits database. This database is part of the first chapter of the PhD thesis "*Assessment of knowledge gaps in bats: A macroecological perspective*" which is being carried out by [Roberto Antonio Ruiz-Ramírez](https://maevolab.mx/authors/roberto/) at the [Evolutionary Macroecology Lab](https://maevolab.mx/).
 
-This repository is a work in progress maintained by Roberto A. Ruiz-Ramírez. If you have any questions or inquiries regarding the use of this document, please write to: [roberto.ruiz\@posgrado.ecologia.edu.mx](mailto:roberto.ruiz@posgrado.ecologia.edu.mx)
+This database is a work in progress maintained by Roberto A. Ruiz-Ramírez. If you have any questions or inquiries regarding the use of this document, please write to: [roberto.ruiz@posgrado.ecologia.edu.mx](mailto:roberto.ruiz@posgrado.ecologia.edu.mx).
 
-A detailed report of the data, methodology, and references used can be found in the following [Quarto document](https://robertoruizr.github.io/GBTD_litrev_traitcat_cleaning/).
+A detailed report of the data, methodology, and references used for the trait selection and literature review process can be found in the following [Quarto document](https://robertoruizr.github.io/GBTD_litrev_traitcat_cleaning/).
+
+
+# The ChiroTraits database
+
+Write description of the database, also the motivation for its creation.
+
+Add the relevance of the traits.build and MDD 2.2 releases for the creation of the database.
+
+The creation of `Chirotraits` was greatly pushed forward thanks to two recent releases: the traits.build R package (Wenk et al., 2024) and the [Mammal Diversity Database 2.1 (2025)](https://www.mammaldiversity.org/).
+
 
 ## File organization
 
 ### /config folder
 
-The database is built around the following files, which can be found in the configuration files (**config**) folder:
+The database is built using the following files, which can be found in the configuration files (**config**) folder:
 
 -   *metadata.yml*: Contains the database description, authors, and affiliations.
 -   *traits.yml*: Contains the definitions of the traits included in the database.
@@ -28,6 +38,38 @@ The /data folder contains the individual publications included in this database.
 
 -   *data.csv*: A csv file with the trait data from the publication.
 -   *metadata.yml*: Metadata from the individual study. Includes publishing information, names and description of the included traits, as well as methods and context from the study.
+
+
+## Taxonomic and trait coverage
+
+The taxonomy used was obtained from the most recent version of [The Mammal Diversity Database (MDD)](https://www.mammaldiversity.org/), which recognises 1492 species, 238 genera, and 21 families of bats. Currently, `ChiroTraits` includes 64010 records for 1295 bat species and 29 functional traits.
+
+### Taxonomic updates
+
+When the species listed in the trait data was out of alignment with the taxonomy used, a taxonomic update was specified in the corresponding metadata.yml file of the study.
+
+Each taxonomic update has the following structure:
+    - *Find*: The species name reported in the source. 
+    - *Replace*: The current accepted species name, as established in the MDD.
+    - *Reason*: The reason listed for the change in the correponding page for the species. Also includes the current webpage for the species listed in the MDD website.
+
+# Trait definitions
+
+Every functional trait included in `ChiroTraits` has a corresponding definition in the config/traits.yml file, which acts as a thesaurus for the complete database. Each trait includes their assigned name, definition, allowed values (numerical variables) or levels (categorical variables), expected unit, and a link to an existing Ontology found in the [Ontobee Data Server](https://ontobee.org/). When a trait definition was not found in the existing ontologies, the definition was obtained from a published trait dataset for bats (e.g. EuroBaTrait, Froidevaux et al., 2023; AfroBat, Cosentino et al., 2023) and the corresponding DOI was added as a source.
+
+
+## Excluded data
+
+Data was excluded from integration into `ChiroTraits` if:
+    - The data value falls out of the allowed value range specified for the trait (e.g. a tail length of 0 mm).
+    - Data which could not be mapped into a species (e.g. record is specified at genus level).
+    - The data corresponds to an extinct bat species. In which case, a link to the corresponding entry in the [REPAD: The Recently Extinct Plants and Animals Database](https://recentlyextinctspecies.com/chiroptera) was added.
+    - The data record was imputed by statistical methods (e.g. gap-filling).
+
+## References
+    - Mammal Diversity Database. (2025). Mammal Diversity Database (Version 2.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.15007505
+    - Wenk, E., Bal, P., Coleman, D., Gallagher, R., Yang, S., & Falster, D. (2024). Traits.build: A data model, workflow and R package for building harmonised ecological trait databases. Ecological Informatics, 83, 102773. https://doi.org/10.1016/j.ecoinf.2024.102773
+
 
 ## License
 
