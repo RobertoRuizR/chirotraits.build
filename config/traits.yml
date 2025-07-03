@@ -8,8 +8,8 @@ traits:
       comments: None.
       type: numeric
       units: g
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1.0e-02
+      allowed_values_max: 4000
       entity_URI: http://purl.obolibrary.org/obo/VT_0001259
     forearm_length:
       label: Forearm length
@@ -17,8 +17,8 @@ traits:
       comments: None.
       type: numeric
       units: mm
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1
+      allowed_values_max: 1000
       entity_URI: http://purl.obolibrary.org/obo/FOVT_0001379
     head_body_length:
       label: Head-body length
@@ -26,8 +26,8 @@ traits:
       comments: None.
       type: numeric
       units: mm
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1
+      allowed_values_max: 1500
       entity_URI: http://eol.org/schema/terms/HeadBodyLength
     body_length_with_tail:
       label: Body length with tail
@@ -35,8 +35,8 @@ traits:
       comments: None.
       type: numeric
       units: mm
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1
+      allowed_values_max: 1500
       entity_URI: http://purl.obolibrary.org/obo/FOVT_0000001
     tail_length:
       label: Tail length
@@ -44,8 +44,8 @@ traits:
       comments: None.
       type: numeric
       units: mm
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1.0e-01
+      allowed_values_max: 1000
       entity_URI: http://purl.obolibrary.org/obo/VT_0002758
     hindfoot_length:
       label: Hindfoot length
@@ -53,8 +53,8 @@ traits:
       comments: None.
       type: numeric
       units: mm
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1
+      allowed_values_max: 500
       entity_URI: http://eol.org/schema/terms/HindTarsusLength
     calcaneus_length:
       label: Calcaneus length
@@ -62,8 +62,8 @@ traits:
       comments: None.
       type: numeric
       units: mm
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1.0e-1
+      allowed_values_max: 1000
       entity_URI: http://purl.obolibrary.org/obo/FOVT_0000022
     ear_length:
       label: Ear length
@@ -71,8 +71,8 @@ traits:
       comments: None.
       type: numeric
       units: mm
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1.0e-01
+      allowed_values_max: 1000
       entity_URI: http://purl.obolibrary.org/obo/OBA_0003426
     tragus_length:
       label: Tragus length
@@ -80,8 +80,8 @@ traits:
       comments: Adapted from Castillo-Figueroa & Perez-Torres, 2021 doi 10.11606/1807-0205/2021.61.24
       type: numeric
       units: mm
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1.0e-01
+      allowed_values_max: 1000
       entity_URI: http://purl.obolibrary.org/obo/UBERON_0010887
     length_of_the_third_digit:
       label: Length of the third digit
@@ -89,8 +89,8 @@ traits:
       comments: Description obtained from Castillo-Figueroa & Perez-Torres, 2021 doi 10.11606/1807-0205/2021.61.24
       type: numeric
       units: mm
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1
+      allowed_values_max: 500
       entity_URI: 10.11606/1807-0205/2021.61.24
     length_of_the_fifth_digit:
       label: Length of the fifth digit
@@ -98,8 +98,8 @@ traits:
       comments: Description obtained from Castillo-Figueroa & Perez-Torres, 2021 doi 10.11606/1807-0205/2021.61.24
       type: numeric
       units: mm
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1
+      allowed_values_max: 500
       entity_URI: 10.11606/1807-0205/2021.61.24
     aspect_ratio:
       label: Aspect ratio
@@ -107,8 +107,8 @@ traits:
       comments: None.
       type: numeric
       units: '{dimensionless}'
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1
+      allowed_values_max: 15
       entity_URI: https://doi.org/10.1098/rstb.1987.0030
     tip_shape_index:
       label: Tip shape index
@@ -126,7 +126,7 @@ traits:
       type: numeric
       units: m2
       allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_max: 2
       entity_URI: https://doi.org/10.1098/rstb.1987.0030
     wing_loading:
       label: Wing loading
@@ -134,8 +134,8 @@ traits:
       comments: None.
       type: numeric
       units: N/m2
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1.0e-03
+      allowed_values_max: 1000
       entity_URI: https://doi.org/10.1098/rstb.1987.0030
     wingspan:
       label: Wingspan
@@ -143,8 +143,8 @@ traits:
       comments: None.
       type: numeric
       units: mm
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1.0e-03
+      allowed_values_max: 10000
       entity_URI: https://doi.org/10.1098/rstb.1987.0030
     greatest_skull_length:
       label: Greatest skull length
@@ -296,8 +296,8 @@ traits:
       comments: None.
       type: categorical
       allowed_values_levels:
-          yes: The species has sexual dimorphism (OWN)
-          no: The species does not have sexual dimorphism (OWN)
+          sexual_dimorphism_present: The species has sexual dimorphism (OWN)
+          sexual_dimorphism_absent: The species does not have sexual dimorphism (OWN)
       entity_URI: http://purl.obolibrary.org/obo/PATO_0002451
     longevity:
       label: Longevity
@@ -305,8 +305,8 @@ traits:
       comments: None.
       type: numeric
       units: days
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 100
+      allowed_values_max: 20000
       entity_URI: http://purl.obolibrary.org/obo/NCIT_C153298
     mating_systems:
       label: Mating systems
@@ -314,10 +314,10 @@ traits:
       comments: Level definitions from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24
       type: categorical
       allowed_values_levels:
-          Polygamy: Mating system in which both sexes have more than one mate, and mating success is approximately equal for males and females.
-          Polyandry: Mating system in which females mate with a restricted group of the same males in successive breeding attempts.
-          Polygyny: Mating system in which males mate with the same group of females in successive mating attempts.
-          Monogamy: Mating system in which males mate with the same female in several reproductive attempts.
+          polygamy: Mating system in which both sexes have more than one mate, and mating success is approximately equal for males and females.
+          polyandry: Mating system in which females mate with a restricted group of the same males in successive breeding attempts.
+          polygyny: Mating system in which males mate with the same group of females in successive mating attempts.
+          monogamy: Mating system in which males mate with the same female in several reproductive attempts.
       entity_URI: http://purl.obolibrary.org/obo/ECOCORE_00000062
     sexual_maturity_age:
       label: Sexual maturity age
@@ -325,8 +325,8 @@ traits:
       comments: None.
       type: numeric
       units: days
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 10
+      allowed_values_max: 10000
       entity_URI: http://purl.obolibrary.org/obo/VT_0002683
     age_at_first_birth:
       label: Age of first birth
@@ -388,8 +388,8 @@ traits:
       comments: None.
       type: categorical
       allowed_values_levels:
-          yes: Dental formula present (OWN)
-          no: Dental formula absent (OWN)
+          dental_formula_present: Dental formula present (OWN)
+          dental_formula_absent: Dental formula absent (OWN)
       entity_URI: http://purl.obolibrary.org/obo/UBPROP_0000113
     migration:
       label: Migration
@@ -397,8 +397,8 @@ traits:
       comments: None.
       type: categorical
       allowed_values_levels:
-          yes: The species migrates (OWN)
-          no: The species does not migrate (OWN)
+          migration_present: The species migrates (OWN)
+          migration_absent: The species does not migrate (OWN)
       entity_URI: http://purl.obolibrary.org/obo/NBO_0070001
     hibernation:
       label: Hibernation
@@ -406,8 +406,8 @@ traits:
       comments: None.
       type: categorical
       allowed_values_levels:
-          yes: The species hibernates (OWN)
-          no: The species does not hibernate (OWN)
+          hibernation_present: The species hibernates (OWN)
+          hibernation_absent: The species does not hibernate (OWN)
       entity_URI: http://purl.obolibrary.org/obo/GO_0042750
     basal_metabolic_rate:
       label: Basal metabolic rate
@@ -415,8 +415,8 @@ traits:
       comments: None.
       type: numeric
       units: ml{O2}/g/h
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1.0e-01
+      allowed_values_max: 1000
       entity_URI: http://purl.bioontology.org/ontology/SNOMEDCT/165109007
     body_temperature:
       label: Body temperature
@@ -424,8 +424,8 @@ traits:
       comments: None.
       type: numeric
       units: C
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 10
+      allowed_values_max: 50
       entity_URI: http://purl.bioontology.org/ontology/CSP/2871-4249
     home_range:
       label: Home range
@@ -464,10 +464,10 @@ traits:
       label: Echolocation presence
       description: The method used by some animals (e.g. bats, dolphins and some whales) to determine the location of something by measuring the time it takes for an echo to return from it. These animals emit sound waves and listen for the echo, calculating the distance to the object from the time lapse between sound emission and the echo returning. 
       comments: None.
-      type: numeric
-      units: kHz
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      type: categorical
+      allowed_values_levels:
+          echolocation_present: The species uses echolocation.
+          echolocation_absent: The species does not use echolocation.
       entity_URI: http://purl.obolibrary.org/obo/GO_0050959
     echolocation_call_type:
       label: Echolocation call type
@@ -485,8 +485,8 @@ traits:
       comments: Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24
       type: numeric
       units: kHz
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1
+      allowed_values_max: 200
       entity_URI: https://doi.org/10.11606/1807-0205/2021.61.24
     call_duration:
       label: Call duration
@@ -494,8 +494,8 @@ traits:
       comments: Description obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4
       type: numeric
       units: ms
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1
+      allowed_values_max: 100
       entity_URI: 10.1038/s41597-023-02157-4
     call_bandwidth:
       label: Call bandwidth
@@ -503,8 +503,8 @@ traits:
       comments: Description obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4
       type: numeric
       units: kHz
-      allowed_values_min: 1.0e-05
-      allowed_values_max: 1000000.0
+      allowed_values_min: 1.0e-01
+      allowed_values_max: 1000
       entity_URI: 10.1038/s41597-023-02157-4
 
 
