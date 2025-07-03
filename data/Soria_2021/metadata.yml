@@ -13,12 +13,28 @@ source:
     issn: 1939-9170
 contributors:
   data_collectors:
-  - last_name: unknown
-    given_name: unknown
+  - last_name: Soria
+    given_name: Carmen
+    ORCID: https://orcid.org/0000-0002-5480-9409
+    affiliation: Global Mammal Assessment Program, Department of Biology and Biotechnologies, Sapienza University of Rome, Rome 00185, Italy
+  - last_name: Pacifici
+    given_name: Michela
+    ORCID: https://orcid.org/0000-0002-4468-4710
+    affiliation: Department of Biology and Biotechnologies, Sapienza University of Rome, Rome 00185, Italy
+  - last_name: Di Marco
+    given_name: Moreno
+    ORCID: https://orcid.org/0000-0002-8902-4193
+    affiliation: Department of Biology and Biotechnologies, Sapienza University of Rome, Rome 00185, Italy
+  - last_name: Stephen
+    given_name: Sarah
     ORCID: unknown
-    affiliation: unknown
+    affiliation: Department of Conservation Biology, Centre for Nature Conservation, Georg-August-University Göttingen, Von-Slebold-Str. 2, 37075 Göttingen, Germany
+  - last_name: Rondinini
+    given_name: Carlo
+    ORCID: https://orcid.org/0000-0002-6617-018X
+    affiliation: Global Mammal Assessment Program, Department of Biology and Biotechnologies, Sapienza University of Rome, Rome 00185, Italy
   assistants: unknown
-  dataset_curators: unknown
+  dataset_curators: Roberto A. Ruiz-Ramírez
 dataset:
   data_is_long_format: no
   custom_R_code: '

@@ -18,12 +18,28 @@ source:
     issn: 2052-4463
 contributors:
   data_collectors:
-  - last_name: unknown
-    given_name: unknown
+  - last_name: Herberstein
+    given_name: Marie 
+    ORCID: https://orcid.org/0000-0001-5071-2952
+    affiliation: School of Natural Sciences, Macquarie University, Sydney, Australia
+  - last_name: McLean
+    given_name: Donald
+    ORCID: https://orcid.org/0000-0001-6229-7063
+    affiliation: School of Natural Sciences, Macquarie University, Sydney, Australia
+  - last_name: Khan
+    given_name: Md Kawsar
+    ORCID: https://orcid.org/0000-0003-1795-1315
+    affiliation: School of Natural Sciences, Macquarie University, Sydney, Australia
+  - last_name: Smith
+    given_name: Kaitlyn
     ORCID: unknown
-    affiliation: unknown
+    affiliation: School of Natural Sciences, Macquarie University, Sydney, Australia
+  - last_name: Wolff
+    given_name: Jonas 
+    ORCID: https://orcid.org/0000-0003-2326-0326
+    affiliation: School of Natural Sciences, Macquarie University, Sydney, Australia; Zoological Institute and Museum, University of Greifswald, Greifswald, Germany
   assistants: unknown
-  dataset_curators: unknown
+  dataset_curators: Roberto A. Ruiz-Ramírez
 dataset:
   data_is_long_format: no
   custom_R_code: '

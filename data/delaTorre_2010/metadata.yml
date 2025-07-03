@@ -12,12 +12,16 @@ source:
     issn: 1545-1410
 contributors:
   data_collectors:
-  - last_name: unknown
-    given_name: unknown
+  - last_name: de la Torre
+    given_name: J. Antonio
     ORCID: unknown
-    affiliation: unknown
+    affiliation: Instituto de Ecologia, UNAM, Laboratorio de Ecologia y Conservacion de Vertebrados Terrestres, Apartado Postal 70-275, C.P. 04510 Ciudad Universitaria, Mexico, Distrito Federal, Mexico
+  - last_name: Medellin
+    given_name: Rodrigo
+    ORCID: https://orcid.org/0000-0002-4242-5344
+    affiliation: Instituto de Ecologia, UNAM, Laboratorio de Ecologia y Conservacion de Vertebrados Terrestres, Apartado Postal 70-275, C.P. 04510 Ciudad Universitaria, Mexico, Distrito Federal, Mexico
   assistants: unknown
-  dataset_curators: unknown
+  dataset_curators: Roberto A. Ruiz-Ramírez
 dataset:
   data_is_long_format: no
   custom_R_code: .na

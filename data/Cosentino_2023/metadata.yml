@@ -12,16 +12,54 @@ source:
     issn: 2052-4463
 contributors:
   data_collectors:
-  - last_name: unknown
-    given_name: unknown
-    ORCID: unknown
-    affiliation: unknown
+  - last_name: Castiello
+    given_name: Giorgia
+    ORCID: https://orcid.org/0000-0001-7488-1312
+    affiliation: CREA Research Centre for Forestry and Wood, v.le Santa Margherita 80, 52100, Arezzo, Italy
+  - last_name: Cosentino
+    given_name: Francesca
+    ORCID: https://orcid.org/0000-0001-9064-2696
+    affiliation: Department of Biology and Biotechnologies “Charles Darwin”, Sapienza University of Rome
   assistants: unknown
-  dataset_curators: unknown
+  dataset_curators: Roberto A. Ruiz-Ramírez
 dataset:
   data_is_long_format: no
   custom_R_code: '
           data |>
+          mutate(Species = str_replace_all(Species, "[^[:alnum:]]", "")) |> 
+          mutate(Genus = str_replace_all(Genus, "[^[:alnum:]]", "")) |> 
+          mutate(SpeciesEpithet = paste0(Genus, " ", Species)) |> 
+          mutate(Roost_Type_CRR = str_replace_all(as.character(Roost_Type_CRR), "1", "rock_crevices")) |> 
+          mutate(Roost_Type_CRT = str_replace_all(as.character(Roost_Type_CRT), "1", "tree_roost")) |> 
+          mutate(Roost_Type_CA = str_replace_all(as.character(Roost_Type_CA), "1", "thermally_stable_underground_roosts")) |> 
+          mutate(Roost_Type_FO = str_replace_all(as.character(Roost_Type_FO), "1", "tree_roost")) |> 
+          mutate(Roost_Type_HB = str_replace_all(as.character(Roost_Type_HB), "1", "human_made_roost")) |> 
+          mutate(Roost_Type_RO = str_replace_all(as.character(Roost_Type_RO), "1", "rock_crevices")) |> 
+          mutate(Roost_Type_HG = str_replace_all(as.character(Roost_Type_HG), "1", "thermally_unstable_underground_roosts")) |> 
+          mutate(Flycatching = if_else(as.character(Flycatching) == "1" | as.character(Flycatching) == "2", "flycatching", as.character(Flycatching))) |>  
+          mutate(Gleaning = if_else(as.character(Gleaning) == "1" | as.character(Gleaning) == "2", "gleaning", as.character(Gleaning))) |> 
+          mutate(Hawking = if_else(as.character(Hawking) == "1" | as.character(Hawking) == "2", "hawking", as.character(Hawking))) |> 
+          mutate(Trawling = if_else(as.character(Trawling) == "1" | as.character(Trawling) == "2", "trawling", as.character(Trawling))) |> 
+          mutate(Hovering = if_else(as.character(Hovering) == "1" | as.character(Hovering) == "2", "hovering", as.character(Hovering))) |> 
+          mutate(Perching = if_else(as.character(Perching) == "1" | as.character(Perching) == "2", "perching", as.character(Perching))) |> 
+          mutate(Clutter = if_else(as.character(Clutter) == "1" | as.character(Clutter) == "2", "clutter", as.character(Clutter))) |> 
+          mutate(Clutter_Edge = if_else(as.character(Clutter_Edge) == "1" | as.character(Clutter_Edge) == "2", "clutter_edge", as.character(Clutter_Edge))) |> 
+          mutate(Open = if_else(as.character(Open) == "1" | as.character(Open) == "2", "open", as.character(Open))) |> 
+          mutate(Migratory = if_else(as.character(Migratory) == "1", "migration_present", as.character(Migratory))) |> 
+          mutate(Migratory = if_else(as.character(Migratory) == "0", "migration_absent", as.character(Migratory))) |> 
+          mutate(Hibernation = if_else(as.character(Hibernation) == "1", "hibernation_present", as.character(Hibernation))) |> 
+          mutate(Hibernation = if_else(as.character(Hibernation) == "0", "hibernation_absent", as.character(Hibernation))) |> 
+          mutate(SexDim_Size = if_else(as.character(SexDim_Size) == "1", "sexual_dimorphism_present", as.character(SexDim_Size))) |> 
+          mutate(SexDim_Size = if_else(as.character(SexDim_Size) == "0", "sexual_dimorphism_absent", as.character(SexDim_Size))) |> 
+          mutate(DentalFormula = if_else(!is.na(as.character(DentalFormula)), "dental_formula_present", as.character(DentalFormula))) |> 
+          mutate(MatingSystem = if_else(as.character(MatingSystem) == "1", "polygamy", as.character(MatingSystem))) |> 
+          mutate(MatingSystem = if_else(as.character(MatingSystem) == "2", "polyandry", as.character(MatingSystem))) |> 
+          mutate(MatingSystem = if_else(as.character(MatingSystem) == "3", "polygyny", as.character(MatingSystem))) |> 
+          mutate(MatingSystem = if_else(as.character(MatingSystem) == "4", "monogamy", as.character(MatingSystem))) |> 
+          mutate(Insectivorous = if_else(as.character(Insectivorous) == "1" | as.character(Insectivorous) == "2", "insectivorous", as.character(Insectivorous))) |>
+          mutate(Frugivorous = if_else(as.character(Frugivorous) == "1" | as.character(Frugivorous) == "2", "frugivorous", as.character(Frugivorous))) |>
+          mutate(Nectarivorous = if_else(as.character(Nectarivorous) == "1" | as.character(Nectarivorous) == "2", "nectarivorous", as.character(Nectarivorous))) |>
+          mutate(Carnivorous = if_else(as.character(Carnivorous) == "1" | as.character(Carnivorous) == "2", "carnivorous", as.character(Carnivorous))) |>
           distinct()  
   '
   collection_date: 2000/2023
@@ -53,7 +91,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: HeadBody_LengthF_mean
@@ -62,7 +100,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: HeadBody_LengthU_mean
@@ -71,7 +109,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: Tail_LengthM_mean
@@ -80,7 +118,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: Tail_LengthF_mean
@@ -89,7 +127,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: Tail_LengthU_mean
@@ -98,7 +136,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: Forearm_LengthM_mean
@@ -107,7 +145,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: Forearm_LengthF_mean
@@ -116,7 +154,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: Forearm_LengthU_mean
@@ -125,7 +163,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: Hindfoot_LengthM_mean
@@ -134,7 +172,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: Hindfoot_LengthF_mean
@@ -143,7 +181,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: Hindfoot_LengthU_mean
@@ -152,7 +190,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: WingspanM_mean
@@ -161,7 +199,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: WingspanF_mean
@@ -170,7 +208,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: WingspanU_mean
@@ -179,7 +217,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: W_aspect_ratioM_mean
@@ -188,7 +226,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: W_aspect_ratioF_mean
@@ -197,7 +235,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: W_aspect_ratioU_mean
@@ -206,7 +244,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: W_loadingM_mean
@@ -215,7 +253,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: W_loadingF_mean
@@ -224,7 +262,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: W_loadingU_mean
@@ -233,7 +271,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: BodyMassM_mean
@@ -242,7 +280,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: BodyMassF_mean
@@ -251,7 +289,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: BodyMassU_mean
@@ -260,7 +298,7 @@ traits:
   entity_type: species
   value_type: mean
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: HeadBody_LengthM_min
@@ -269,7 +307,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: HeadBody_LengthF_min
@@ -278,7 +316,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: HeadBody_LengthU_min
@@ -287,7 +325,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: Tail_LengthM_min
@@ -296,7 +334,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: Tail_LengthF_min
@@ -305,7 +343,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: Tail_LengthU_min
@@ -314,7 +352,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: Forearm_LengthM_min
@@ -323,7 +361,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: Forearm_LengthF_min
@@ -332,7 +370,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: Forearm_LengthU_min
@@ -341,7 +379,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: Hindfoot_LengthM_min
@@ -350,7 +388,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: Hindfoot_LengthF_min
@@ -359,7 +397,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: Hindfoot_LengthU_min
@@ -368,7 +406,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: WingspanM_min
@@ -377,7 +415,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: WingspanF_min
@@ -386,7 +424,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: WingspanU_min
@@ -395,7 +433,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: W_aspect_ratioM_min
@@ -404,7 +442,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: W_aspect_ratioF_min
@@ -413,7 +451,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: W_aspect_ratioU_min
@@ -422,7 +460,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: W_loadingM_min
@@ -431,7 +469,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: W_loadingF_min
@@ -440,7 +478,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: W_loadingU_min
@@ -449,7 +487,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: BodyMassM_min
@@ -458,7 +496,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: BodyMassF_min
@@ -467,7 +505,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: BodyMassU_min
@@ -476,7 +514,7 @@ traits:
   entity_type: species
   value_type: minimum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: HeadBody_LengthM_max
@@ -485,7 +523,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: HeadBody_LengthF_max
@@ -494,7 +532,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: HeadBody_LengthU_max
@@ -503,7 +541,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: Tail_LengthM_max
@@ -512,7 +550,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: Tail_LengthF_max
@@ -521,7 +559,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: Tail_LengthU_max
@@ -530,7 +568,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: Forearm_LengthM_max
@@ -539,7 +577,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: Forearm_LengthF_max
@@ -548,7 +586,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: Forearm_LengthU_max
@@ -557,7 +595,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: Hindfoot_LengthM_max
@@ -566,7 +604,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: Hindfoot_LengthF_max
@@ -575,7 +613,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: Hindfoot_LengthU_max
@@ -584,7 +622,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: WingspanM_max
@@ -593,7 +631,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: WingspanF_max
@@ -602,7 +640,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: WingspanU_max
@@ -611,7 +649,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: W_aspect_ratioM_max
@@ -620,7 +658,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: W_aspect_ratioF_max
@@ -629,7 +667,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: W_aspect_ratioU_max
@@ -638,7 +676,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: W_loadingM_max
@@ -647,7 +685,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: W_loadingF_max
@@ -656,7 +694,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: W_loadingU_max
@@ -665,7 +703,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: unknown
   methods: unknown
 - var_in: BodyMassM_max
@@ -674,7 +712,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: male
   methods: unknown
 - var_in: BodyMassF_max
@@ -683,7 +721,7 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
-  replicates: 1
+  replicates: '1'
   male_female: female
   methods: unknown
 - var_in: BodyMassU_max
@@ -692,8 +730,323 @@ traits:
   entity_type: species
   value_type: maximum
   basis_of_value: measurement
+  replicates: '1'
+  male_female: unknown
+  methods: unknown
+- var_in: Roost_Type_CRR
+  unit_in: .na.character
+  trait_name: type_of_roost
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Roost_Type_CRT
+  unit_in: .na.character
+  trait_name: type_of_roost
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Roost_Type_CA
+  unit_in: .na.character
+  trait_name: type_of_roost
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Roost_Type_FO
+  unit_in: .na.character
+  trait_name: type_of_roost
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Roost_Type_HB
+  unit_in: .na.character
+  trait_name: type_of_roost
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Roost_Type_RO
+  unit_in: .na.character
+  trait_name: type_of_roost
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Roost_Type_HG
+  unit_in: .na.character
+  trait_name: type_of_roost
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Flycatching
+  unit_in: .na.character
+  trait_name: foraging_strategy
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Gleaning
+  unit_in: .na.character
+  trait_name: foraging_strategy
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Hawking
+  unit_in: .na.character
+  trait_name: foraging_strategy
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Trawling
+  unit_in: .na.character
+  trait_name: foraging_strategy
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Hovering
+  unit_in: .na.character
+  trait_name: foraging_strategy
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Perching
+  unit_in: .na.character
+  trait_name: foraging_strategy
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Clutter
+  unit_in: .na.character
+  trait_name: foraging_habitat
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Clutter_Edge
+  unit_in: .na.character
+  trait_name: foraging_habitat
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Open
+  unit_in: .na.character
+  trait_name: foraging_habitat
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Lifespan_Wild_max
+  unit_in: years
+  trait_name: longevity
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Migratory
+  unit_in: .na.character
+  trait_name: migration
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Hibernation
+  unit_in: .na.character
+  trait_name: hibernation
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: SexDim_Size
+  unit_in: .na.character
+  trait_name: sexual_dimorphism
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: DentalFormula
+  unit_in: .na.character
+  trait_name: dental_formula
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: MatingSystem
+  unit_in: .na.character
+  trait_name: mating_systems
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: SexMaturity_AgeM_min
+  unit_in: days
+  trait_name: sexual_maturity_age
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: male
+  methods: unknown
+- var_in: SexMaturity_AgeM_max
+  unit_in: days
+  trait_name: sexual_maturity_age
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: male
+  methods: unknown
+- var_in: SexMaturity_AgeM_mean
+  unit_in: days
+  trait_name: sexual_maturity_age
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: mean
+  methods: unknown
+- var_in: SexMaturityF_Age_min
+  unit_in: days
+  trait_name: sexual_maturity_age
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: SexMaturityF_Age_max
+  unit_in: days
+  trait_name: sexual_maturity_age
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: SexMaturityF_Age_mean
+  unit_in: days
+  trait_name: sexual_maturity_age
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: female
+  methods: unknown
+- var_in: SexMaturity_AgeU_min
+  unit_in: days
+  trait_name: sexual_maturity_age
+  entity_type: species
+  value_type: minimum
+  basis_of_value: measurement
   replicates: 1
   male_female: unknown
+  methods: unknown
+- var_in: SexMaturity_AgeU_max
+  unit_in: days
+  trait_name: sexual_maturity_age
+  entity_type: species
+  value_type: maximum
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: SexMaturity_AgeU_mean
+  unit_in: days
+  trait_name: sexual_maturity_age
+  entity_type: species
+  value_type: mean
+  basis_of_value: measurement
+  replicates: 1
+  male_female: unknown
+  methods: unknown
+- var_in: Insectivorous
+  unit_in: .na.character
+  trait_name: feeding_guild
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Frugivorous
+  unit_in: .na.character
+  trait_name: feeding_guild
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Nectarivorous
+  unit_in: .na.character
+  trait_name: feeding_guild
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
+  methods: unknown
+- var_in: Carnivorous
+  unit_in: .na.character
+  trait_name: feeding_guild
+  entity_type: species
+  value_type: .na.character
+  basis_of_value: measurement
+  replicates: unknown
+  male_female: .na.character
   methods: unknown
 substitutions: .na
 taxonomic_updates:
@@ -804,9 +1157,18 @@ taxonomic_updates:
   reason: occasionally included under the genus Lissonycteris, although most recent
     publications include the species under Myonycteris https://www.mammaldiversity.org/taxon/1004531/
   taxonomic_resolution: species
+- find: Macronycteris commersoni
+  replace: Macronycteris commersonii
+  reason: Mispelling https://www.mammaldiversity.org/taxon/1004640/
+  taxonomic_resolution: species
 - find: Macronycteris vittatus
   replace: Macronycteris vittata
   reason: Synonym of Macronycteris vittata https://www.mammaldiversity.org/taxon/1004644/
+  taxonomic_resolution: species
+- find: Myotis goudoti
+  replace: Myotis goudotii
+  reason: spelling changed from 'goudoti' to 'goudotii' to match original description
+    https://www.mammaldiversity.org/taxon/1005412/
   taxonomic_resolution: species
 - find: Nycteris madagascariensis
   replace: Nycteris macrotis
@@ -823,6 +1185,12 @@ taxonomic_updates:
 - find: Nycticeinops grandidieri
   replace: Afropipistrellus grandidieri
   reason: Synonym of Afropipistrellus grandidieri https://www.mammaldiversity.org/taxon/1005749/
+  taxonomic_resolution: species
+- find: Paratriaenops furculus
+  replace: Paratriaenops furcula
+  reason: generally spelt furculus, but the name has been changed to furcula because
+    it is a noun in apposition and does not change with generic gender; moved from
+    Triaenops to Paratriaenops; moved from Hipposideridae to Rhinonycteridae https://www.mammaldiversity.org/taxon/1004763/
   taxonomic_resolution: species
 - find: Rhinolophus gorongosae
   replace: Rhinolophus simulator

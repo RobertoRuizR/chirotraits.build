@@ -23,12 +23,20 @@ source:
     issn: 2052-4463
 contributors:
   data_collectors:
-  - last_name: unknown
-    given_name: unknown
-    ORCID: unknown
-    affiliation: unknown
+  - last_name: Froidevaux
+    given_name: Jérémy 
+    ORCID: https://orcid.org/0000-0001-6850-4879
+    affiliation: University of Stirling, Biological and Environmental Sciences, Faculty of Natural Sciences, FK9 4LJ, Stirling, UK; Centre d’Ecologie et des Sciences de la Conservation (CESCO, UMR 7204), CNRS, MNHN, Sorbonne-Université, 29900 Concarneau, 75005, Paris, France; School of Biological Sciences, University of Bristol, Life Sciences Building, BS8 1TQ, Bristol, UK
+  - last_name: Razgour
+    given_name: Orly 
+    ORCID: https://orcid.org/0000-0003-3186-0313
+    affiliation: Biosciences, University of Exeter, Streatham Campus, Hatherly Laboratories, Prince of Wales Road, Exeter, EX4 4PS, UK
+  - last_name: Toshkova
+    given_name: Nia
+    ORCID: https://orcid.org/0000-0003-4217-5653
+    affiliation: Institute of Biodiversity and Ecosystem Research, Bulgarian Academy of Sciences, 1 Tsar Osvoboditel Blvd., 1000, Sofia, Bulgaria; National Museum of Natural History at the Bulgarian Academy of Sciences, Sofia, Bulgaria 
   assistants: unknown
-  dataset_curators: unknown
+  dataset_curators: Roberto A. Ruiz-Ramírez
 dataset:
   data_is_long_format: yes
   custom_R_code: '
@@ -52,6 +60,8 @@ dataset:
           rename("coordinateX_WGS84" = "coordinateX-WGS84") |>
           mutate(verbatimContryRegion = if_else(!is.na(coordinateX_WGS84), Area, NA), .before = coordinateX_WGS84) |> 
           mutate(verbatimContryRegionDescription = if_else(!is.na(verbatimContryRegion), "Country of origin of the data.", NA), .after = verbatimContryRegion) |>
+          mutate(verbatimTraitValue = map2_chr(verbatimTraitName, verbatimTraitValue, \(x, y) if_else(str_detect(x, "TorporBehavior") & str_detect(str_squish(y), "yes"), "hibernation_present", y)), .after = verbatimTraitValue) |> 
+          mutate(verbatimTraitValue = map2_chr(verbatimTraitName, verbatimTraitValue, \(x, y) if_else(str_detect(x, "TorporBehavior") & str_detect(str_squish(y), "no"), "hibernation_absent", y)), .after = verbatimTraitValue) |> 
           group_by(verbatimScientificName, verbatimTraitName, verbatimTraitValueType, verbatimEntityType_individuals, verbatimEntityType_sex, verbatimEntityType_age, Area) |> 
           mutate(across(c("verbatimTraitMethod"), replace_duplicates_with_NA)) |> 
           ungroup() |> 
@@ -64,6 +74,8 @@ dataset:
                                           "WingLoadingIndex",
                                           "TorporBehavior", 
                                           "BasalMetabolicRate",
+                                          "SexualMaturityFemale",
+                                          "SexualMaturityMale",
                                           "MaxLongevity",
                                           "CallDuration", 
                                           "CallPeakFrequency", 
@@ -96,6 +108,16 @@ contexts:
 - context_property: Age of the bat (If identified).
   category: entity_context
   var_in: verbatimEntityType_age
+- context_property: male_female
+  category: entity_context
+  var_in: male_female
+  values:
+  - value: male
+    description: unknown
+  - value: female
+    description: unknown
+  - value: unknown
+    description: unknown
 traits:
 - var_in: ForearmLength
   unit_in: verbatimTraitUnit
@@ -200,6 +222,24 @@ traits:
   value_type: verbatimTraitValueType
   basis_of_value: verbatimBasisofValue
   replicates: unknown
+  methods: unknown
+- var_in: SexualMaturityFemale
+  unit_in: verbatimTraitUnit
+  trait_name: sexual_maturity_age
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
+  replicates: unknown
+  male_female: female
+  methods: unknown
+- var_in: SexualMaturityMale
+  unit_in: verbatimTraitUnit
+  trait_name: sexual_maturity_age
+  entity_type: verbatimEntityType_individuals
+  value_type: verbatimTraitValueType
+  basis_of_value: verbatimBasisofValue
+  replicates: unknown
+  male_female: male
   methods: unknown
 - var_in: HomeRange
   unit_in: verbatimTraitUnit

@@ -40,12 +40,12 @@ source:
     issn: 1939-9170
 contributors:
   data_collectors:
-  - last_name: unknown
-    given_name: unknown
-    ORCID: unknown
-    affiliation: unknown
+  - last_name: Goncalves
+    given_name: Fernando
+    ORCID: https://orcid.org/0000-0001-8620-1011
+    affiliation: Instituto de Biociências, Departamento de Biodiversidade, Universidade Estadual Paulista, 13506-900 Rio Claro, São Paulo, Brazil
   assistants: unknown
-  dataset_curators: unknown
+  dataset_curators: Roberto A. Ruiz-Ramírez
 dataset:
   data_is_long_format: no
   custom_R_code: '

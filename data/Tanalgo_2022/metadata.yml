@@ -22,12 +22,24 @@ source:
     issn: 2052-4463
 contributors:
   data_collectors:
-  - last_name: unknown
-    given_name: unknown
-    ORCID: unknown
-    affiliation: unknown
+  - last_name: Tanalgo
+    given_name: Krizler 
+    ORCID: https://orcid.org/0000-0003-4140-336X
+    affiliation: Center for Integrative Conservation, Xishuangbanna Tropical Botanical Garden, and the Center for Conservation Biology, Core Botanical Gardens, Chinese Academy of Sciences, Yunnan, P.R. China; International College of the Chinese Academy of Sciences, Beijing, P.R. China; Ecology and Conservation Research Lab (Eco/Con Lab), Department of Biological Sciences, College of Science and Mathematics, University of Southern Mindanao, Kabacan, North Cotabato, Philippines; Zukunftskolleg and the Center for Advanced Study of Collective Behaviour, University of Konstanz, Universitätsstrasse 10, Baden-Württemberg, Konstanz, Germany
+  - last_name: Hughes
+    given_name: Alice 
+    ORCID: https://orcid.org/0000-0002-0675-7552
+    affiliation: School of Biological Sciences, The University of Hong Kong, Hong Kong SAR, China
+  - last_name: Haelewaters
+    given_name: Danny 
+    ORCID: https://orcid.org/0000-0002-6424-0834
+    affiliation: Research Group Mycology, Department of Biology, Ghent University, 9000, Ghent, Belgium; Operation Wallacea Ltd, Wallace House, Old Bolingbroke, Lincolnshire, PE23 4EX, United Kingdom; Faculty of Science, University of South Bohemia, 370 05, České Budějovice, Czech Republic
+  - last_name: Tabora
+    given_name: John
+    ORCID: https://orcid.org/0000-0002-7809-2422
+    affiliation: Ecology and Conservation Research Lab (Eco/Con Lab), Department of Biological Sciences, College of Science and Mathematics, University of Southern Mindanao, Kabacan, North Cotabato, Philippines; School of Environmental Science and Management, University of the Philippines, Los Banos, Laguna, Philippines; 
   assistants: unknown
-  dataset_curators: unknown
+  dataset_curators: Roberto A. Ruiz-Ramírez
 dataset:
   data_is_long_format: no
   custom_R_code: '
@@ -63,7 +75,19 @@ traits:
   basis_of_value: mean
   replicates: unknown
   methods: unknown
-substitutions: .na
+substitutions:
+- trait_name: feeding_guild
+  find: Frugivore
+  replace: frugivorous
+- trait_name: feeding_guild
+  find: Insectivore
+  replace: insectivorous
+- trait_name: feeding_guild
+  find: Carnivore
+  replace: carnivorous
+- trait_name: feeding_guild
+  find: Nectarivore
+  replace: nectarivorous
 taxonomic_updates:
 - find: Arielulus aureocollaris
   replace: Thainycteris aureocollaris
