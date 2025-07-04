@@ -47,7 +47,10 @@ The taxonomy used was obtained from the most recent version of [The Mammal Diver
 
 When the species listed in the trait data was out of alignment with the taxonomy used, a taxonomic update was specified in the corresponding metadata.yml file of the study.
 
-Each taxonomic update has the following structure: - *Find*: The species name reported in the source. - *Replace*: The current accepted species name, as established in the MDD. - *Reason*: The reason listed for the change in the correponding page for the species. Also includes the current webpage for the species listed in the MDD website.
+Each taxonomic update has the following structure: 
+- *Find*: The species name reported in the source. 
+- *Replace*: The current accepted species name, as established in the MDD. 
+- *Reason*: The reason listed for the change in the correponding page for the species. Also includes the current webpage for the species listed in the MDD website.
 
 *Add table with taxonomic updates in ChiroTraits*
 
@@ -57,7 +60,10 @@ Every functional trait included in `ChiroTraits` has a corresponding definition 
 
 ## Excluded data
 
-Data was excluded from integration into `ChiroTraits` if: - The data value falls out of the allowed value range specified for the trait (e.g. a tail length of 0 mm). - Data which could not be mapped into a species (e.g. record is specified at genus level). - The data corresponds to an extinct bat species. In which case, a link to the corresponding entry in the [REPAD: The Recently Extinct Plants and Animals Database](https://recentlyextinctspecies.com/chiroptera) was added. - The data record was imputed by statistical methods (e.g. gap-filling).
+Data was excluded from integration into `ChiroTraits` if: - The data value falls out of the allowed value range specified for the trait (e.g. a tail length of 0 mm). 
+- Data which could not be mapped into a species (e.g. record is specified at genus level). 
+- The data corresponds to an extinct bat species. In which case, a link to the corresponding entry in the [REPAD: The Recently Extinct Plants and Animals Database](https://recentlyextinctspecies.com/chiroptera) was added. 
+- The data record was imputed by statistical methods (e.g. gap-filling).
 
 ## References
 
