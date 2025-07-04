@@ -25,10 +25,10 @@ metadata:
   publication_year: unknown
   publication_date: unknown
   license:
-    rights: CC-BY-4.0    
+    rights: ODC-By    
     rights_holder: Ruiz-Ramírez, Roberto Antonio
-    rights_URI: https://creativecommons.org/licenses/by/4.0/
-    description: Under this license, the material can be copied and redistributed in any medium or format. It can be remixed, transformed, and built upon for any purpose, even commercially. Re-users must give appropriate credit, provide a link to the license, and indicate if changes were made. Re-users may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+    rights_URI: http://opendatacommons.org/licenses/by/1.0/
+    description: The Open Data Commons Attribution License is a license agreement intended to allow users to freely share, modify, and use this Database subject only to the attribution requirements set out in Section 4.
   creators: 
   - last_name: Ruiz-Ramírez
     given_name: Roberto Antonio
