@@ -1,4 +1,5 @@
-# `chirotraits.build` <img src="inst/chirotraits.png" align="right" height="138"/>
+# `chirotraits.build` 
+<img src="inst/chirotraits.png" align="right" height="138"/>
 
 Source repository to build the `ChiroTraits` database.
 
