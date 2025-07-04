@@ -59,11 +59,11 @@ dataset:
   taxon_name: binomial
   location_name: unknown
   individual_id: ID_register
-  description: unknown
-  basis_of_record: unknown
+  description: Data set comprising morphological and life history information of 279 mammal species from 39,850 individuals of 388 populations ranging from −5.83 to −29.75 decimal degrees of latitude and −34.82 to −56.73 decimal degrees of longitude in the Atlantic forest of South America.
+  basis_of_record: literature
   life_stage: unknown
-  sampling_strategy: unknown
-  original_file: unknown
+  sampling_strategy: literature review
+  original_file: ATLANTIC_TR_all_data.csv
   notes: unknown
 locations: .na
 contexts:
@@ -72,35 +72,35 @@ contexts:
   var_in: age
   values:
   - find: adult
-    value: unknown
-    description: unknown
+    value: adult
+    description: A maturity quality inhering in an individual by virtue of the individual having attained sexual maturity and full growth. http://www.ebi.ac.uk/efo/EFO_0001272
   - find: juvenile
-    value: unknown
-    description: unknown
+    value: juvenile
+    description: A maturity quality inhering in a bearer by virtue the bearer's being not fully grown or developed. http://purl.obolibrary.org/obo/PATO_0001190
   - find: juvenille
-    value: unknown
-    description: unknown
+    value: juvenile
+    description: A maturity quality inhering in a bearer by virtue the bearer's being not fully grown or developed. http://purl.obolibrary.org/obo/PATO_0001190
 - context_property: Sex of the bat (If identified).
   category: entity_context
   var_in: sex
-- context_property: unknown
-  category: Reproductive stage of the bat (If identified).
+- context_property: Reproductive stage of the bat (If identified).
+  category: entity_context
   var_in: reproductive_stage
   values:
   - find: pregnant
-    value: unknown
-    description: unknown
+    value: pregnant
+    description: containing a developing embryo, fetus, or unborn offspring within the body. http://purl.obolibrary.org/obo/BTO_0004733
   - find: scroted
-    value: unknown
-    description: unknown
+    value: scroted
+    description: Testes are located outside of the body, suspended by the spermatic cord within the scrotum. http://eol.org/schema/terms/scrotal
 - context_property: Status of individual when measured
   category: entity_context
   var_in: status
   values:
   - value: dead
-    description: unknown
+    description: a state resulting from the cessation of the bearer's life. http://purl.obolibrary.org/obo/PATO_0001422
   - value: alive
-    description: unknown
+    description: A viability quality inhering in a bearer by virtue of the bearer's condition before death.  http://purl.obolibrary.org/obo/PATO_0001421
 traits:
 - var_in: body_mass
   unit_in: g

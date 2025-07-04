@@ -30,11 +30,11 @@ dataset:
   collection_date: 2000/2018
   taxon_name: taxon_name
   location_name: unknown
-  description: unknown
-  basis_of_record: unknown
+  description: PHYLACINE, The Phylogenetic Atlas of Mammal Macroecology. This taxonomically integrated platform contains phylogenies, range maps, trait data, and threat status for all 5,831 known mammal species that lived since the last interglacial (~130,000 years ago until present).
+  basis_of_record: literature
   life_stage: unknown
-  sampling_strategy: unknown
-  original_file: unknown
+  sampling_strategy: literaure review
+  original_file: Trait_data.csv
   notes: unknown
 locations: .na
 contexts: .na

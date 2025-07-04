@@ -56,11 +56,11 @@ dataset:
   collection_date: publicationYear
   taxon_name: species
   location_name: unknown
-  description: unknown
-  basis_of_record: unknown
+  description: AnimalTraits database, a curated database of body mass, metabolic rate and brain size, in standardised units, for terrestrial animals.
+  basis_of_record: literature
   life_stage: unknown
-  sampling_strategy: unknown
-  original_file: unknown
+  sampling_strategy: literature review
+  original_file: Download.csv link from https://animaltraits.org/
   notes: unknown
 locations: .na
 contexts:

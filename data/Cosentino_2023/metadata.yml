@@ -62,15 +62,15 @@ dataset:
           mutate(Carnivorous = if_else(as.character(Carnivorous) == "1" | as.character(Carnivorous) == "2", "carnivorous", as.character(Carnivorous))) |>
           distinct()  
   '
-  collection_date: 2000/2023
+  collection_date: 1949/2023
   taxon_name: SpeciesEpithet
   location_name: unknown
   individual_id: Code
-  description: unknown
-  basis_of_record: unknown
+  description: AfroBaT dataset, a compilation of trait data on 320 African bat species containing 76,914 values for 86 traits focusing on morphology, reproduction, life-history, trophic ecology, and species distributions.
+  basis_of_record: literature
   life_stage: unknown
-  sampling_strategy: unknown
-  original_file: unknown
+  sampling_strategy: literature review
+  original_file: AfroBat csv files in /AfroBaT pre-imputation dataset folder
   notes: unknown
 locations: .na
 contexts:
@@ -79,11 +79,11 @@ contexts:
   var_in: male_female
   values:
   - value: male
-    description: unknown
+    description: A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes. http://purl.obolibrary.org/obo/PATO_0000384
   - value: female
-    description: unknown
+    description: A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes. http://purl.obolibrary.org/obo/PATO_0000383
   - value: unknown
-    description: unknown
+    description: Not defined in the publication.
 traits:
 - var_in: HeadBody_LengthM_mean
   unit_in: mm
@@ -737,7 +737,7 @@ traits:
   unit_in: .na.character
   trait_name: type_of_roost
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -746,7 +746,7 @@ traits:
   unit_in: .na.character
   trait_name: type_of_roost
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -755,7 +755,7 @@ traits:
   unit_in: .na.character
   trait_name: type_of_roost
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -764,7 +764,7 @@ traits:
   unit_in: .na.character
   trait_name: type_of_roost
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -773,7 +773,7 @@ traits:
   unit_in: .na.character
   trait_name: type_of_roost
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -782,7 +782,7 @@ traits:
   unit_in: .na.character
   trait_name: type_of_roost
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -791,7 +791,7 @@ traits:
   unit_in: .na.character
   trait_name: type_of_roost
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -800,7 +800,7 @@ traits:
   unit_in: .na.character
   trait_name: foraging_strategy
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -809,7 +809,7 @@ traits:
   unit_in: .na.character
   trait_name: foraging_strategy
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -818,7 +818,7 @@ traits:
   unit_in: .na.character
   trait_name: foraging_strategy
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -827,7 +827,7 @@ traits:
   unit_in: .na.character
   trait_name: foraging_strategy
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -836,7 +836,7 @@ traits:
   unit_in: .na.character
   trait_name: foraging_strategy
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -845,7 +845,7 @@ traits:
   unit_in: .na.character
   trait_name: foraging_strategy
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -854,7 +854,7 @@ traits:
   unit_in: .na.character
   trait_name: foraging_habitat
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -863,7 +863,7 @@ traits:
   unit_in: .na.character
   trait_name: foraging_habitat
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -872,7 +872,7 @@ traits:
   unit_in: .na.character
   trait_name: foraging_habitat
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -890,7 +890,7 @@ traits:
   unit_in: .na.character
   trait_name: migration
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -899,7 +899,7 @@ traits:
   unit_in: .na.character
   trait_name: hibernation
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -908,7 +908,7 @@ traits:
   unit_in: .na.character
   trait_name: sexual_dimorphism
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -917,7 +917,7 @@ traits:
   unit_in: .na.character
   trait_name: dental_formula
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -926,7 +926,7 @@ traits:
   unit_in: .na.character
   trait_name: mating_systems
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -1016,7 +1016,7 @@ traits:
   unit_in: .na.character
   trait_name: feeding_guild
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -1025,7 +1025,7 @@ traits:
   unit_in: .na.character
   trait_name: feeding_guild
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -1034,7 +1034,7 @@ traits:
   unit_in: .na.character
   trait_name: feeding_guild
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character
@@ -1043,7 +1043,7 @@ traits:
   unit_in: .na.character
   trait_name: feeding_guild
   entity_type: species
-  value_type: .na.character
+  value_type: mode
   basis_of_value: measurement
   replicates: unknown
   male_female: .na.character

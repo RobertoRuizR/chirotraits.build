@@ -28,11 +28,11 @@ dataset:
   collection_date: '2010'
   taxon_name: species_name
   location_name: unknown
-  description: unknown
-  basis_of_record: unknown
+  description: Individual species account published by the American Society of Mammalogists.
+  basis_of_record: literature and measurement
   life_stage: unknown
-  sampling_strategy: unknown
-  original_file: unknown
+  sampling_strategy: literature review and museum specimens
+  original_file: transcribed from manuscript
   notes: unknown
 locations: .na
 contexts: .na

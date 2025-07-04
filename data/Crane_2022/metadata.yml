@@ -37,11 +37,11 @@ dataset:
   collection_date: year
   taxon_name: scientificName.iucn
   location_name: unknown
-  description: unknown
-  basis_of_record: unknown
+  description: Review of bat wing morphology data, specifically mass, wingspan, wing area, wing loading, and aspect ratio, to identify issues with data reporting and ambiguity. Aimed to assess taxonomic and geographic biases in trait data coverage.
+  basis_of_record: literature
   life_stage: lifestage
-  sampling_strategy: unknown
-  original_file: unknown
+  sampling_strategy: literature review
+  original_file: mam12270-sup-0004-appendixs7-s9.xlsx/Appendix S8_species level data
   notes: unknown
 locations: .na
 contexts: .na

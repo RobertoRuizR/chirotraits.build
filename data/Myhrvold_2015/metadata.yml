@@ -43,11 +43,11 @@ dataset:
   collection_date: 2000/2015
   taxon_name: taxon_name
   location_name: unknown
-  description: unknown
-  basis_of_record: unknown
+  description: Database compiled from peer-reviewed studies on individual species, macroecological studies of multiple species, existing life-history databases, and other aggregated sources as well as published books and other compilations.
+  basis_of_record: literature
   life_stage: unknown
-  sampling_strategy: unknown
-  original_file: unknown
+  sampling_strategy: literature review
+  original_file: Amniote_Sparse_Table_Aug_2015.csv
   notes: unknown
 locations: .na
 contexts:
@@ -56,11 +56,11 @@ contexts:
   var_in: male_female
   values:
   - value: male
-    description: unknown
+    description: A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes. http://purl.obolibrary.org/obo/PATO_0000384
   - value: female
-    description: unknown
+    description: A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes. http://purl.obolibrary.org/obo/PATO_0000383
   - value: unknown
-    description: unknown
+    description: Not defined in the publication.
 traits:
 - var_in: female_maturity_d
   unit_in: days

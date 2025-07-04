@@ -46,11 +46,11 @@ dataset:
   collection_date: 1999/2020
   taxon_name: name
   location_name: unknown
-  description: unknown
-  basis_of_record: unknown
+  description: Taxonomically integrated database of mammal traits that maximized trait number and coverage without compromising data quality. COMBINE contains information on 54 traits for 6,234 extant and recently extinct mammal species, including information on morphology, reproduction, diet, biogeography, life habit, phenology, behavior, home range, and density.
+  basis_of_record: literature
   life_stage: unknown
-  sampling_strategy: unknown
-  original_file: unknown
+  sampling_strategy: literaure review
+  original_file: trait_data_reported.csv
   notes: unknown
 locations: .na
 contexts: .na

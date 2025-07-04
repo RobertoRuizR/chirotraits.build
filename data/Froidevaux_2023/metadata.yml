@@ -88,11 +88,11 @@ dataset:
   trait_name: verbatimTraitName
   value: verbatimTraitValue
   location_name: Area
-  description: unknown
-  basis_of_record: unknown
+  description: EuroBaTrait 1.0, the most comprehensive and up-to-date trait dataset covering 47 European bat species. The dataset includes data on 118 traits including genetic composition, physiology, morphology, acoustic signature, climatic associations, foraging habitat, roost type, diet, spatial behaviour, life history, pathogens, phenology, and distribution.
+  basis_of_record: literature
   life_stage: unknown
-  sampling_strategy: unknown
-  original_file: unknown
+  sampling_strategy: literature review
+  original_file: csv files numbered 01 (01_genetic_composition.csv) to 13 (13_distribution.csv) in https://figshare.com/articles/dataset/A_species-level_trait_dataset_of_bats_in_Europe_and_beyond/21777161/2
   notes: unknown
 locations: .na
 contexts:
@@ -113,11 +113,11 @@ contexts:
   var_in: male_female
   values:
   - value: male
-    description: unknown
+    description: A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes. http://purl.obolibrary.org/obo/PATO_0000384
   - value: female
-    description: unknown
+    description: A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes. http://purl.obolibrary.org/obo/PATO_0000383
   - value: unknown
-    description: unknown
+    description: Not defined in the publication.
 traits:
 - var_in: ForearmLength
   unit_in: verbatimTraitUnit

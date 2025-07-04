@@ -50,11 +50,11 @@ dataset:
   collection_date: 2000/2021
   taxon_name: Species.name
   location_name: unknown
-  description: unknown
-  basis_of_record: unknown
+  description: DarkCideS 1.0 (https://darkcides.org/), a global database of bat caves and species synthesised from publicly available information and datasets. The DarkCideS 1.0 is by far the largest database for cave-dwelling bats, which contains information for geographical location, ecological status, species traits, and parasites and hyperparasites for 679 bat species are known to occur in caves or use caves in part of their life histories.
+  basis_of_record: literature
   life_stage: unknown
-  sampling_strategy: unknown
-  original_file: unknown
+  sampling_strategy: literature review
+  original_file: Dataset 1.csv
   notes: unknown
 locations: .na
 contexts: .na
@@ -63,7 +63,7 @@ traits:
   unit_in: unknown
   trait_name: feeding_guild
   entity_type: species
-  value_type: unknown
+  value_type: mode
   basis_of_value: expert_score
   replicates: unknown
   methods: unknown
