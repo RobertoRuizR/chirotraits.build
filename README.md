@@ -1,5 +1,4 @@
-# `chirotraits.build` 
-<img src="inst/chirotraits.png" align="right" height="138"/>
+# `chirotraits.build` <img src="inst/chirotraits.png" align="right" width="138"/>
 
 Source repository to build the `ChiroTraits` database.
 
@@ -48,10 +47,7 @@ The taxonomy used was obtained from the most recent version of [The Mammal Diver
 
 When the species listed in the trait data was out of alignment with the taxonomy used, a taxonomic update was specified in the corresponding metadata.yml file of the study.
 
-Each taxonomic update has the following structure: 
-- *Find*: The species name reported in the source. 
-- *Replace*: The current accepted species name, as established in the MDD. 
-- *Reason*: The reason listed for the change in the correponding page for the species. Also includes the current webpage for the species listed in the MDD website.
+Each taxonomic update has the following structure: - *Find*: The species name reported in the source. - *Replace*: The current accepted species name, as established in the MDD. - *Reason*: The reason listed for the change in the correponding page for the species. Also includes the current webpage for the species listed in the MDD website.
 
 *Add table with taxonomic updates in ChiroTraits*
 
@@ -61,18 +57,14 @@ Every functional trait included in `ChiroTraits` has a corresponding definition 
 
 ## Excluded data
 
-Data was excluded from integration into `ChiroTraits` if: 
-- The data value falls out of the allowed value range specified for the trait (e.g. a tail length of 0 mm). 
-- Data which could not be mapped into a species (e.g. record is specified at genus level). 
-- The data corresponds to an extinct bat species. In which case, a link to the corresponding entry in the [REPAD: The Recently Extinct Plants and Animals Database](https://recentlyextinctspecies.com/chiroptera) was added. 
-- The data record was imputed by statistical methods (e.g. gap-filling).
+Data was excluded from integration into `ChiroTraits` if: - The data value falls out of the allowed value range specified for the trait (e.g. a tail length of 0 mm). - Data which could not be mapped into a species (e.g. record is specified at genus level). - The data corresponds to an extinct bat species. In which case, a link to the corresponding entry in the [REPAD: The Recently Extinct Plants and Animals Database](https://recentlyextinctspecies.com/chiroptera) was added. - The data record was imputed by statistical methods (e.g. gap-filling).
 
 ## References
-      
-- Cosentino, F., Castiello, G., & Maiorano, L. (2023). A dataset on African bats’ functional traits. Scientific Data, 10(1), 623. https://doi.org/10.1038/s41597-023-02472-w
-- Froidevaux, J. S. P., Toshkova, N., Barbaro, L., Benítez-López, A., Kerbiriou, C., Le Viol, I., Pacifici, M., Santini, L., Stawski, C., Russo, D., Dekker, J., Alberdi, A., Amorim, F., Ancillotto, L., Barré, K., Bas, Y., Cantú-Salazar, L., Dechmann, D. K. N., Devaux, T., … Razgour, O. (2023). A species-level trait dataset of bats in Europe and beyond. Scientific Data, 10(1), 253. https://doi.org/10.1038/s41597-023-02157-4  
-- Mammal Diversity Database. (2025). Mammal Diversity Database (Version 2.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.15007505
-- Wenk, E., Bal, P., Coleman, D., Gallagher, R., Yang, S., & Falster, D. (2024). Traits.build: A data model, workflow and R package for building harmonised ecological trait databases. Ecological Informatics, 83, 102773. https://doi.org/10.1016/j.ecoinf.2024.102773
+
+-   Cosentino, F., Castiello, G., & Maiorano, L. (2023). A dataset on African bats’ functional traits. Scientific Data, 10(1), 623. https://doi.org/10.1038/s41597-023-02472-w
+-   Froidevaux, J. S. P., Toshkova, N., Barbaro, L., Benítez-López, A., Kerbiriou, C., Le Viol, I., Pacifici, M., Santini, L., Stawski, C., Russo, D., Dekker, J., Alberdi, A., Amorim, F., Ancillotto, L., Barré, K., Bas, Y., Cantú-Salazar, L., Dechmann, D. K. N., Devaux, T., … Razgour, O. (2023). A species-level trait dataset of bats in Europe and beyond. Scientific Data, 10(1), 253. https://doi.org/10.1038/s41597-023-02157-4\
+-   Mammal Diversity Database. (2025). Mammal Diversity Database (Version 2.0) \[Data set\]. Zenodo. https://doi.org/10.5281/zenodo.15007505
+-   Wenk, E., Bal, P., Coleman, D., Gallagher, R., Yang, S., & Falster, D. (2024). Traits.build: A data model, workflow and R package for building harmonised ecological trait databases. Ecological Informatics, 83, 102773. https://doi.org/10.1016/j.ecoinf.2024.102773
 
 ## License
 
