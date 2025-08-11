@@ -1,5 +1,7 @@
 ---
-title: "ChiroTraits.build: Source repository to build the `ChiroTraits` database"
+title: |
+  ![](inst/chirotraits.png){width=2in}
+  chirotraits.build: Source repository to build the `ChiroTraits` database
 ---
 
 
@@ -58,14 +60,33 @@ A detailed description of the following components, as established in the traits
 
 ### traits
 
-Table with all the trait data integrated in `ChiroTraits`, each data point has the study of origin, units, context, and locations from the original source. Additionally, the type of measurement (e.g. mean, raw data, or median) as well as the entity context of the organism (e.g sex, lifestage, or number of individuals of which a data point comes from) are also documented.
+Table with all the trait data integrated in `ChiroTraits`, each data point has the study of origin, units, context, and locations from the original source (Table 1). Additionally, the type of measurement (e.g. mean, raw data, or median) as well as the entity context of the organism (e.g sex, lifestage, or number of individuals of which a data point comes from) are also documented.
+
+```{r Traits sample, echo=FALSE, message=FALSE, warning=FALSE, tidy=FALSE}
+
+library(readr)
+library(dplyr)
+library(ggh4x)
+library(kableExtra)
+
+# Import clean citation csv
+sample <- read_csv("export/tables/trait_sample.csv")
+
+# Generate kable of final list
+sample |>
+kbl(caption = "Table 1. Example of trait observations included in ChiroTraits", col.names = c("Dataset ID", "Species", "Trait", "Value", "Unit", "Entity type", "Value type"), align = "l") |>
+  kable_styling(full_width = F, html_font = "Calibri", fixed_thead = T, font_size = 16, position = "center") |>
+  #column_spec(1:2, bold = T) |>
+  scroll_box(width = "1300px", height = "500px")
+
+```
 
 ### taxa
 
 Table with the list of bat species currently recognized. The taxonomy used was obtained from the 2.1 version of [The Mammal Diversity Database (MDD)](https://www.mammaldiversity.org/), which recognises 1492 species, 238 genera, and 21 families of bats.
 
 ### definitions
-Every functional trait included in `ChiroTraits` has a corresponding definition in the `config/traits.yml` file, which acts as a thesaurus for the complete database. Each trait includes their assigned name, definition, allowed values (numerical variables) or levels (categorical variables), expected unit, and a link to an existing Ontology found in the [Ontobee Data Server](https://ontobee.org/). When a trait definition was not found in the existing ontologies, the definition was obtained from a published trait dataset for bats (e.g. EuroBaTrait, Froidevaux et al., 2023; AfroBat, Cosentino et al., 2023) and the corresponding DOI was added as a source.
+Every functional trait included in `ChiroTraits` has a corresponding definition in the `config/traits.yml` file, which acts as a thesaurus for the complete database (Table 2). Each trait includes their assigned name, definition, allowed values (numerical variables) or levels (categorical variables), expected unit, and a link to an existing Ontology found in the [Ontobee Data Server](https://ontobee.org/). When a trait definition was not found in the existing ontologies, the definition was obtained from a published trait dataset for bats (e.g. EuroBaTrait, Froidevaux et al., 2023; AfroBat, Cosentino et al., 2023) and the corresponding DOI was added as a source.
 
 ```{r Traits, echo=FALSE, message=FALSE, warning=FALSE, tidy=FALSE}
 
@@ -79,7 +100,7 @@ traits <- read_csv("export/tables/trait_dictionary.csv")
 
 # Generate kable of final list
 traits |>
-kbl(caption = "Table 3. Full list of traits included in ChiroTraits. Label: Name of the trait in the database; Description: Trait description as found in the ontology consulted; Comments: Additional comments about the trait.", col.names = c("Trait label",	"Trait description",	"Comments",	"Variable type",	"Expected units",	"Source")) |>
+kbl(caption = "Table 2. Full list of traits included in ChiroTraits. Label: Name of the trait in the database; Description: Trait description as found in the ontology consulted; Comments: Additional comments about the trait.", col.names = c("Trait label",	"Trait description",	"Comments",	"Variable type",	"Expected units",	"Source")) |>
   kable_styling(full_width = F, html_font = "Calibri", fixed_thead = T, font_size = 16, position = "center") |>
   column_spec(1:2, bold = T) |>
   footnote(general = "The trait name, type, and description were extracted from the ontology or publication listed as a source and are reported as written in the ontology consulted. When a trait and its description were obtained from different sources it's highlighted in the comments.", footnote_as_chunk = T) |>
@@ -89,19 +110,42 @@ kbl(caption = "Table 3. Full list of traits included in ChiroTraits. Label: Name
 
 ### excluded_data
 
-Table with data points which were excluded during the build process. The reason for the exclusion is documented for each row.
+Table with data points which were excluded during the build process. The reason for the exclusion is documented for each row (Table 3).
 
 Data was excluded from integration into `ChiroTraits` if: 
+
 - The data value falls out of the allowed value range specified for the trait (e.g. a tail length of 0 mm). 
 - Data which could not be mapped into a species (e.g. record is specified at genus level). 
 - The data corresponds to an extinct bat species. In which case, a link to the corresponding entry in the [REPAD: The Recently Extinct Plants and Animals Database](https://recentlyextinctspecies.com/chiroptera) was added. 
 - The data record was imputed by statistical methods (e.g. gap-filling).
 
+```{r excluded data, echo=FALSE, message=FALSE, warning=FALSE, tidy=FALSE}
+
+library(readr)
+library(dplyr)
+library(ggh4x)
+library(kableExtra)
+
+# Import clean citation csv
+excluded <- read_csv("export/tables/excluded_data.csv")
+
+# Generate kable of final list
+excluded |>
+  slice_sample(n = 20) |> 
+kbl(caption = "Table 3. Sample of observations excluded from ChiroTraits and reason for exclusion", col.names = c("Reason for exclusion", "Dataset ID", "Species", "Observation ID", "Trait", "Value", "Unit")) |>
+  kable_styling(full_width = F, html_font = "Calibri", fixed_thead = T, font_size = 16, position = "center") |>
+  #column_spec(1:2, bold = T) |>
+  footnote(general = "The trait name, type, and description were extracted from the ontology or publication listed as a source and are reported as written in the ontology consulted. When a trait and its description were obtained from different sources it's highlighted in the comments.", footnote_as_chunk = T) |>
+  scroll_box(width = "1300px", height = "500px")
+
+```
+
 ### taxonomic_updates
 
-When the species listed in the trait data was out of alignment with the taxonomy used, a taxonomic update was specified in the corresponding `metadata.yml` file of the study. This table contains the list of updated scientific names assigned in the study, the new accepted taxon, the study which lists the outdated name, and the reason given for the update (Table 1).
+When the species listed in the trait data was out of alignment with the taxonomy used, a taxonomic update was specified in the corresponding `metadata.yml` file of the study. This table contains the list of updated scientific names assigned in the study, the new accepted taxon, the study which lists the outdated name, and the reason given for the update (Table 4).
 
 Each taxonomic update is written in the `metadata.yml` file for each study with the following structure: 
+
 - *Find*: The species name reported in the source. 
 - *Replace*: The current accepted species name, as established in the MDD 2.1.
 - *Reason*: The reason listed for the change in the correponding page for the species. Also includes the current webpage for the species listed in the MDD website.
@@ -120,7 +164,7 @@ taxonomic_updates <- read_csv("export/tables/taxonomic_updates.csv")
 taxonomic_updates |> 
   distinct(aligned_name, .keep_all = T) |> 
   slice_sample(n = 20) |> 
-  kbl(caption = "Table 1. Examples of taxonomic updates applied in ChiroTraits. Accepted names and reasons for change obtained from MDD 2.1") |> 
+  kbl(caption = "Table 4. Sample of taxonomic updates applied in ChiroTraits. Accepted names and reasons for change obtained from MDD 2.1") |> 
   kable_styling(full_width = F, html_font = "Calibri", fixed_thead = T, font_size = 16) |>
   scroll_box(height = "500px")
 
@@ -147,36 +191,9 @@ commit and R session_info.
 
 ## ChiroTraits in numbers
 
-### Bat species
-Out of the 1492 species listed in the MDD 2.1, `ChiroTraits` contains data for 1293 bat species, divided into 237 genera, and 21 families. The best represented bat families are Phyllostomidae with 65.3%, and Vespertilionidae with 15% of the total data (Figure 3, Supplementary table 3). Every other family represented <= 4.48% of data in ChiroTraits.
+### Observations
 
-The Phyllostomidae family represents the mayority of the data. Out of the ten best represented genera in ChiroTraits, 8 are from Phyllostomidae (Figure 4). The three best represented genera are phyllostomids, Artibeus, Carollia, and Sturnira, which represent 20%, 18.8%, and 10.2% of the total volume of data, respectively.  The fourth and fifth places, the genera Myotis (Vespertilionidae) and Rhinolophus (Rhinolophidae), represent 6.14% and 3.25% of the total volume of data, respectively.
-
-```{r Family percentage, echo=FALSE, message=FALSE, warning=FALSE, tidy=FALSE}
-
-library(readr)
-library(dplyr)
-library(ggh4x)
-library(kableExtra)
-
-# Import clean citation csv
-family_summary <- read_csv("export/tables/family_summary_percentage.csv")
-
-# Generate kable of final list
-family_summary |>
-kbl(caption = "Representativeness of the ten bat families with most data by percentage in ChiroTraits.", col.names = c("Family",	"Total number of observations",	"Number of datasets",	"Number of species", "Percent of data of the family")) |>
-  kable_styling(full_width = F, html_font = "Calibri", fixed_thead = T, font_size = 16, position = "center") |>
-  column_spec(1, bold = T) |>
-  scroll_box(width = "1300px", height = "500px")
-
-```
-
-### Functional traits
-
-The best represented functional traits are body mass, forearm length, and head-body length, which represent 46.6%, 37.7%, and 3.27% of ChiroTraits respectively (Figure 2, Supplementary table 2). Every other trait represented <= 2.03% of data in ChiroTraits.
-
-
-
+Currently, `ChiroTraits` contains a total of 65238 records from 10 publications (Table 5). 
 
 ```{r Sources, echo=FALSE, message=FALSE, warning=FALSE, tidy=FALSE}
 
@@ -191,31 +208,121 @@ sources <- read_csv("export/tables/sources.csv")
 # Generate kable of final list
 sources |>
   as.data.frame()  |> 
-  kbl(caption = "Table 3. Publications currently included in ChiroTraits.", col.names = c("Title",	"Publication year",	"Authors",	"Published in",	"DOI")) |> 
+  kbl(caption = "Table 5. Publications currently included in ChiroTraits.", col.names = c("Title",	"Publication year",	"Authors",	"Published in",	"DOI")) |> 
   kable_styling(full_width = F, html_font = "Calibri", fixed_thead = T, font_size = 16, position = "center") |> 
   scroll_box(height = "500px")
 
 ```
 
+### Bat species
+Out of the 1492 species listed in the MDD 2.1, `ChiroTraits` contains data for 1293 bat species, divided into 237 genera, and 21 families. The best represented bat families are Phyllostomidae with 65.3%, and Vespertilionidae with 15% of the total data (Figure 1a). Every other family represented <= 4.48% of data in `ChiroTraits`.
 
+The three best represented genera are phyllostomids, *Artibeus*, *Carollia*, and *Sturnira*, which represent 20%, 18.8%, and 10.2% of the total volume of data, respectively (Figure 1b).  The fourth and fifth places, the genera *Myotis* (Vespertilionidae) and *Rhinolophus* (Rhinolophidae), represent 6.14% and 3.25% of the total volume of data, respectively.
 
+<br>
 
-```{r Trait percentage, echo=FALSE, message=FALSE, warning=FALSE, tidy=FALSE}
+```{r Family percentage, fig.cap = "Figure 1. The ten best represented bat families and genera in ChiroTraits by percentage", echo=FALSE, message=FALSE, warning=FALSE, tidy=FALSE}
 
 library(readr)
 library(dplyr)
 library(ggh4x)
-library(kableExtra)
+library(ggplot2)
+library(forcats)
+library(patchwork)
+library(ggview)
+
+# Import clean citation csv
+family_summary <- read_csv("export/tables/family_summary_percentage.csv")
+genus_summary <- read_csv("export/tables/genus_summary_percentage.csv")
+
+# Generate kable of final list
+f <- family_summary |>
+  arrange(desc(percent_total)) |> 
+  slice_head(n = 10) |> 
+  ggplot(aes(fct_rev(fct_reorder(family, percent_total)), percent_total)) +
+  geom_col(fill = "darkgreen") +
+    geom_text(aes(label = paste0(percent_total, "%")), vjust = -0.5) +
+    ylim(0,100)+
+  theme(axis.text.x =  element_text(angle = 45, size = 10, face = "bold", vjust = 1, hjust = 1), 
+        axis.text.y =  element_text(size = 10, face = "bold"), 
+        axis.title.x =  element_text(size = 12, face = "bold"), 
+        panel.background = element_rect(fill = "white", colour = "grey50"),
+        plot.margin = margin(0, 0, 0, 1, "cm")) +
+  labs(x = "Family", y = "Percentage of data in ChiroTraits\n")
+
+g <- genus_summary |>
+  arrange(desc(percent_total)) |> 
+  slice_head(n = 10) |> 
+  ggplot(aes(fct_rev(fct_reorder(genus, percent_total)), percent_total)) +
+  geom_col(fill = "darkgreen") +
+    geom_text(aes(label = paste0(percent_total, "%")), vjust = -0.5) +
+    ylim(0,50)+
+  theme(axis.text.x =  element_text(angle = 45, size = 10, face = "bold", vjust = 1, hjust = 1), 
+        axis.text.y =  element_text(size = 10, face = "bold"), 
+        axis.title.x =  element_text(size = 12, face = "bold"), 
+        panel.background = element_rect(fill = "white", colour = "grey50"),
+        plot.margin = margin(0, 0, 0, 1, "cm")) +
+  labs(x = "Genus", y = "Percentage of data in ChiroTraits\n")
+
+f /  g + plot_layout(axes = "collect") + plot_annotation(tag_levels = 'a')
+```
+
+### Functional traits
+
+The best represented functional traits are body mass, forearm length, and head-body length, which represent 46.6%, 37.7%, and 3.27% of `ChiroTraits` respectively (Figure 2). Every other trait represented <= 2.03% of data in `ChiroTraits`.
+
+
+```{r Trait percentage, , fig.cap = "Figure 2. The ten best represented functional traits in ChiroTraits by percentage", echo=FALSE, message=FALSE, warning=FALSE, tidy=FALSE}
+
+library(readr)
+library(dplyr)
+library(ggh4x)
+library(ggplot2)
+library(forcats)
 
 # Import clean citation csv
 trait_summary <- read_csv("export/tables/trait_summary_percentage.csv")
 
 # Generate kable of final list
 trait_summary |>
-kbl(caption = "Representativeness of the ten bat functional traits with most data by percentage in ChiroTraits.", col.names = c("Trait label",	"Total number of observations",	"Number of datasets",	"Number of species with data",	"Percentage of species with data",	"Percent of data of the trait")) |>
-  kable_styling(full_width = F, html_font = "Calibri", fixed_thead = T, font_size = 16, position = "center") |>
-  column_spec(1, bold = T) |>
-  scroll_box(width = "1300px", height = "500px")
-
+  mutate(percent_total = (percent_total)*100) |> 
+  arrange(desc(percent_total)) |> 
+  slice_head(n = 10) |> 
+  ggplot(aes(fct_rev(fct_reorder(trait_name, percent_total)), percent_total)) +
+  geom_col(fill = "darkgreen") +
+    geom_text(aes(label = paste0(percent_total, "%")), vjust = -0.5) +
+    ylim(0,50) +
+  theme(axis.text.x =  element_text(angle = 45, size = 12, face = "bold", vjust = 1, hjust = 1), 
+        axis.text.y =  element_text(size = 12, face = "bold"), 
+        axis.title.x =  element_text(size = 14, face = "bold"), 
+        panel.background = element_rect(fill = "white", colour = "grey50")) +
+  labs(x = "Functional trait", y = "Percentage of data in ChiroTraits")
 ```
 
+
+
+
+
+
+
+
+## References
+
+- Brosse, S., Charpin, N., Su, G., Toussaint, A., Herrera-R, G. A., Tedesco, P. A., & Villéger, S. (2021). FISHMORPH: A global database on morphological traits of freshwater fishes. Global Ecology and Biogeography, 30(12), 2330–2336. https://doi.org/10.1111/geb.13395
+-   Cosentino, F., Castiello, G., & Maiorano, L. (2023). A dataset on African bats’ functional traits. Scientific Data, 10(1), 623. https://doi.org/10.1038/s41597-023-02472-w
+- Dawson, S. K., Carmona, C. P., González-Suárez, M., Jönsson, M., Chichorro, F., Mallen-Cooper, M., Melero, Y., Moor, H., Simaika, J. P., & Duthie, A. B. (2021). The traits of “trait ecologists”: An analysis of the use of trait and functional trait terminology. Ecology and Evolution, 11(23), 16434–16445. https://doi.org/10.1002/ece3.8321
+- Etard, A., Morrill, S., & Newbold, T. (2020). Global gaps in trait data for terrestrial vertebrates. Global Ecology and Biogeography, 29(12), 2143–2158. https://doi.org/10.1111/geb.13184
+- Falster, D., Gallagher, R., Wenk, E. H., Wright, I. J., Indiarto, D., Andrew, S. C., Baxter, C., Lawson, J., Allen, S., Fuchs, A., Monro, A., Kar, F., Adams, M. A., Ahrens, C. W., Alfonzetti, M., Angevin, T., Apgaua, D. M. G., Arndt, S., Atkin, O. K., … Ziemińska, K. (2021). AusTraits, a curated plant trait database for the Australian flora. Scientific Data, 8(1), 254. https://doi.org/10.1038/s41597-021-01006-6
+-   Froidevaux, J. S. P., Toshkova, N., Barbaro, L., Benítez-López, A., Kerbiriou, C., Le Viol, I., Pacifici, M., Santini, L., Stawski, C., Russo, D., Dekker, J., Alberdi, A., Amorim, F., Ancillotto, L., Barré, K., Bas, Y., Cantú-Salazar, L., Dechmann, D. K. N., Devaux, T., … Razgour, O. (2023). A species-level trait dataset of bats in Europe and beyond. Scientific Data, 10(1), 253. https://doi.org/10.1038/s41597-023-02157-4\
+- Funk, J. L., Larson, J. E., Ames, G. M., Butterfield, B. J., Cavender-Bares, J., Firn, J., Laughlin, D. C., Sutton-Grier, A. E., Williams, L., & Wright, J. (2017). Revisiting the Holy Grail: Using plant functional traits to understand ecological processes. Biological Reviews, 92(2), 1156–1173. https://doi.org/10.1111/brv.12275
+- Huang, N., Sun, X., Song, Y., Yuan, Z., & Zhou, W. (2023). Amphibian traits database: A global database on morphological traits of amphibians. Global Ecology and Biogeography, 32(5), 633–641. https://doi.org/10.1111/geb.13656
+- Kattge, J., Bönisch, G., Díaz, S., Lavorel, S., Prentice, I. C., Leadley, P., Tautenhahn, S., Werner, G. D. A., Aakala, T., Abedi, M., Acosta, A. T. R., Adamidis, G. C., Adamson, K., Aiba, M., Albert, C. H., Alcántara, J. M., Alcázar C, C., Aleixo, I., Ali, H., … Wirth, C. (2020). TRY plant trait database – enhanced coverage and open access. Global Change Biology, 26(1), 119–188. https://doi.org/10.1111/gcb.14904
+-  Mammal Diversity Database. (2025). Mammal Diversity Database (Version 2.0) \[Data set\]. Zenodo. https://doi.org/10.5281/zenodo.15007505
+- Soria, C. D., Pacifici, M., Di Marco, M., Stephen, S. M., & Rondinini, C. (2021). COMBINE: a coalesced mammal database of intrinsic and extrinsic traits. Ecology, 102(6). https://doi.org/10.1002/ecy.3344
+- Tobias, J. A. (2022). A bird in the hand: Global-scale morphological trait datasets open new frontiers of ecology, evolution and ecosystem science. Ecology Letters, 25(3), 573–580. https://doi.org/10.1111/ele.13960
+-   Wenk, E., Bal, P., Coleman, D., Gallagher, R., Yang, S., & Falster, D. (2024). Traits.build: A data model, workflow and R package for building harmonised ecological trait databases. Ecological Informatics, 83, 102773. https://doi.org/10.1016/j.ecoinf.2024.102773
+- Zakharova, L., Meyer, K. M., & Seifan, M. (2019). Trait-based modelling in ecology: A review of two decades of research. Ecological Modelling, 407, 108703. https://doi.org/10.1016/j.ecolmodel.2019.05.008
+
+## License
+
+The contents of this repository are made available under the Open Data Commons Attribution License (ODC-By): http://opendatacommons.org/licenses/by/1.0/

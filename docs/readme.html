@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title> chirotraits.build: Source repository to build the ChiroTraits database – chirotraits.build</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-dc7d4ce461f85e4742395f43b54f2ce0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./readme.html">Progress report</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title"><p><img src="inst/chirotraits.png" class="img-fluid" style="width:2in"> chirotraits.build: Source repository to build the <code>ChiroTraits</code> database</p></h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">chirotraits.build</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/RobertoRuizR/chirotraits.build" title="Site Source Code" class="quarto-navigation-tool px-1" aria-label="Site Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./readme.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Progress report</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#file-organization" id="toc-file-organization" class="nav-link" data-scroll-target="#file-organization">File organization</a>
+  <ul class="collapse">
+  <li><a href="#config-folder" id="toc-config-folder" class="nav-link" data-scroll-target="#config-folder">/config folder</a></li>
+  <li><a href="#data-folder" id="toc-data-folder" class="nav-link" data-scroll-target="#data-folder">/data folder</a></li>
+  </ul></li>
+  <li><a href="#database-structure" id="toc-database-structure" class="nav-link" data-scroll-target="#database-structure">Database structure</a>
+  <ul class="collapse">
+  <li><a href="#traits" id="toc-traits" class="nav-link" data-scroll-target="#traits">traits</a></li>
+  <li><a href="#taxa" id="toc-taxa" class="nav-link" data-scroll-target="#taxa">taxa</a></li>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions">definitions</a></li>
+  <li><a href="#excluded_data" id="toc-excluded_data" class="nav-link" data-scroll-target="#excluded_data">excluded_data</a></li>
+  <li><a href="#taxonomic_updates" id="toc-taxonomic_updates" class="nav-link" data-scroll-target="#taxonomic_updates">taxonomic_updates</a></li>
+  <li><a href="#other-tables-included-in-the-structure-of-chirotraits" id="toc-other-tables-included-in-the-structure-of-chirotraits" class="nav-link" data-scroll-target="#other-tables-included-in-the-structure-of-chirotraits">Other tables included in the structure of <code>ChiroTraits</code></a></li>
+  </ul></li>
+  <li><a href="#chirotraits-in-numbers" id="toc-chirotraits-in-numbers" class="nav-link" data-scroll-target="#chirotraits-in-numbers">ChiroTraits in numbers</a>
+  <ul class="collapse">
+  <li><a href="#observations" id="toc-observations" class="nav-link" data-scroll-target="#observations">Observations</a></li>
+  <li><a href="#bat-species" id="toc-bat-species" class="nav-link" data-scroll-target="#bat-species">Bat species</a></li>
+  <li><a href="#functional-traits" id="toc-functional-traits" class="nav-link" data-scroll-target="#functional-traits">Functional traits</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#file-organization">File organization</a>
+<ul>
+<li><a href="#config-folder">/config folder</a></li>
+<li><a href="#data-folder">/data folder</a></li>
+</ul></li>
+<li><a href="#database-structure">Database structure</a>
+<ul>
+<li><a href="#traits">traits</a></li>
+<li><a href="#taxa">taxa</a></li>
+<li><a href="#definitions">definitions</a></li>
+<li><a href="#excluded_data">excluded data</a></li>
+<li><a href="#taxonomic_updates">taxonomic updates</a></li>
+<li><a href="#other-tables-included-in-the-structure-of-chirotraits">Other tables included in the structure of <code>ChiroTraits</code></a></li>
+</ul></li>
+<li><a href="#points-to-discuss">ChiroTraits in numbers</a></li>
+<li><a href="#references">References</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Functional traits (FT) – well-defined, measurable, morphophysiological and ecological characteristics that influence the fitness of individuals – have been used to model numerous ecological processes, as well as responses to environmental changes in diverse organisms and biological communities (Funk et al., 2017; Zakharova et al., 2019; Etard et al., 2020; Dawson et al., 2021). The focus on functional traits has driven a multidisciplinary effort to create and update comprehensive databases in numerous taxa (e.g.&nbsp;plants, Kattge et al., 2020; fishes, Brosse et al., 2021; mammals, Soria et al., 2021; birds, Tobias et al., 2022; and amphibians, Huang et al., 2023). However, despite their importance, to date there is no comprehensive dataset of functional traits for the order Chiroptera at a global level.</p>
+<p><code>ChiroTraits</code> aims to be a comprehensive database of functional traits for the order Chiroptera. Additionally, the workflow used allows for the constant update of the dataset in response to taxonomic updates, future addition of functional traits, and continuous data integration from interested parties. The creation of this databse was greatly pushed forward thanks to two recent releases: the traits.build R package (Wenk et al., 2024) and the <a href="https://www.mammaldiversity.org/">Mammal Diversity Database 2.1 (2025)</a>.</p>
+<p>The name <code>ChiroTraits</code> follows from the naming convention used by Falster et al., 2021 in the <code>AusTraits</code> database. Likewise, the name <code>chirotraits.build</code> follows the <code>austraits.build</code> and <code>traits.build</code> naming convention used by Wenk et al., 2024.</p>
+</section>
+<section id="file-organization" class="level2">
+<h2 class="anchored" data-anchor-id="file-organization">File organization</h2>
+<section id="config-folder" class="level3">
+<h3 class="anchored" data-anchor-id="config-folder">/config folder</h3>
+<p><code>ChiroTraits</code> is built using the following files, which can be found in the <strong>/config</strong> folder:</p>
+<ul>
+<li><em>metadata.yml</em>: Contains the database description, authors, and affiliations.</li>
+<li><em>traits.yml</em>: Contains the definitions of the traits included in the database.</li>
+<li><em>taxon_list.csv</em>: Contains the taxon names to be included in the database.
+<ul>
+<li>Obtained from the <a href="https://www.mammaldiversity.org/">Mammal Diversity Database 2.1</a></li>
+</ul></li>
+<li><em>unit_conversions.csv</em>: Contains common unit conversion formulas.</li>
+</ul>
+</section>
+<section id="data-folder" class="level3">
+<h3 class="anchored" data-anchor-id="data-folder">/data folder</h3>
+<p>The /data folder contains the individual publications included in this database. Each publication is in a folder named <strong>FirstAuthor_YearofPublication</strong>, and in each of those the following files are included:</p>
+<ul>
+<li><em>data.csv</em>: A csv file with the trait data from the publication.</li>
+<li><em>metadata.yml</em>: Metadata from the individual study. Includes publishing information, names and description of the included traits, as well as methods and context from the study.</li>
+</ul>
+</section>
+</section>
+<section id="database-structure" class="level2">
+<h2 class="anchored" data-anchor-id="database-structure">Database structure</h2>
+<p>Once built, the <code>ChiroTraits</code> database is a list of related tables, each one contains a different dimension of the data.</p>
+<p>A detailed description of the following components, as established in the traits.build R package (Wenk et al., 2024), can be found <a href="https://traitecoevo.github.io/traits.build-book/database_structure.html">here</a>.</p>
+<section id="traits" class="level3">
+<h3 class="anchored" data-anchor-id="traits">traits</h3>
+<p>Table with all the trait data integrated in <code>ChiroTraits</code>, each data point has the study of origin, units, context, and locations from the original source (Table 1). Additionally, the type of measurement (e.g.&nbsp;mean, raw data, or median) as well as the entity context of the organism (e.g sex, lifestage, or number of individuals of which a data point comes from) are also documented.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:1300px; ">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table 1. Example of trait observations included in ChiroTraits</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Dataset ID</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Species</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Trait</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Value</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Unit</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Entity type</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Value type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Hypsugo ariel</td>
+<td style="text-align: left;">body_mass</td>
+<td style="text-align: left;">2.30</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">minimum</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Glossophaga soricina</td>
+<td style="text-align: left;">forearm_length</td>
+<td style="text-align: left;">36.80</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Chiroderma villosum</td>
+<td style="text-align: left;">forearm_length</td>
+<td style="text-align: left;">48.18</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Carollia perspicillata</td>
+<td style="text-align: left;">body_mass</td>
+<td style="text-align: left;">24.00</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Glossophaga soricina</td>
+<td style="text-align: left;">forearm_length</td>
+<td style="text-align: left;">33.60</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Faurby_2018</td>
+<td style="text-align: left;">Nyctophilus bifax</td>
+<td style="text-align: left;">body_mass</td>
+<td style="text-align: left;">9.80</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Crane_2022</td>
+<td style="text-align: left;">Parastrellus hesperus</td>
+<td style="text-align: left;">body_mass</td>
+<td style="text-align: left;">3.80</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">population</td>
+<td style="text-align: left;">mean</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Artibeus planirostris</td>
+<td style="text-align: left;">body_mass</td>
+<td style="text-align: left;">36.00</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Lonchorhina aurita</td>
+<td style="text-align: left;">forearm_length</td>
+<td style="text-align: left;">50.80</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Carollia perspicillata</td>
+<td style="text-align: left;">forearm_length</td>
+<td style="text-align: left;">38.90</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Sturnira lilium</td>
+<td style="text-align: left;">forearm_length</td>
+<td style="text-align: left;">41.60</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Rousettus obliviosus</td>
+<td style="text-align: left;">hindfoot_length</td>
+<td style="text-align: left;">13.00</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">minimum</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Carollia perspicillata</td>
+<td style="text-align: left;">body_mass</td>
+<td style="text-align: left;">17.00</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Molossops temminckii</td>
+<td style="text-align: left;">body_mass</td>
+<td style="text-align: left;">6.00</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Platyrrhinus lineatus</td>
+<td style="text-align: left;">body_mass</td>
+<td style="text-align: left;">24.00</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Carollia perspicillata</td>
+<td style="text-align: left;">forearm_length</td>
+<td style="text-align: left;">38.05</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Faurby_2018</td>
+<td style="text-align: left;">Myotis brandtii</td>
+<td style="text-align: left;">body_mass</td>
+<td style="text-align: left;">5.30</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Glossophaga soricina</td>
+<td style="text-align: left;">body_mass</td>
+<td style="text-align: left;">10.00</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Scotophilus ejetai</td>
+<td style="text-align: left;">forearm_length</td>
+<td style="text-align: left;">50.20</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">minimum</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Artibeus lituratus</td>
+<td style="text-align: left;">body_mass</td>
+<td style="text-align: left;">79.42</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">individual</td>
+<td style="text-align: left;">raw</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="taxa" class="level3">
+<h3 class="anchored" data-anchor-id="taxa">taxa</h3>
+<p>Table with the list of bat species currently recognized. The taxonomy used was obtained from the 2.1 version of <a href="https://www.mammaldiversity.org/">The Mammal Diversity Database (MDD)</a>, which recognises 1492 species, 238 genera, and 21 families of bats.</p>
+</section>
+<section id="definitions" class="level3">
+<h3 class="anchored" data-anchor-id="definitions">definitions</h3>
+<p>Every functional trait included in <code>ChiroTraits</code> has a corresponding definition in the <code>config/traits.yml</code> file, which acts as a thesaurus for the complete database (Table 2). Each trait includes their assigned name, definition, allowed values (numerical variables) or levels (categorical variables), expected unit, and a link to an existing Ontology found in the <a href="https://ontobee.org/">Ontobee Data Server</a>. When a trait definition was not found in the existing ontologies, the definition was obtained from a published trait dataset for bats (e.g.&nbsp;EuroBaTrait, Froidevaux et al., 2023; AfroBat, Cosentino et al., 2023) and the corresponding DOI was added as a source.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:1300px; ">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table 2. Full list of traits included in ChiroTraits. Label: Name of the trait in the database; Description: Trait description as found in the ontology consulted; Comments: Additional comments about the trait.</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Trait label</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Trait description</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Comments</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Variable type</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Expected units</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Aspect ratio</td>
+<td style="text-align: left; font-weight: bold;">The square of the wingspan divided by the wing area.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">{dimensionless}</td>
+<td style="text-align: left;">https://doi.org/10.1098/rstb.1987.0030</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Basal metabolic rate</td>
+<td style="text-align: left; font-weight: bold;">Basal metabolic rate (BMR) is the amount of energy expended daily by humans and other animals at rest. Rest is defined as existing in a neutrally temperate environment while in the post-absorptive state.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">ml{O2}/g/h</td>
+<td style="text-align: left;">http://purl.bioontology.org/ontology/SNOMEDCT/165109007</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Body mass</td>
+<td style="text-align: left; font-weight: bold;">The amount of matter in the body of an organism.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/VT_0001259</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Body temperature</td>
+<td style="text-align: left; font-weight: bold;">The degree of heat in the body of a living organism, temperature is measure of the average kinetic energy of the particles in a sample of matter, expressed in terms of units or degrees designated on a standard scale.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">http://purl.bioontology.org/ontology/CSP/2871-4249</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Call bandwidth</td>
+<td style="text-align: left; font-weight: bold;">The range of frequencies through which an echolocation call sweeps.</td>
+<td style="text-align: left;">Description obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">kHz</td>
+<td style="text-align: left;">10.1038/s41597-023-02157-4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Call duration</td>
+<td style="text-align: left; font-weight: bold;">Duration of a call.</td>
+<td style="text-align: left;">Description obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">ms</td>
+<td style="text-align: left;">10.1038/s41597-023-02157-4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Dental formula</td>
+<td style="text-align: left; font-weight: bold;">Syntax. upper/lower I.C.P.M / I.C.P.M. When used with generic tooth class applies to both deciduous and primary. Should also be used with a taxon property.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/UBPROP_0000113</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Dental formula</td>
+<td style="text-align: left; font-weight: bold;">Syntax. upper/lower I.C.P.M / I.C.P.M. When used with generic tooth class applies to both deciduous and primary. Should also be used with a taxon property.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/UBPROP_0000113</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Echolocation call type</td>
+<td style="text-align: left; font-weight: bold;">Type of echolocation signal according to frequency modulation in time.</td>
+<td style="text-align: left;">Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">10.1038/s41597-023-02157-4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Echolocation call type</td>
+<td style="text-align: left; font-weight: bold;">Type of echolocation signal according to frequency modulation in time.</td>
+<td style="text-align: left;">Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">10.1038/s41597-023-02157-4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Echolocation call type</td>
+<td style="text-align: left; font-weight: bold;">Type of echolocation signal according to frequency modulation in time.</td>
+<td style="text-align: left;">Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">10.1038/s41597-023-02157-4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Feeding guild</td>
+<td style="text-align: left; font-weight: bold;">Organisms that share certain morphological traits due to adaptation to similar environments and ecological roles.</td>
+<td style="text-align: left;">Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Omnivore level and description obtained from http://www.wikidata.org/entity/Q164509 Sanguivore level and description obtained from http://purl.obolibrary.org/obo/ECOCORE_00000164</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://eol.org/schema/terms/EcomorphologicalGuild</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Feeding guild</td>
+<td style="text-align: left; font-weight: bold;">Organisms that share certain morphological traits due to adaptation to similar environments and ecological roles.</td>
+<td style="text-align: left;">Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Omnivore level and description obtained from http://www.wikidata.org/entity/Q164509 Sanguivore level and description obtained from http://purl.obolibrary.org/obo/ECOCORE_00000164</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://eol.org/schema/terms/EcomorphologicalGuild</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Feeding guild</td>
+<td style="text-align: left; font-weight: bold;">Organisms that share certain morphological traits due to adaptation to similar environments and ecological roles.</td>
+<td style="text-align: left;">Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Omnivore level and description obtained from http://www.wikidata.org/entity/Q164509 Sanguivore level and description obtained from http://purl.obolibrary.org/obo/ECOCORE_00000164</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://eol.org/schema/terms/EcomorphologicalGuild</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Feeding guild</td>
+<td style="text-align: left; font-weight: bold;">Organisms that share certain morphological traits due to adaptation to similar environments and ecological roles.</td>
+<td style="text-align: left;">Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Omnivore level and description obtained from http://www.wikidata.org/entity/Q164509 Sanguivore level and description obtained from http://purl.obolibrary.org/obo/ECOCORE_00000164</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://eol.org/schema/terms/EcomorphologicalGuild</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Feeding guild</td>
+<td style="text-align: left; font-weight: bold;">Organisms that share certain morphological traits due to adaptation to similar environments and ecological roles.</td>
+<td style="text-align: left;">Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Omnivore level and description obtained from http://www.wikidata.org/entity/Q164509 Sanguivore level and description obtained from http://purl.obolibrary.org/obo/ECOCORE_00000164</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://eol.org/schema/terms/EcomorphologicalGuild</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Feeding guild</td>
+<td style="text-align: left; font-weight: bold;">Organisms that share certain morphological traits due to adaptation to similar environments and ecological roles.</td>
+<td style="text-align: left;">Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Omnivore level and description obtained from http://www.wikidata.org/entity/Q164509 Sanguivore level and description obtained from http://purl.obolibrary.org/obo/ECOCORE_00000164</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://eol.org/schema/terms/EcomorphologicalGuild</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Foraging habitat</td>
+<td style="text-align: left; font-weight: bold;">Primary habitat where the species forages.</td>
+<td style="text-align: left;">Description modified from http://eol.org/schema/terms/ForagingHabitat Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Foraging habitat</td>
+<td style="text-align: left; font-weight: bold;">Primary habitat where the species forages.</td>
+<td style="text-align: left;">Description modified from http://eol.org/schema/terms/ForagingHabitat Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Foraging habitat</td>
+<td style="text-align: left; font-weight: bold;">Primary habitat where the species forages.</td>
+<td style="text-align: left;">Description modified from http://eol.org/schema/terms/ForagingHabitat Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Foraging strategy</td>
+<td style="text-align: left; font-weight: bold;">Behavioral strategy that is used to obtain food.</td>
+<td style="text-align: left;">Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Foraging strategy</td>
+<td style="text-align: left; font-weight: bold;">Behavioral strategy that is used to obtain food.</td>
+<td style="text-align: left;">Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Foraging strategy</td>
+<td style="text-align: left; font-weight: bold;">Behavioral strategy that is used to obtain food.</td>
+<td style="text-align: left;">Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Foraging strategy</td>
+<td style="text-align: left; font-weight: bold;">Behavioral strategy that is used to obtain food.</td>
+<td style="text-align: left;">Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Foraging strategy</td>
+<td style="text-align: left; font-weight: bold;">Behavioral strategy that is used to obtain food.</td>
+<td style="text-align: left;">Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Foraging strategy</td>
+<td style="text-align: left; font-weight: bold;">Behavioral strategy that is used to obtain food.</td>
+<td style="text-align: left;">Levels and level definition obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Forearm length</td>
+<td style="text-align: left; font-weight: bold;">This is measured from the end of the ulna to the end of the carpus.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/FOVT_0001379</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Frequency of maximum amplitude</td>
+<td style="text-align: left; font-weight: bold;">Frequency of most energy, also called peak frequency. the frequency of the call with the greatest amplitude.</td>
+<td style="text-align: left;">Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">kHz</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Head-body length</td>
+<td style="text-align: left; font-weight: bold;">Head-body length is the total length from tip of nose to anus, base of tail or vent (i.e. tail length is excluded).</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">http://eol.org/schema/terms/HeadBodyLength</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Hibernation</td>
+<td style="text-align: left; font-weight: bold;">Any process in which an organism enters and maintains a period of dormancy in which to pass the winter. It is characterized by narcosis and by sharp reduction in body temperature and metabolic activity and by a depression of vital signs.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/GO_0042750</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Hibernation</td>
+<td style="text-align: left; font-weight: bold;">Any process in which an organism enters and maintains a period of dormancy in which to pass the winter. It is characterized by narcosis and by sharp reduction in body temperature and metabolic activity and by a depression of vital signs.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/GO_0042750</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Hindfoot length</td>
+<td style="text-align: left; font-weight: bold;">The hind foot length, from heel to toe.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">http://eol.org/schema/terms/HindTarsusLength</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Home range</td>
+<td style="text-align: left; font-weight: bold;">Size of the area within which everyday activities of individuals or groups (of any type) are typically restricted.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">km2</td>
+<td style="text-align: left;">http://eol.org/schema/terms/HomeRange</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Length of the fifth digit</td>
+<td style="text-align: left; font-weight: bold;">In biological collections the trait is the result of the sum of the metacarpus and its two phalanges. The metacarpus is measured from the joint with the phalanx to the junction with the carpus. The phalanx is measured as the maximum distance between the joints. In the field, it is measured from the junction of the metacarpus with the carps to the tip of the second phalanx.</td>
+<td style="text-align: left;">Description obtained from Castillo-Figueroa &amp; Perez-Torres, 2021 doi 10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Length of the third digit</td>
+<td style="text-align: left; font-weight: bold;">In biological collections the trait is the result of the sum of the metacarpus and its three phalanges. The metacarpus is measured from the joint with the phalanx to the junction with the carpus. The phalanx is measured as the maximum distance between the joints. In the field, the trait is measured from the junction of the metacarpus with the carpus to the tip of the third phalanx.</td>
+<td style="text-align: left;">Description obtained from Castillo-Figueroa &amp; Perez-Torres, 2021 doi 10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Longevity</td>
+<td style="text-align: left; font-weight: bold;">The length or duration of life or viability.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">days</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/NCIT_C153298</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Mating systems</td>
+<td style="text-align: left; font-weight: bold;">An organismal quality inhering in a bearer by virtue of the structure of the bearer's conspecifics in relation to sexual behavior.</td>
+<td style="text-align: left;">Level definitions from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/ECOCORE_00000062</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Mating systems</td>
+<td style="text-align: left; font-weight: bold;">An organismal quality inhering in a bearer by virtue of the structure of the bearer's conspecifics in relation to sexual behavior.</td>
+<td style="text-align: left;">Level definitions from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/ECOCORE_00000062</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Mating systems</td>
+<td style="text-align: left; font-weight: bold;">An organismal quality inhering in a bearer by virtue of the structure of the bearer's conspecifics in relation to sexual behavior.</td>
+<td style="text-align: left;">Level definitions from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/ECOCORE_00000062</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Mating systems</td>
+<td style="text-align: left; font-weight: bold;">An organismal quality inhering in a bearer by virtue of the structure of the bearer's conspecifics in relation to sexual behavior.</td>
+<td style="text-align: left;">Level definitions from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/ECOCORE_00000062</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Migration</td>
+<td style="text-align: left; font-weight: bold;">Rhythmic behavior that involves cue-initiated, persistent, direct, focused movement between habitats.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/NBO_0070001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Migration</td>
+<td style="text-align: left; font-weight: bold;">Rhythmic behavior that involves cue-initiated, persistent, direct, focused movement between habitats.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/NBO_0070001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Sexual dimorphism</td>
+<td style="text-align: left; font-weight: bold;">A quality inhering in a bearer by virtue of the bearer's exhibiting a phenotypic difference between males and females of the same species.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PATO_0002451</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Sexual dimorphism</td>
+<td style="text-align: left; font-weight: bold;">A quality inhering in a bearer by virtue of the bearer's exhibiting a phenotypic difference between males and females of the same species.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/PATO_0002451</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Sexual maturity age</td>
+<td style="text-align: left; font-weight: bold;">The age at which an organism develops the ability to produce viable offspring.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">days</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/VT_0002683</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Tail length</td>
+<td style="text-align: left; font-weight: bold;">The distance from point to point along the longest axis of the appendage at the caudal end of the vertebral column.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">http://purl.obolibrary.org/obo/VT_0002758</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Type of roost</td>
+<td style="text-align: left; font-weight: bold;">The lair of an animal, where the animal can rest, give birth, hibernate, or take shelter.</td>
+<td style="text-align: left;">Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Type of roost</td>
+<td style="text-align: left; font-weight: bold;">The lair of an animal, where the animal can rest, give birth, hibernate, or take shelter.</td>
+<td style="text-align: left;">Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Type of roost</td>
+<td style="text-align: left; font-weight: bold;">The lair of an animal, where the animal can rest, give birth, hibernate, or take shelter.</td>
+<td style="text-align: left;">Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Type of roost</td>
+<td style="text-align: left; font-weight: bold;">The lair of an animal, where the animal can rest, give birth, hibernate, or take shelter.</td>
+<td style="text-align: left;">Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Type of roost</td>
+<td style="text-align: left; font-weight: bold;">The lair of an animal, where the animal can rest, give birth, hibernate, or take shelter.</td>
+<td style="text-align: left;">Description obtained from Cosentino et al., 2023. https://doi.org/10.11606/1807-0205/2021.61.24 Levels and level values obtained from Froidevaux et al., 2023 doi 10.1038/s41597-023-02157-4</td>
+<td style="text-align: left;">categorical</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">https://doi.org/10.11606/1807-0205/2021.61.24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Wing area</td>
+<td style="text-align: left; font-weight: bold;">The combined area of the two wings, the entire tail membrane and the portion of the body between the wings.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">m2</td>
+<td style="text-align: left;">https://doi.org/10.1098/rstb.1987.0030</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Wing loading</td>
+<td style="text-align: left; font-weight: bold;">The weight divided by the wing area.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">N/m2</td>
+<td style="text-align: left;">https://doi.org/10.1098/rstb.1987.0030</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Wingspan</td>
+<td style="text-align: left; font-weight: bold;">Distance between the wingtips of a bat with wings extended so that the leading edge is straight.</td>
+<td style="text-align: left;">None.</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">mm</td>
+<td style="text-align: left;">https://doi.org/10.1098/rstb.1987.0030</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><span style="font-style: italic;">Note: </span> <sup></sup> The trait name, type, and description were extracted from the ontology or publication listed as a source and are reported as written in the ontology consulted. When a trait and its description were obtained from different sources it's highlighted in the comments.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="excluded_data" class="level3">
+<h3 class="anchored" data-anchor-id="excluded_data">excluded_data</h3>
+<p>Table with data points which were excluded during the build process. The reason for the exclusion is documented for each row (Table 3).</p>
+<p>Data was excluded from integration into <code>ChiroTraits</code> if:</p>
+<ul>
+<li>The data value falls out of the allowed value range specified for the trait (e.g.&nbsp;a tail length of 0 mm).</li>
+<li>Data which could not be mapped into a species (e.g.&nbsp;record is specified at genus level).</li>
+<li>The data corresponds to an extinct bat species. In which case, a link to the corresponding entry in the <a href="https://recentlyextinctspecies.com/chiroptera">REPAD: The Recently Extinct Plants and Animals Database</a> was added.</li>
+<li>The data record was imputed by statistical methods (e.g.&nbsp;gap-filling).</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:1300px; ">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table 3. Sample of observations excluded from ChiroTraits and reason for exclusion</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Reason for exclusion</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Dataset ID</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Species</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Observation ID</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Trait</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Value</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Value out of allowable range</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Casinycteris campomaanensis</td>
+<td style="text-align: left;">023</td>
+<td style="text-align: left;">tail_length</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">mm</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Value out of allowable range</td>
+<td style="text-align: left;">Crane_2022</td>
+<td style="text-align: left;">Hipposideros beatus</td>
+<td style="text-align: left;">166</td>
+<td style="text-align: left;">wing_area</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">m2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unsupported trait value</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Myotis emarginatus</td>
+<td style="text-align: left;">390</td>
+<td style="text-align: left;">type_of_roost</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Value out of allowable range</td>
+<td style="text-align: left;">Crane_2022</td>
+<td style="text-align: left;">Pilonycteris celebensis</td>
+<td style="text-align: left;">682</td>
+<td style="text-align: left;">wing_area</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">m2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Value out of allowable range</td>
+<td style="text-align: left;">Crane_2022</td>
+<td style="text-align: left;">Lophostoma silvicola</td>
+<td style="text-align: left;">251</td>
+<td style="text-align: left;">wing_area</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">m2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Unsupported trait value</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Pseudoromicia rendalli</td>
+<td style="text-align: left;">538</td>
+<td style="text-align: left;">foraging_strategy</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unsupported trait value</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Glauconycteris machadoi</td>
+<td style="text-align: left;">167</td>
+<td style="text-align: left;">feeding_guild</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Value out of allowable range</td>
+<td style="text-align: left;">Crane_2022</td>
+<td style="text-align: left;">Murina suilla</td>
+<td style="text-align: left;">334</td>
+<td style="text-align: left;">body_mass</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">g</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unsupported trait value</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Hypsugo savii</td>
+<td style="text-align: left;">208</td>
+<td style="text-align: left;">foraging_strategy</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Value out of allowable range</td>
+<td style="text-align: left;">Crane_2022</td>
+<td style="text-align: left;">Myotis montivagus</td>
+<td style="text-align: left;">380</td>
+<td style="text-align: left;">forearm_length</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">mm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Value out of allowable range</td>
+<td style="text-align: left;">Crane_2022</td>
+<td style="text-align: left;">Myotis tricolor</td>
+<td style="text-align: left;">404</td>
+<td style="text-align: left;">body_mass</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">g</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Unsupported trait value</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Myotis bocagii</td>
+<td style="text-align: left;">382</td>
+<td style="text-align: left;">foraging_strategy</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Value out of allowable range</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Pteropus niger</td>
+<td style="text-align: left;">553</td>
+<td style="text-align: left;">tail_length</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">mm</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Unsupported trait value</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Miniopterus griffithsi</td>
+<td style="text-align: left;">294</td>
+<td style="text-align: left;">type_of_roost</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unsupported trait value</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Hipposideros abae</td>
+<td style="text-align: left;">177</td>
+<td style="text-align: left;">foraging_strategy</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Unsupported trait value</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Rhinopoma microphyllum</td>
+<td style="text-align: left;">663</td>
+<td style="text-align: left;">foraging_strategy</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Value out of allowable range</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Casinycteris ophiodon</td>
+<td style="text-align: left;">029</td>
+<td style="text-align: left;">tail_length</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">mm</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Unsupported trait value</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Kerivoula argentata</td>
+<td style="text-align: left;">212</td>
+<td style="text-align: left;">foraging_habitat</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unsupported trait value</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Miniopterus petersoni</td>
+<td style="text-align: left;">319</td>
+<td style="text-align: left;">foraging_strategy</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Unsupported trait value</td>
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Plerotes anchietae</td>
+<td style="text-align: left;">526</td>
+<td style="text-align: left;">foraging_strategy</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><span style="font-style: italic;">Note: </span> <sup></sup> The trait name, type, and description were extracted from the ontology or publication listed as a source and are reported as written in the ontology consulted. When a trait and its description were obtained from different sources it's highlighted in the comments.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="taxonomic_updates" class="level3">
+<h3 class="anchored" data-anchor-id="taxonomic_updates">taxonomic_updates</h3>
+<p>When the species listed in the trait data was out of alignment with the taxonomy used, a taxonomic update was specified in the corresponding <code>metadata.yml</code> file of the study. This table contains the list of updated scientific names assigned in the study, the new accepted taxon, the study which lists the outdated name, and the reason given for the update (Table 4).</p>
+<p>Each taxonomic update is written in the <code>metadata.yml</code> file for each study with the following structure:</p>
+<ul>
+<li><em>Find</em>: The species name reported in the source.</li>
+<li><em>Replace</em>: The current accepted species name, as established in the MDD 2.1.</li>
+<li><em>Reason</em>: The reason listed for the change in the correponding page for the species. Also includes the current webpage for the species listed in the MDD website.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; ">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table 4. Sample of taxonomic updates applied in ChiroTraits. Accepted names and reasons for change obtained from MDD 2.1</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">dataset_id</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">original_name</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">aligned_name</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">taxonomic_resolution</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">taxon_name</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">aligned_name_taxonomic_status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Faurby_2018</td>
+<td style="text-align: left;">Natalus espiritosantensis</td>
+<td style="text-align: left;">Natalus macrourus</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Natalus macrourus</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Soria_2021</td>
+<td style="text-align: left;">Neoromicia robertsi</td>
+<td style="text-align: left;">Laephotis robertsi</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Laephotis robertsi</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Myhrvold_2015</td>
+<td style="text-align: left;">Pteropus insularis</td>
+<td style="text-align: left;">Pteropus pelagicus</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Pteropus pelagicus</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Crane_2022</td>
+<td style="text-align: left;">Neoromicia capensis</td>
+<td style="text-align: left;">Laephotis capensis</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Laephotis capensis</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Myhrvold_2015</td>
+<td style="text-align: left;">Rhogeessa alleni</td>
+<td style="text-align: left;">Baeodon alleni</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Baeodon alleni</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Myhrvold_2015</td>
+<td style="text-align: left;">Hypsugo bodenheimeri</td>
+<td style="text-align: left;">Hypsugo ariel</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Hypsugo ariel</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Soria_2021</td>
+<td style="text-align: left;">Neoromicia roseveari</td>
+<td style="text-align: left;">Pseudoromicia roseveari</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Pseudoromicia roseveari</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Soria_2021</td>
+<td style="text-align: left;">Pipistrellus aladdin</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cosentino_2023</td>
+<td style="text-align: left;">Chaerephon ansorgei</td>
+<td style="text-align: left;">Mops ansorgei</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Mops ansorgei</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Goncalvez_2018</td>
+<td style="text-align: left;">Artibeus gnomus</td>
+<td style="text-align: left;">Dermanura gnomus</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Dermanura gnomus</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Myhrvold_2015</td>
+<td style="text-align: left;">Micropteropus intermedius</td>
+<td style="text-align: left;">Epomophorus intermedius</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Epomophorus intermedius</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Soria_2021</td>
+<td style="text-align: left;">Mormopterus eleryi</td>
+<td style="text-align: left;">Setirostris eleryi</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Setirostris eleryi</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Herberstein_2022</td>
+<td style="text-align: left;">Miniopterus gigas</td>
+<td style="text-align: left;">Macroderma gigas</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Macroderma gigas</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Faurby_2018</td>
+<td style="text-align: left;">Chaerephon johorensis</td>
+<td style="text-align: left;">Mops johorensis</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Mops johorensis</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Soria_2021</td>
+<td style="text-align: left;">Hipposideros pendlebury</td>
+<td style="text-align: left;">Hipposideros pendleburyi</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Hipposideros pendleburyi</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Faurby_2018</td>
+<td style="text-align: left;">Lonchophylla thomasi</td>
+<td style="text-align: left;">Hsunycteris thomasi</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Hsunycteris thomasi</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Faurby_2018</td>
+<td style="text-align: left;">Rousettus lanosus</td>
+<td style="text-align: left;">Stenonycteris lanosa</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Stenonycteris lanosa</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Faurby_2018</td>
+<td style="text-align: left;">Triaenops rufus</td>
+<td style="text-align: left;">Triaenops persicus</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Triaenops persicus</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Soria_2021</td>
+<td style="text-align: left;">Anoura carishina</td>
+<td style="text-align: left;">Anoura latidens</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Anoura latidens</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Myhrvold_2015</td>
+<td style="text-align: left;">Lasiurus salinae</td>
+<td style="text-align: left;">Lasiurus blossevillii</td>
+<td style="text-align: left;">species</td>
+<td style="text-align: left;">Lasiurus blossevillii</td>
+<td style="text-align: left;">accepted</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="other-tables-included-in-the-structure-of-chirotraits" class="level3">
+<h3 class="anchored" data-anchor-id="other-tables-included-in-the-structure-of-chirotraits">Other tables included in the structure of <code>ChiroTraits</code></h3>
+<p>Descriptions obtained directly from Wenk et al., 2024.</p>
+<ul>
+<li><em>locations</em>: A table containing observations of location/site characteristics associated with information in <code>traits</code>.</li>
+<li><em>contexts</em>: A table containing observations of contextual characteristics associated with information in <code>traits</code>.</li>
+<li><em>methods</em>: A table containing details on methods with which data were collected, including time frame and source.</li>
+<li><em>contributors</em>: A table of people contributing to each study. Obtained from the <code>metadata.yml</code> file from each study included.</li>
+<li><em>identifiers</em>: A table of identifiers that cross-references observations between datasets or with other data resources such as museum specimens.</li>
+<li><em>sources</em>: Bibtex entries for all primary and secondary sources in the compilation.</li>
+<li><em>schema</em>: A copy of the schema for all tables and terms. Information included here was used to process data and generate any documentation for the study.</li>
+<li><em>metadata</em>: Metadata associated with the dataset, including title, creators, license, subject, funding sources.</li>
+<li><em>build_info</em>: A description of the computing environment used to create this version of the dataset, including version number, git commit and R session_info.</li>
+</ul>
+</section>
+</section>
+<section id="chirotraits-in-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="chirotraits-in-numbers">ChiroTraits in numbers</h2>
+<section id="observations" class="level3">
+<h3 class="anchored" data-anchor-id="observations">Observations</h3>
+<p>Currently, <code>ChiroTraits</code> contains a total of 65238 records from 10 publications (Table 5).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; ">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table 5. Publications currently included in ChiroTraits.</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Title</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Publication year</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Authors</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">Published in</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF; position: sticky; top: 0; background-color: #FFFFFF;">DOI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">{A dataset on African bats’ functional traits}</td>
+<td style="text-align: right;">2023</td>
+<td style="text-align: left;">Francesca Cosentino and Giorgia Castiello and Luigi Maiorano</td>
+<td style="text-align: left;">Scientific Data</td>
+<td style="text-align: left;">10.1038/s41597-023-02472-w</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">{Limitations and gaps in global bat wing morphology trait data}</td>
+<td style="text-align: right;">2021</td>
+<td style="text-align: left;">Matt Crane and Inês Silva and Matthew J. Grainger and George A. Gale</td>
+<td style="text-align: left;">Mammal Review</td>
+<td style="text-align: left;">10.1111/mam.12270</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">{Pteronotus personatus (Chiroptera: Mormoopidae)}</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: left;">J. Antonio De La Torre and Rodrigo A. Medellín</td>
+<td style="text-align: left;">Mammalian Species</td>
+<td style="text-align: left;">10.1644/869.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">{&lt;scp&gt;PHYLACINE&lt;/scp&gt; 1.2: The Phylogenetic Atlas of Mammal Macroecology}</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">Søren Faurby and Matt Davis and Rasmus Ø. Pedersen and Simon D. Schowanek and Alexandre Antonelli1 and Jens‐Christian Svenning</td>
+<td style="text-align: left;">Ecology</td>
+<td style="text-align: left;">10.1002/ecy.2443</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">{A species-level trait dataset of bats in Europe and beyond}</td>
+<td style="text-align: right;">2023</td>
+<td style="text-align: left;">Jérémy S. P. Froidevaux and Nia Toshkova and Luc Barbaro and Ana Benítez-López and Christian Kerbiriou and Isabelle Le Viol and Michela Pacifici and Luca Santini and Clare Stawski and Danilo Russo and Jasja Dekker and Antton Alberdi and Francisco Amorim and Leonardo Ancillotto and Kévin Barré and Yves Bas and Lisette Cantú-Salazar and Dina K. N. Dechmann and Tiphaine Devaux and Katrine Eldegard and Sasan Fereidouni and Joanna Furmankiewicz and Daniela Hamidovic and Davina L. Hill and Carlos Ibáñez and Jean-Francois Julien and Javier Juste and Peter Kaňuch and Carmi Korine and Alexis Laforge and Gaelle Legras and Camille Leroux and Grzegorz Lesiński and Léa Mariton and Julie Marmet and Vanessa A. Mata and Clare M. Mifsud and Victoria Nistreanu and Roberto Novella-Fernandez and Hugo Rebelo and Niamh Roche and Charlotte Roemer and Ireneusz Ruczyński and Rune Sørås and Marcel Uhrin and Adriana Vella and Christian C. Voigt and Orly Razgour</td>
+<td style="text-align: left;">Scientific Data</td>
+<td style="text-align: left;">10.1038/s41597-023-02157-4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">{&lt;scp&gt;ATLANTIC MAMMAL TRAITS&lt;/scp&gt;: a data set of morphological traits of mammals in the Atlantic Forest of South America}</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">Fernando Goncalves and Ricardo S. Bovendorp and Gabrielle Beca and Carolina Bello and Raul Costa_Pereira and Renata L. Muylaert and Raisa R. Rodarte and Nacho Villar and Rafael Souza and Maurício E. Graipel and Jorge J. Cherem and Deborah Faria and Julio Baumgarten and Martín R. Alvarez and Emerson M. Vieira and Nilton Cáceres and Renata Pardini and Yuri L. R. Leite and Leonora P. Costa and Marco A. R. Mello and Erich Fischer and Fernando C. Passos and Luiz H. Varzinczak and Jayme A. Prevedello and Ariovaldo P. Cruz_Neto and Fernando Carvalho and Alexandre R. Percequillo and Agustin Paviolo and Alessandra Nava and José M. B. Duarte and Noé U. De La Sancha and Enrico Bernard and Ronaldo G. Morato and Juliana F. Ribeiro and Rafael G. Becker and Gabriela Paise and Paulo S. Tomasi and Felipe Vélez_Garcia and Geruza L. Melo and Jonas Sponchiado and Felipe Cerezer and Marília A. S. Barros and Albérico Q. S. De Souza and Cinthya C. Dos Santos and Gastón A. F. Giné and Patricia Kerches_Rogeri and Marcelo M. Weber and Guilherme Ambar and Lucía V. Cabrera_Martinez and Alan Eriksson and Maurício Silveira and Carolina F. Santos and Lucas Alves and Eder Barbier and Gabriela C. Rezende and Guilherme S. T. Garbino and Élson O. Rios and Adna Silva and Alexandre Túlio A. Nascimento and Rodrigo S. De Carvalho and Anderson Feijó and Juan Arrabal and Ilaria Agostini and Daniela Lamattina and Sebastian Costa and Ezequiel Vanderhoeven and Fabiano R. De Melo and Plautino De Oliveira Laroque and Leandro Jerusalinsky and Monica M. Valenca_Montenegro and Amely B. Martins and Gabriela Ludwig and Renata B. De Azevedo and Agustin Anzóategui and Marina X. Da Silva and Marcela Figuerêdo Duarte Moraes and Alexandre Vogliotti and Andressa Gatti and Thomas Püttker and Camila S. Barros and Thais K. Martins and Alexine Keuroghlian and Donald P. Eaton and Carolina L. Neves and Marcelo S. Nardi and Caryne Braga and Pablo R. Goncalves and Ana Carolina Srbek_Araujo and Poliana Mendes and João A. De Oliveira and Fábio A. M. Soares and Patrício A. Rocha and Peter Crawshaw and Milton C. Ribeiro and Mauro Galetti</td>
+<td style="text-align: left;">Ecology</td>
+<td style="text-align: left;">10.1002/ecy.2106</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">{AnimalTraits - a curated animal trait database for body mass, metabolic rate and brain size}</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">Marie E. Herberstein and Donald James Mclean and Elizabeth Lowe and Jonas O. Wolff and Md Kawsar Khan and Kaitlyn Smith and Andrew P. Allen and Matthew Bulbert and Bruno A. Buzatto and Mark D. B. Eldridge and Daniel Falster and Laura Fernandez Winzer and Simon C. Griffith and Joshua S. Madin and Ajay Narendra and Mark Westoby and Martin J. Whiting and Ian J. Wright and Alexandra J. R. Carthey</td>
+<td style="text-align: left;">Scientific Data</td>
+<td style="text-align: left;">10.1038/s41597-022-01364-9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">{An amniote life history database to perform comparative analyses with birds, mammals, and reptiles: Ecological Archives E096 269}</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: left;">Nathan P. Myhrvold and Elita Baldridge and Benjamin Chan and Dhileep Sivam and Daniel L. Freeman and S. K. Morgan Ernest</td>
+<td style="text-align: left;">Ecology</td>
+<td style="text-align: left;">10.1890/15-0846r.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">{COMBINE: a coalesced mammal database of intrinsic and extrinsic traits}</td>
+<td style="text-align: right;">2021</td>
+<td style="text-align: left;">Carmen D. Soria and Michela Pacifici and Moreno Di Marco and Sarah M. Stephen and Carlo Rondinini</td>
+<td style="text-align: left;">Ecology</td>
+<td style="text-align: left;">10.1002/ecy.3344</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">{DarkCideS 1.0, a global database for bats in karsts and caves}</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: left;">Krizler C. Tanalgo and John Aries G. Tabora and Hernani Fernandes Magalhães De Oliveira and Danny Haelewaters and Chad T. Beranek and Aída Otálora-Ardila and Enrico Bernard and Fernando Gonçalves and Alan Eriksson and Melissa Donnelly and Joel Monzón González and Humberto Fernández Ramos and Alberto Clark Rivas and Paul W. Webala and Stanimira Deleva and Ridha Dalhoumi and Jaycelle Maula and Dennis Lizarro and Luis F. Aguirre and Nils Bouillard and Ma. Niña Regina M. Quibod and Jennifer Barros and Manfredo Alejandro Turcios-Casco and Marcio Martínez and Diego Iván Ordoñez-Mazier and José Alejandro Soler Orellana and Eduardo J. Ordoñez-Trejo and Danny Ordoñez and Ada Chornelia and Jian Mei Lu and Chen Xing and Sanjeev Baniya and Renata L. Muylaert and Leonardo Henrique Dias-Silva and Nittaya Ruadreo and Alice Catherine Hughes</td>
+<td style="text-align: left;">Scientific Data</td>
+<td style="text-align: left;">10.1038/s41597-022-01234-4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="bat-species" class="level3">
+<h3 class="anchored" data-anchor-id="bat-species">Bat species</h3>
+<p>Out of the 1492 species listed in the MDD 2.1, <code>ChiroTraits</code> contains data for 1293 bat species, divided into 237 genera, and 21 families. The best represented bat families are Phyllostomidae with 65.3%, and Vespertilionidae with 15% of the total data (Figure 1a). Every other family represented &lt;= 4.48% of data in <code>ChiroTraits</code>.</p>
+<p>The three best represented genera are phyllostomids, <em>Artibeus</em>, <em>Carollia</em>, and <em>Sturnira</em>, which represent 20%, 18.8%, and 10.2% of the total volume of data, respectively (Figure 1b). The fourth and fifth places, the genera <em>Myotis</em> (Vespertilionidae) and <em>Rhinolophus</em> (Rhinolophidae), represent 6.14% and 3.25% of the total volume of data, respectively.</p>
+<p><br></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="readme_files/figure-html/Family percentage-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figure 1. The ten best represented bat families and genera in ChiroTraits by percentage</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="functional-traits" class="level3">
+<h3 class="anchored" data-anchor-id="functional-traits">Functional traits</h3>
+<p>The best represented functional traits are body mass, forearm length, and head-body length, which represent 46.6%, 37.7%, and 3.27% of <code>ChiroTraits</code> respectively (Figure 2). Every other trait represented &lt;= 2.03% of data in <code>ChiroTraits</code>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="readme_files/figure-html/Trait percentage, -1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Figure 2. The ten best represented functional traits in ChiroTraits by percentage</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Brosse, S., Charpin, N., Su, G., Toussaint, A., Herrera-R, G. A., Tedesco, P. A., &amp; Villéger, S. (2021). FISHMORPH: A global database on morphological traits of freshwater fishes. Global Ecology and Biogeography, 30(12), 2330–2336. https://doi.org/10.1111/geb.13395</li>
+<li>Cosentino, F., Castiello, G., &amp; Maiorano, L. (2023). A dataset on African bats’ functional traits. Scientific Data, 10(1), 623. https://doi.org/10.1038/s41597-023-02472-w</li>
+<li>Dawson, S. K., Carmona, C. P., González-Suárez, M., Jönsson, M., Chichorro, F., Mallen-Cooper, M., Melero, Y., Moor, H., Simaika, J. P., &amp; Duthie, A. B. (2021). The traits of “trait ecologists”: An analysis of the use of trait and functional trait terminology. Ecology and Evolution, 11(23), 16434–16445. https://doi.org/10.1002/ece3.8321</li>
+<li>Etard, A., Morrill, S., &amp; Newbold, T. (2020). Global gaps in trait data for terrestrial vertebrates. Global Ecology and Biogeography, 29(12), 2143–2158. https://doi.org/10.1111/geb.13184</li>
+<li>Falster, D., Gallagher, R., Wenk, E. H., Wright, I. J., Indiarto, D., Andrew, S. C., Baxter, C., Lawson, J., Allen, S., Fuchs, A., Monro, A., Kar, F., Adams, M. A., Ahrens, C. W., Alfonzetti, M., Angevin, T., Apgaua, D. M. G., Arndt, S., Atkin, O. K., … Ziemińska, K. (2021). AusTraits, a curated plant trait database for the Australian flora. Scientific Data, 8(1), 254. https://doi.org/10.1038/s41597-021-01006-6</li>
+<li>Froidevaux, J. S. P., Toshkova, N., Barbaro, L., Benítez-López, A., Kerbiriou, C., Le Viol, I., Pacifici, M., Santini, L., Stawski, C., Russo, D., Dekker, J., Alberdi, A., Amorim, F., Ancillotto, L., Barré, K., Bas, Y., Cantú-Salazar, L., Dechmann, D. K. N., Devaux, T., … Razgour, O. (2023). A species-level trait dataset of bats in Europe and beyond. Scientific Data, 10(1), 253. https://doi.org/10.1038/s41597-023-02157-4<br>
+</li>
+<li>Funk, J. L., Larson, J. E., Ames, G. M., Butterfield, B. J., Cavender-Bares, J., Firn, J., Laughlin, D. C., Sutton-Grier, A. E., Williams, L., &amp; Wright, J. (2017). Revisiting the Holy Grail: Using plant functional traits to understand ecological processes. Biological Reviews, 92(2), 1156–1173. https://doi.org/10.1111/brv.12275</li>
+<li>Huang, N., Sun, X., Song, Y., Yuan, Z., &amp; Zhou, W. (2023). Amphibian traits database: A global database on morphological traits of amphibians. Global Ecology and Biogeography, 32(5), 633–641. https://doi.org/10.1111/geb.13656</li>
+<li>Kattge, J., Bönisch, G., Díaz, S., Lavorel, S., Prentice, I. C., Leadley, P., Tautenhahn, S., Werner, G. D. A., Aakala, T., Abedi, M., Acosta, A. T. R., Adamidis, G. C., Adamson, K., Aiba, M., Albert, C. H., Alcántara, J. M., Alcázar C, C., Aleixo, I., Ali, H., … Wirth, C. (2020). TRY plant trait database – enhanced coverage and open access. Global Change Biology, 26(1), 119–188. https://doi.org/10.1111/gcb.14904</li>
+<li>Mammal Diversity Database. (2025). Mammal Diversity Database (Version 2.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.15007505</li>
+<li>Soria, C. D., Pacifici, M., Di Marco, M., Stephen, S. M., &amp; Rondinini, C. (2021). COMBINE: a coalesced mammal database of intrinsic and extrinsic traits. Ecology, 102(6). https://doi.org/10.1002/ecy.3344</li>
+<li>Tobias, J. A. (2022). A bird in the hand: Global-scale morphological trait datasets open new frontiers of ecology, evolution and ecosystem science. Ecology Letters, 25(3), 573–580. https://doi.org/10.1111/ele.13960</li>
+<li>Wenk, E., Bal, P., Coleman, D., Gallagher, R., Yang, S., &amp; Falster, D. (2024). Traits.build: A data model, workflow and R package for building harmonised ecological trait databases. Ecological Informatics, 83, 102773. https://doi.org/10.1016/j.ecoinf.2024.102773</li>
+<li>Zakharova, L., Meyer, K. M., &amp; Seifan, M. (2019). Trait-based modelling in ecology: A review of two decades of research. Ecological Modelling, 407, 108703. https://doi.org/10.1016/j.ecolmodel.2019.05.008</li>
+</ul>
+</section>
+<section id="license" class="level2">
+<h2 class="anchored" data-anchor-id="license">License</h2>
+<p>The contents of this repository are made available under the Open Data Commons Attribution License (ODC-By): http://opendatacommons.org/licenses/by/1.0/</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

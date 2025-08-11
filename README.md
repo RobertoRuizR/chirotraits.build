@@ -21,7 +21,7 @@ Currently, `ChiroTraits` includes 65238 records for 1293 bat species and 29 func
 
 The creation of `Chirotraits` was greatly pushed forward thanks to two recent releases: the traits.build R package (Wenk et al., 2024) and the [Mammal Diversity Database 2.1 (2025)](https://www.mammaldiversity.org/).
 
-The name `ChiroTraits` follows from the naming convention used by Falster et al., 2021 in their `AusTraits` database. Likewise, the name `chirotraits.build` follows the `austraits.build` and `traits.build` naming convention used by Wenk et al., 2024.
+The name `ChiroTraits` follows from the naming convention used by Falster et al., 2021 in the `AusTraits` database. Likewise, the name `chirotraits.build` follows the `austraits.build` and `traits.build` naming convention used by Wenk et al., 2024.
 
 
 ## File organization
@@ -69,15 +69,13 @@ When the species listed in the trait data was out of alignment with the taxonomy
 
 Each taxonomic update is written in the `metadata.yml` file for each study with the following structure: 
 - *Find*: The species name reported in the source. 
-- *Replace*: The current accepted species name, as established in the MDD. 
+- *Replace*: The current accepted species name, as established in the MDD 2.1.
 - *Reason*: The reason listed for the change in the correponding page for the species. Also includes the current webpage for the species listed in the MDD website.
-
-*Add table with taxonomic updates in ChiroTraits*
 
 
 ### taxa
 
-Table with the list of bat species currently recognized. The taxonomy used was obtained from the most recent version of [The Mammal Diversity Database (MDD)](https://www.mammaldiversity.org/), which recognises 1492 species, 238 genera, and 21 families of bats. 
+Table with the list of bat species currently recognized. The taxonomy used was obtained from the 2.1 version of [The Mammal Diversity Database (MDD)](https://www.mammaldiversity.org/), which recognises 1492 species, 238 genera, and 21 families of bats. 
 
 ### definitions
 Every functional trait included in `ChiroTraits` has a corresponding definition in the `config/traits.yml` file, which acts as a thesaurus for the complete database. Each trait includes their assigned name, definition, allowed values (numerical variables) or levels (categorical variables), expected unit, and a link to an existing Ontology found in the [Ontobee Data Server](https://ontobee.org/). When a trait definition was not found in the existing ontologies, the definition was obtained from a published trait dataset for bats (e.g. EuroBaTrait, Froidevaux et al., 2023; AfroBat, Cosentino et al., 2023) and the corresponding DOI was added as a source.
