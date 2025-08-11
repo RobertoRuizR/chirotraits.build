@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "ChiroTraits.build"
+  sidebar:
+    background: primary
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/RobertoRuizR/chirotraits.build
+        text: Site Source Code
+    style: docked
+    contents: 
+      - href: index.qmd
+        text: Home
+      - href: readme.qmd
+        text: Progress report
+
+format:
+  html:
+    theme: flatly
+    fontsize: 1.3em
+    toc: true
+
+execute:
+  freeze: auto
+
