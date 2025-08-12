@@ -1,6 +1,6 @@
 metadata:
-  title: 'ChiroTraits: A Global Database for Bat Functional Traits'
-  description: "A global database of bat functional trait data"
+  title: ChiroTraits
+  description: A global database for bat functional trait data
   doi: unknown
   structure_URI: https://github.com/RobertoRuizR/chirotraits.build
   geo_location:
